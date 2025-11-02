@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7d11d50-ca42-4c74-ac3d-c5d964f4ee69" name="Changes" comment="Source code base">
+    <list default="true" id="c7d11d50-ca42-4c74-ac3d-c5d964f4ee69" name="Changes" comment="Chỉnh màu, ảnh hero">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,12 +23,12 @@
     &quot;assignee&quot;: &quot;dkmvkl1xx1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/23130047-DuongMinhDat/Web-t-tour-du-l-ch-n-i-a.git",
-    "accountId": "96f839fb-286a-4401-ac4e-5495021964fb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/23130047-DuongMinhDat/Web-t-tour-du-l-ch-n-i-a.git&quot;,
+    &quot;accountId&quot;: &quot;96f839fb-286a-4401-ac4e-5495021964fb&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -40,25 +40,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Rebasing main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "C:/Users/Helios NEO 16/AppData/Roaming/JetBrains/WebStorm2025.2/node/versions/24.11.0/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Rebasing main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Users/Helios NEO 16/AppData/Roaming/JetBrains/WebStorm2025.2/node/versions/24.11.0/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,7 +74,10 @@
       <option name="presentableId" value="Default" />
       <updated>1761818086264</updated>
       <workItem from="1761818087350" duration="688000" />
-      <workItem from="1761879337304" duration="3251000" />
+      <workItem from="1761879337304" duration="3688000" />
+      <workItem from="1762052167359" duration="4669000" />
+      <workItem from="1762077293110" duration="5191000" />
+      <workItem from="1762082585318" duration="346000" />
     </task>
     <task id="LOCAL-00001" summary="Source code base">
       <option name="closed" value="true" />
@@ -84,7 +87,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761818585690</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Thêm Login">
+      <option name="closed" value="true" />
+      <created>1761882942063</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1761882942063</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Chỉnh màu, ảnh hero">
+      <option name="closed" value="true" />
+      <created>1762082534051</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762082534051</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +122,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Source code base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Source code base" />
+    <MESSAGE value="Thêm Login" />
+    <MESSAGE value="Chỉnh màu, ảnh hero" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chỉnh màu, ảnh hero" />
   </component>
 </project>
