@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", async (e) => {
 
         if (user) {
             alert("Login successful");
-            window.location.href = "../html/index.html"; // Redirect to the home page
+            window.location.href = "../../html/index.html"; // Redirect to the home page
         } else {
             alert("User not found");
         }
