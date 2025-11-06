@@ -1,0 +1,126 @@
+/* Hero Section */
+
+.hero {
+    position: relative;
+    background: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* Hero text animation */
+.hero h1, .hero p, .hero-buttons {
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+}
+
+.hero h1 {
+    animation-delay: 0.2s;
+}
+
+.hero p {
+    animation-delay: 0.5s;
+}
+
+.hero-buttons {
+    animation-delay: 0.8s;
+}
+
+/* Tour Search */
+.tour-search {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+    margin-bottom: 20px;
+}
+
+.tour-search form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tour-search .btn-group {
+    font-size: 1em;
+}
+
+/* Tour card hover */
+
+.tour-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.tour-card {
+    position: relative;
+    overflow: hidden;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tour-card img {
+    width: 300px;
+    height: 200px;
+    transition: transform 0.6s ease;
+    object-fit: cover;
+}
+
+
+.tour-card:hover img {
+    transform: scale(1.1);
+}
+
+.feature:hover i {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Newsletter hover */
+.newsletter input {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    width: 240px;
+}
+
+.newsletter input:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 5px rgba(0, 153, 204, 0.3);
+}
+
