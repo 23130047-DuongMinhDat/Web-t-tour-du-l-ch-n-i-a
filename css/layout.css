@@ -186,13 +186,17 @@ footer {
     color: #ccc;
     padding: 60px 20px 10px;
     margin-top: 40px;
+    text-align: center;
+
 }
 
 .footer-content {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
+    row-gap: 30px;
 }
 
 .footer-content h3 {
@@ -212,6 +216,11 @@ footer {
 
 .footer-content a:hover {
     color: var(--blue);
+}
+
+.footer-content .footer-about p {
+    max-width: 400px;
+    margin: 0 auto 20px;
 }
 
 .footer-bottom {
