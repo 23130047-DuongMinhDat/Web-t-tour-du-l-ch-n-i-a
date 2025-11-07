@@ -67,7 +67,6 @@
 <!-- Contact Us Section -->
 <main>
     <h1>Contact Us</h1>
-
     <div class="container">
         <div class="grid">
             <div class="contact-info flex card">
@@ -89,18 +88,27 @@
             <div class="contact-form flex card">
                 <h2>Contact Form</h2>
                 <p>We’d love to hear from you! Please fill out the form below to get in touch with us.</p>
-                <form action="" method="post">
+                <form id="contact-form" action="" method="post">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </label>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </label>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
+                        <label for="subject">
+                            <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
+                        </label>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        <label for="message">
+                            <textarea id="message" name="message" rows="4" placeholder="Your Message"
+                                      required></textarea>
+                        </label>
                     </div>
                     <button type="submit">Send Message</button>
                 </form>
@@ -147,6 +155,6 @@
         <p>© 2025 VietTravel - All rights reserved.</p>
     </div>
 </footer>
-
+<script src="../assets/js/contact.js"></script>
 </body>
 </html>

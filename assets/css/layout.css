@@ -164,6 +164,24 @@ header nav ul {
     margin-right: 20px;
 }
 
+header nav ul li a {
+    background: var(--text-light, #333);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 1em;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+
+}
+
+header nav ul li a:hover {
+    background: var(--blue);
+    font-size: 1.2em;
+}
+
 /* Sticky Header Transition */
 .header {
     transition: all 0.4s ease;
