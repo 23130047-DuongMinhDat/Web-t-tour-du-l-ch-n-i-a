@@ -93,11 +93,6 @@ form {
     text-align: right;
 }
 
-.forgot-passwd {
-    color: var(--primary);
-    font-size: 0.9em;
-    text-decoration: none;
-}
 
 button[type="submit"] {
     background-color: var(--primary);
@@ -164,12 +159,12 @@ button[type="submit"]:hover {
     color: var(--neutral);
 }
 
-.signup-text {
+.login-text {
     font-size: 0.95em;
     color: var(--text-dark); /* Dùng --text-dark */
 }
 
-.signup-text a {
+.login-text a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 500;
