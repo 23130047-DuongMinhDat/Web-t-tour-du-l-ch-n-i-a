@@ -1,18 +1,7 @@
-/* ==============================
-   CONTACT PAGE STYLE
-   (Dựa theo layout.css)
-============================== */
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* Giữ nguyên font từ layout */
 body {
     min-height: 100vh;
-    background: var(--light-blue); /* dùng nền từ layout */
-    color: var(--text-dark);
-    font-family: var(--ff-poppins, 'Poppins', sans-serif);
+    background: var(--light-blue);: var(--text-dark);
+    font-family: var(--ff-poppins, 'Poppins', sans-serif), serif;
 }
 
 /* Heading */
@@ -30,7 +19,7 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Layout chính */
+/* Container */
 .container {
     max-width: 1100px;
     margin: 40px auto;
@@ -49,7 +38,7 @@ h2 {
     align-items: center;
 }
 
-/* Card chung */
+/* Styled Cards */
 .card {
     background-color: var(--white);
     border-radius: var(--radius);
@@ -143,9 +132,4 @@ button:hover {
     border: none;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
+

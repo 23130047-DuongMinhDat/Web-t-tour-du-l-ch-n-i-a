@@ -1,0 +1,80 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #0099cc;
+    --dark-blue: #0077aa;
+    --light-blue: #e6f7ff;
+    --text-dark: #333;
+    --text-light: #777;
+    --white: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    background: #fafafa;
+    color: var(--text-dark);
+    line-height: 1.35;
+    min-height: 100vh;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+input {
+    padding: 10px;
+    border: solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1em;
+    border-width: 2px;
+}
+
+
+main {
+    padding: 20px;
+}
+
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
