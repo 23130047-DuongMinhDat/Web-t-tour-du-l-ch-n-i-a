@@ -1,20 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VietTravel - Discover Vietnam</title>
+    <title>VietTravel - Khám phá Việt Nam</title>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
     <!-- AOS for scroll animations -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 
 <body>
@@ -30,16 +33,16 @@
 
         <div class="user-auth">
             <div class="guest-menu">
-                <a href="login.html"><i class="fas fa-user"></i> Login</a>
-                <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
             </div>
             <div class="user-dashboard" style="display:none;">
-                <i class="fas fa-user-circle"></i> Dashboard
+                <i class="fas fa-user-circle"></i> Trang cá nhân
                 <div class="dropdown-content">
-                    <a href="profile.html">Profile</a>
-                    <a href="my-bookings.html">My Bookings</a>
-                    <a href="my-wishlist.html">My Wishlist</a>
-                    <a href="logout.html">Logout</a>
+                    <a href="profile.html">Hồ sơ</a>
+                    <a href="my-bookings.html">Đặt tour của tôi</a>
+                    <a href="my-wishlist.html">Danh sách yêu thích</a>
+                    <a href="logout.html">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -55,12 +58,12 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="destination.html">Destination</a></li>
-                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="destination.html">Điểm đến</a></li>
+                    <li><a href="tours.html">Tour</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
                 </ul>
             </nav>
         </div>
@@ -69,13 +72,13 @@
 
 <main>
     <!-- HERO -->
-    <section class="hero" aria-label="Explore Vietnam">
+    <section class="hero" aria-label="Khám phá Việt Nam">
         <div class="container">
-            <h1>Journey to explore Vietnam</h1>
-            <p>Adventure awaits – discover Vietnam your own way</p>
+            <h1>Hành trình khám phá Việt Nam</h1>
+            <p>Khám phá vẻ đẹp đất nước – du lịch theo cách của bạn</p>
             <div class="hero-buttons">
-                <button class="btn">Learn More</button>
-                <button class="btn">Book Now</button>
+                <button class="btn">Tìm hiểu thêm</button>
+                <button class="btn">Đặt tour ngay</button>
             </div>
         </div>
     </section>
@@ -84,15 +87,15 @@
     <section class="about-preview" data-aos="fade-up">
         <div class="container">
             <div class="about-content">
-                <img src="../assets/images/about-preview.jpg" alt="About VietTravel">
+                <img src="../assets/images/about-preview.jpg" alt="Về VietTravel">
                 <div>
-                    <h2>About VietTravel</h2>
+                    <h2>Về VietTravel</h2>
                     <p>
-                        With over 15 years of experience, VietTravel has guided thousands of
-                        travelers to explore the beauty of Vietnam – from stunning beaches to
-                        majestic mountains and rich cultural heritage.
+                        Với hơn 15 năm kinh nghiệm, VietTravel đã đồng hành cùng hàng ngàn du khách
+                        khám phá vẻ đẹp của Việt Nam – từ những bãi biển trong xanh đến núi rừng hùng vĩ
+                        và di sản văn hóa đặc sắc.
                     </p>
-                    <a href="about.html" class="btn">Read More</a>
+                    <a href="about.html" class="btn">Xem thêm</a>
                 </div>
             </div>
         </div>
@@ -102,91 +105,90 @@
     <section class="tour-search">
         <form action="">
             <div class="input-group">
-                <label for="destination">Destination</label>
-                <input type="text" id="destination" placeholder="Enter destination">
+                <label for="destination">Điểm đến</label>
+                <input type="text" id="destination" placeholder="Nhập điểm đến">
             </div>
             <div class="input-group">
-                <label for="pax">Pax Number</label>
-                <input type="number" id="pax" placeholder="No. of people">
+                <label for="pax">Số người</label>
+                <input type="number" id="pax" placeholder="Số lượng khách">
             </div>
             <div class="input-group">
-                <label for="check-in">Check-in</label>
+                <label for="check-in">Ngày đi</label>
                 <input type="date" id="check-in">
             </div>
             <div class="input-group">
-                <label for="check-out">Check-out</label>
+                <label for="check-out">Ngày về</label>
                 <input type="date" id="check-out">
             </div>
             <div class="btn btn-group">
-                <button class="btn">Search Tours</button>
+                <button class="btn">Tìm tour</button>
             </div>
         </form>
     </section>
 
     <!-- POPULAR TOURS -->
     <section class="popular-tours" data-aos="zoom-in-up">
-        <h2>Popular Tours</h2>
+        <h2>Tour nổi bật</h2>
         <div class="tour-cards">
             <div class="tour-card">
-                <img src="../assets/images/popular-1.jpg" alt="Ha Long Bay">
+                <img src="../assets/images/popular-1.jpg" alt="Hạ Long">
                 <div class="tour-info">
-                    <h3>Ha Long Bay</h3>
-                    <p>UNESCO World Heritage site – discover limestone islands & caves.</p>
-                    <a href="tour-details.html" class="btn">View Details</a>
+                    <h3>Vịnh Hạ Long</h3>
+                    <p>Di sản thế giới UNESCO – khám phá đảo đá vôi và hang động tuyệt đẹp.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
                 </div>
             </div>
             <div class="tour-card">
-                <img src="../assets/images/popular-2.jpg" alt="Phu Quoc">
+                <img src="../assets/images/popular-2.jpg" alt="Phú Quốc">
                 <div class="tour-info">
-                    <h3>Phu Quoc Island</h3>
-                    <p>Explore the rich history and culture of Phu Quoc Island.</p>
-                    <a href="tour-details.html" class="btn">View Details</a>
+                    <h3>Đảo Phú Quốc</h3>
+                    <p>Khám phá bãi biển tuyệt đẹp và văn hóa đặc sắc của đảo ngọc.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
                 </div>
             </div>
             <div class="tour-card">
-                <img src="../assets/images/popular-3.jpg" alt="Hoi An Ancient Town">
+                <img src="../assets/images/popular-3.jpg" alt="Hội An">
                 <div class="tour-info">
-                    <h3>Hoi An Ancient Town</h3>
-                    <p>Explore ancient ruins and ancient temples in Hoi An.</p>
-                    <a href="tour-details.html" class="btn">View Details</a>
+                    <h3>Phố cổ Hội An</h3>
+                    <p>Khám phá di tích lịch sử và những ngôi chùa cổ kính của Hội An.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- WHY CHOOSE US -->
     <section class="why-choose-us" data-aos="fade-right">
-        <h2>Why Choose VietTravel?</h2>
+        <h2>Tại sao chọn VietTravel?</h2>
         <div class="features">
             <div class="feature">
                 <i class="fas fa-globe-asia"></i>
-                <h4>Local Expertise</h4>
-                <p>We specialize in Vietnam tours with authentic local experiences.</p>
+                <h4>Kinh nghiệm địa phương</h4>
+                <p>Chuyên tổ chức tour Việt Nam với trải nghiệm bản địa chân thực.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-dollar-sign"></i>
-                <h4>Best Price Guarantee</h4>
-                <p>Transparent pricing and great discounts for early bookings.</p>
+                <h4>Giá tốt nhất</h4>
+                <p>Giá minh bạch và nhiều ưu đãi khi đặt sớm.</p>
             </div>
             <div class="feature">
                 <i class="fas fa-headset"></i>
-                <h4>24/7 Support</h4>
-                <p>Our team is ready to help you anytime, anywhere.</p>
+                <h4>Hỗ trợ 24/7</h4>
+                <p>Đội ngũ sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi.</p>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials" data-aos="fade-left">
-        <h2>What Our Travelers Say</h2>
+        <h2>Khách hàng nói gì?</h2>
         <div class="testimonial-container">
             <div class="testimonial-item">
-                <p>“The trip to Vietnam was beyond amazing! The service was great!”</p>
-                <span>— Linh Tran, Hanoi</span>
+                <p>“Chuyến đi đến Việt Nam thật tuyệt vời! Dịch vụ rất tốt!”</p>
+                <span>— Linh Trần, Hà Nội</span>
             </div>
             <div class="testimonial-item">
-                <p>“VietTravel organized everything perfectly – loved every moment.”</p>
+                <p>“VietTravel tổ chức mọi thứ hoàn hảo – tôi rất hài lòng.”</p>
                 <span>— John Smith, London</span>
             </div>
         </div>
@@ -194,26 +196,29 @@
 
     <!-- FAQ -->
     <section class="faq" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
+        <h2>Câu hỏi thường gặp</h2>
         <div class="faq-item">
-            <h4>How can I book a tour?</h4>
-            <p>Simply use our online booking form or contact our support team.</p>
+            <h4>Làm sao để đặt tour?</h4>
+            <p>Bạn có thể đặt tour trực tuyến hoặc liên hệ đội ngũ hỗ trợ của chúng tôi.</p>
         </div>
         <div class="faq-item">
-            <h4>Can I customize my travel plan?</h4>
-            <p>Yes! Our travel experts can help design a tour that suits your interests.</p>
+            <h4>Có thể tùy chỉnh hành trình không?</h4>
+            <p>Có! Chuyên gia du lịch của chúng tôi sẽ giúp bạn thiết kế tour phù hợp.</p>
         </div>
     </section>
 
-
     <!-- NEWSLETTER -->
     <section class="newsletter" data-aos="fade-up">
-        <h2>Subscribe to our Newsletter</h2>
-        <p>Stay updated with the latest tours and offers</p>
+        <h2>Đăng ký nhận tin</h2>
+        <p>Cập nhật các tour mới và ưu đãi hấp dẫn</p>
         <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <button class="btn">Subscribe</button>
+            <label for="name">
+                <input id="name" type="text" placeholder="Họ và tên" required>
+            </label>
+            <label for="email">
+                <input id="email" type="email" placeholder="Email của bạn" required>
+            </label>
+            <button class="btn">Đăng ký</button>
         </form>
     </section>
 </main>
@@ -221,46 +226,43 @@
 <footer>
     <div class="footer-content">
         <div class="footer-about">
-            <h3>About Us</h3>
-            <p>VietTravel is a trusted Vietnam tour booking website, helping travelers find and book domestic tours
-                easily and quickly.</p>
-            <p>We offer a wide range of tours, from adventure to relaxation, catering to your unique needs.</p>
+            <h3>Về chúng tôi</h3>
+            <p>VietTravel là website đặt tour uy tín, giúp khách du lịch tìm và đặt tour nội địa dễ dàng và nhanh
+                chóng.</p>
+            <p>Chúng tôi cung cấp đa dạng tour, từ khám phá mạo hiểm đến nghỉ dưỡng, phù hợp với mọi nhu cầu.</p>
         </div>
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3>Liên kết nhanh</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Popular Tours</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tour nổi bật</a></li>
+                <li><a href="#">Liên hệ</a></li>
             </ul>
         </div>
         <div class="footer-contact">
-            <h3>Contact Us</h3>
+            <h3>Liên hệ</h3>
             <p><i class="fa fa-phone"></i> +84 123 456 789</p>
             <p><i class="fa fa-envelope"></i> contact@viettravel.vn</p>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 VietTravel - All rights reserved.</p>
+        <p>© 2025 VietTravel - Bản quyền thuộc về VietTravel.</p>
     </div>
 </footer>
 
-
-<!-- jQuery (for sticky header or interactive effects) -->
+<!-- jQuery (sticky header hoặc hiệu ứng) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 <script>
-    // AOS initialization
     AOS.init({
         duration: 1000,
         once: true
     });
 
-    // Sticky header color change
     $(window).on("scroll", function () {
         if ($(window).scrollTop() > 80) {
             $(".header").addClass("scrolled");

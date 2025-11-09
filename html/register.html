@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Đăng nhập</title>
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <title>Đăng ký tài khoản</title>
+    <link rel="stylesheet" href="../assets/css/register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -14,9 +14,16 @@
 <body>
 <main>
     <section class="auth-card">
-        <h1>Đăng nhập</h1>
+        <h1>Đăng ký tài khoản</h1>
 
-        <form id="login-form" action="/login" method="post">
+        <form id="signup-form" action="/register" method="post">
+            <div class="input-group">
+                <label for="name">Tên</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Type your name" required>
+                </div>
+            </div>
             <div class="input-group">
                 <label for="email">Email</label>
                 <div class="input-wrapper">
@@ -30,19 +37,22 @@
                 <div class="input-wrapper">
                     <i class="fas fa-lock"></i>
                     <input type="password" id="password" name="password" placeholder="Type your password" required>
-                    <i class="fa-solid fa-eye-slash toggle-pass"></i>
-                </div>
+                    <i class="fa-solid fa-eye-slash toggle-pass" id="toggle-password"></i></div>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirm-password" name="confirm_password"
+                           placeholder="Type your password" required>
+                    <i class="fa-solid fa-eye-slash toggle-pass" id="toggle-confirm-password"></i></div>
             </div>
 
-            <div class="options">
-                <a href="#" class="forgot-passwd">Quên mật khẩu?</a>
-            </div>
-
-            <button id="submit" type="submit">Đăng nhập</button>
+            <button id="submit" type="submit">Đăng ký</button>
         </form>
 
         <div class="divider">
-            <span>Hoặc đăng nhập bằng: </span>
+            <span>Hoặc đăng nhập bằng:</span>
         </div>
 
         <div class="social-media">
@@ -51,11 +61,11 @@
             <a href="#" title="Google"><i class="fab fa-google"></i></a>
         </div>
 
-        <p class="signup-text">
-            Chưa có tài khoản ? <a href="register.html">Đăng ký</a>
+        <p class="login-text">
+            Đã có tài khoản ? <a href="login.html">Đăng Nhập</a>
         </p>
     </section>
 </main>
-<script src="../assets/js/login.js"></script>
+<script src="../assets/js/register.js"></script>
 </body>
 </html>
