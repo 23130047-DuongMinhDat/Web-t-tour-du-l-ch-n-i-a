@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog - VietTravel</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+</head>
+
+<body>
+<header>
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="user-auth">
+            <div class="guest-menu">
+                <a href="login.html"><i class="fas fa-user"></i> Login</a>
+                <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+            </div>
+            <div class="user-dashboard" style="display:none;">
+                <i class="fas fa-user-circle"></i> Dashboard
+                <div class="dropdown-content">
+                    <a href="profile.html">Profile</a>
+                    <a href="my-bookings.html">My Bookings</a>
+                    <a href="my-wishlist.html">My Wishlist</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-plane-departure"></i>
+                    <p>VietTravel</p>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="destination.html">Destination</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/blog/blog-hero.jpg') center/cover;">
+        <div class="hero-overlay">
+            <h1>Travel Blog</h1>
+            <p>Stories, Tips & Guides for Your Vietnam Adventure</p>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post" data-aos="fade-up">
+        <div class="container">
+            <div class="featured-badge">Featured Post</div>
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="../assets/images/blog/featured-post.jpg" alt="Top 10 Must-Visit Destinations in Vietnam">
+                </div>
+                <div class="featured-text">
+                    <div class="post-meta">
+                        <span class="category">Travel Guide</span>
+                        <span class="date"><i class="far fa-calendar"></i> Nov 5, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h2>Top 10 Must-Visit Destinations in Vietnam 2025</h2>
+                    <p>
+                        Discover the most breathtaking places in Vietnam, from the stunning Ha Long Bay
+                        to the ancient town of Hoi An. This comprehensive guide covers everything you need
+                        to know about planning your perfect Vietnamese adventure.
+                    </p>
+                    <a href="blog-detail.html" class="btn-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div class="blog-main">
+                    <!-- Category Filter -->
+                    <div class="category-filter" data-aos="fade-up">
+                        <button class="filter-btn active" data-category="all">All Posts</button>
+                        <button class="filter-btn" data-category="travel-tips">Travel Tips</button>
+                        <button class="filter-btn" data-category="destinations">Destinations</button>
+                        <button class="filter-btn" data-category="food">Food & Culture</button>
+                        <button class="filter-btn" data-category="guides">Travel Guides</button>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="blog-grid">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-card" data-aos="fade-up" data-category="travel-tips">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-travel-tips.jpg" alt="Essential Travel Tips for Vietnam">
+                                <div class="blog-category">Travel Tips</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 3, 2025</span>
+                                    <span><i class="far fa-clock"></i> 5 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Essential Travel Tips for First-Time Visitors to Vietnam</a></h3>
+                                <p>Planning your first trip to Vietnam? Here are the essential tips you need to know for a smooth and enjoyable journey.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="blog-card" data-aos="fade-up" data-aos-delay="100" data-category="food">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-food-culture.jpg" alt="Vietnamese Street Food">
+                                <div class="blog-category">Food & Culture</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Nov 1, 2025</span>
+                                    <span><i class="far fa-clock"></i> 6 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Vietnamese Street Food: A Culinary Adventure</a></h3>
+                                <p>Explore the vibrant world of Vietnamese street food, from pho to banh mi, and discover the best local eateries.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="destinations">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-sapa.jpg" alt="Exploring Sapa Vietnam">
+                                <div class="blog-category">Destinations</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Oct 28, 2025</span>
+                                    <span><i class="far fa-clock"></i> 7 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Exploring Sapa: Vietnam's Mountain Paradise</a></h3>
+                                <p>Journey to the breathtaking terraced rice fields and ethnic villages of Sapa in northern Vietnam.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 4 -->
+                        <article class="blog-card" data-aos="fade-up" data-category="guides">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-halong-cruise.jpg" alt="Ha Long Bay Cruise Guide">
+                                <div class="blog-category">Travel Guides</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Oct 25, 2025</span>
+                                    <span><i class="far fa-clock"></i> 10 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Complete Guide to Ha Long Bay Cruise</a></h3>
+                                <p>Everything you need to know about cruising through the majestic limestone karsts of Ha Long Bay.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 5 -->
+                        <article class="blog-card" data-aos="fade-up" data-aos-delay="100" data-category="destinations">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-hoian.jpg" alt="Hoi An Ancient Town">
+                                <div class="blog-category">Destinations</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Oct 22, 2025</span>
+                                    <span><i class="far fa-clock"></i> 6 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Hoi An: A Journey Through Time</a></h3>
+                                <p>Discover the enchanting ancient town of Hoi An, with its lantern-lit streets and rich cultural heritage.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 6 -->
+                        <article class="blog-card" data-aos="fade-up" data-aos-delay="200" data-category="travel-tips">
+                            <div class="blog-image">
+                                <img src="../assets/images/blog/blog-budget-travel.jpg" alt="Budget Travel Vietnam">
+                                <div class="blog-category">Travel Tips</div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> Oct 20, 2025</span>
+                                    <span><i class="far fa-clock"></i> 4 min read</span>
+                                </div>
+                                <h3><a href="blog-detail.html">Budget Travel: Vietnam on $50 a Day</a></h3>
+                                <p>Learn how to explore Vietnam on a budget without missing out on amazing experiences.</p>
+                                <a href="blog-detail.html" class="read-more-link">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" data-aos="fade-up">
+                        <a href="#" class="page-link active">1</a>
+                        <a href="#" class="page-link">2</a>
+                        <a href="#" class="page-link">3</a>
+                        <a href="#" class="page-link">4</a>
+                        <a href="#" class="page-link"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <!-- Search -->
+                    <div class="sidebar-widget" data-aos="fade-left">
+                        <h3>Search</h3>
+                        <form class="search-form" id="searchForm">
+                            <input type="text" id="searchInput" placeholder="Search posts...">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Popular Posts</h3>
+                        <div class="popular-posts">
+                            <div class="popular-post-item">
+                                <img src="../assets/images/blog/featured-post.jpg" alt="Top 10 Must-Visit Destinations">
+                                <div>
+                                    <a href="blog-detail.html">Top 10 Must-Visit Destinations</a>
+                                    <span class="post-date">Nov 5, 2025</span>
+                                </div>
+                            </div>
+                            <div class="popular-post-item">
+                                <img src="../assets/images/blog/blog-halong-cruise.jpg" alt="Ha Long Bay Cruise Guide">
+                                <div>
+                                    <a href="blog-detail.html">Ha Long Bay Cruise Guide</a>
+                                    <span class="post-date">Oct 25, 2025</span>
+                                </div>
+                            </div>
+                            <div class="popular-post-item">
+                                <img src="../assets/images/blog/blog-food-culture.jpg" alt="Vietnamese Street Food Guide">
+                                <div>
+                                    <a href="blog-detail.html">Vietnamese Street Food Guide</a>
+                                    <span class="post-date">Nov 1, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
+                        <h3>Categories</h3>
+                        <ul class="categories-list">
+                            <li><a href="#"><i class="fas fa-folder"></i> Travel Tips <span>(12)</span></a></li>
+                            <li><a href="#"><i class="fas fa-folder"></i> Destinations <span>(18)</span></a></li>
+                            <li><a href="#"><i class="fas fa-folder"></i> Food & Culture <span>(8)</span></a></li>
+                            <li><a href="#"><i class="fas fa-folder"></i> Travel Guides <span>(15)</span></a></li>
+                            <li><a href="#"><i class="fas fa-folder"></i> Adventure <span>(10)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-widget" data-aos="fade-left" data-aos-delay="300">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to get the latest travel tips and stories!</p>
+                        <form class="newsletter-form" id="newsletterForm">
+                            <input type="email" id="newsletterEmail" placeholder="Your email" required>
+                            <button type="submit" class="btn">Subscribe</button>
+                        </form>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="400">
+                        <h3>Popular Tags</h3>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag">Vietnam</a>
+                            <a href="#" class="tag">Travel</a>
+                            <a href="#" class="tag">Adventure</a>
+                            <a href="#" class="tag">Beach</a>
+                            <a href="#" class="tag">Culture</a>
+                            <a href="#" class="tag">Food</a>
+                            <a href="#" class="tag">Backpacking</a>
+                            <a href="#" class="tag">Photography</a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>VietTravel is a trusted Vietnam tour booking website, helping travelers find and book domestic tours
+                easily and quickly.</p>
+            <p>We offer a wide range of tours, from adventure to relaxation, catering to your unique needs.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tours.html">Popular Tours</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-phone"></i> +84 123 456 789</p>
+            <p><i class="fa fa-envelope"></i> contact@viettravel.vn</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 VietTravel - All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Blog JS -->
+<script src="../assets/js/blog.js"></script>
+
+</body>
+</html>
