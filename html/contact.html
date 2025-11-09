@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/contact.css">
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <title>Contact Us</title>
+    <title>Liên hệ - VietTravel</title>
 </head>
 <body>
 
@@ -27,16 +28,16 @@
 
         <div class="user-auth">
             <div class="guest-menu">
-                <a href="login.html"><i class="fas fa-user"></i> Login</a>
-                <a href="register.html"><i class="fas fa-user-plus"></i> Register</a>
+                <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
             </div>
             <div class="user-dashboard" style="display:none;">
-                <i class="fas fa-user-circle"></i> Dashboard
+                <i class="fas fa-user-circle"></i> Trang cá nhân
                 <div class="dropdown-content">
-                    <a href="profile.html">Profile</a>
-                    <a href="my-bookings.html">My Bookings</a>
-                    <a href="my-wishlist.html">My Wishlist</a>
-                    <a href="logout.html">Logout</a>
+                    <a href="profile.html">Hồ sơ</a>
+                    <a href="my-bookings.html">Đặt tour của tôi</a>
+                    <a href="my-wishlist.html">Danh sách yêu thích</a>
+                    <a href="logout.html">Đăng xuất</a>
                 </div>
             </div>
         </div>
@@ -52,12 +53,12 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="destination.html">Destination</a></li>
-                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="destination.html">Điểm đến</a></li>
+                    <li><a href="tours.html">Tour</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Liên hệ</a></li>
                 </ul>
             </nav>
         </div>
@@ -66,58 +67,61 @@
 
 <!-- Contact Us Section -->
 <main>
-    <h1>Contact Us</h1>
+    <h1>Liên hệ</h1>
     <div class="container">
         <div class="grid">
+            <!-- Contact Information -->
             <div class="contact-info flex card">
-                <h2>Contact Information</h2>
+                <h2>Thông tin liên hệ</h2>
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p>123 Main Street, City, Country</p>
+                    <p>123 Đường Chính, Thành phố, Việt Nam</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
-                    <p>Phone: +123 456 7890</p>
+                    <p>Điện thoại: +84 123 456 789</p>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <p>Email: abc@gmail.com</p>
+                    <p>Email: contact@viettravel.vn</p>
                 </div>
             </div>
 
+            <!-- Contact Form -->
             <div class="contact-form flex card">
-                <h2>Contact Form</h2>
-                <p>We’d love to hear from you! Please fill out the form below to get in touch with us.</p>
+                <h2>Mẫu liên hệ</h2>
+                <p>Chúng tôi rất vui khi nhận phản hồi từ bạn! Vui lòng điền thông tin dưới đây để liên hệ với chúng
+                    tôi.</p>
                 <form id="contact-form" action="" method="post">
                     <div class="form-group">
                         <label for="name">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Họ và tên" required>
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="email">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Email của bạn" required>
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="subject">
-                            <input type="text" id="subject" name="subject" placeholder="Your Subject" required>
+                            <input type="text" id="subject" name="subject" placeholder="Chủ đề" required>
                         </label>
                     </div>
                     <div class="form-group">
                         <label for="message">
-                            <textarea id="message" name="message" rows="4" placeholder="Your Message"
+                            <textarea id="message" name="message" rows="4" placeholder="Nội dung tin nhắn"
                                       required></textarea>
                         </label>
                     </div>
-                    <button type="submit">Send Message</button>
+                    <button type="submit">Gửi</button>
                 </form>
             </div>
         </div>
 
-        <!-- 🗺️ Map Section -->
+        <!-- Map Section -->
         <div class="map card">
-            <h2>Find Us on the Map</h2>
+            <h2>Bản đồ</h2>
             <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.520691210555!2d106.80210557580563!3d10.84773925788154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8a4f3ad0077%3A0x5c47abfc98b1c2f1!2zVHLhuqduZyDEkOG7i2NoIENvbmcuIE5naOG7hyBUaMOgbmggVOG7mQ!5e0!3m2!1svi!2s!4v1708609420921!5m2!1svi!2s"
                     allowfullscreen=""
@@ -131,28 +135,28 @@
 <footer>
     <div class="footer-content">
         <div class="footer-about">
-            <h3>About Us</h3>
-            <p>VietTravel is a trusted Vietnam tour booking website, helping travelers find and book domestic tours
-                easily and quickly.</p>
-            <p>We offer a wide range of tours, from adventure to relaxation, catering to your unique needs.</p>
+            <h3>Về chúng tôi</h3>
+            <p>VietTravel là website đặt tour uy tín, giúp khách du lịch tìm và đặt tour nội địa dễ dàng và nhanh
+                chóng.</p>
+            <p>Chúng tôi cung cấp đa dạng tour, từ khám phá mạo hiểm đến nghỉ dưỡng, phù hợp với mọi nhu cầu.</p>
         </div>
         <div class="footer-links">
-            <h3>Quick Links</h3>
+            <h3>Liên kết nhanh</h3>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Popular Tours</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tour nổi bật</a></li>
+                <li><a href="#">Liên hệ</a></li>
             </ul>
         </div>
         <div class="footer-contact">
-            <h3>Contact Us</h3>
+            <h3>Liên hệ</h3>
             <p><i class="fa fa-phone"></i> +84 123 456 789</p>
             <p><i class="fa fa-envelope"></i> contact@viettravel.vn</p>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 VietTravel - All rights reserved.</p>
+        <p>© 2025 VietTravel - Bản quyền thuộc về VietTravel.</p>
     </div>
 </footer>
 <script src="../assets/js/contact.js"></script>

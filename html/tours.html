@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Du Lịch - VietTravel</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- dùng lại css từ trang home -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/tours.css">
+</head>
+
+<body>
+<header>
+    <div class="top-bar">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-google"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <div class="user-auth">
+            <div class="guest-menu">
+                <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                <a href="register.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+            </div>
+            <div class="user-dashboard" style="display:none;">
+                <i class="fas fa-user-circle"></i> Trang cá nhân
+                <div class="dropdown-content">
+                    <a href="profile.html">Hồ sơ</a>
+                    <a href="my-bookings.html">Đơn đặt tour</a>
+                    <a href="my-wishlist.html">Danh sách yêu thích</a>
+                    <a href="logout.html">Đăng xuất</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-plane-departure"></i>
+                    <p>VietTravel</p>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="about.html">Giới thiệu</a></li>
+                    <li><a href="destination.html">Điểm đến</a></li>
+                    <li><a href="tours.html">Tour</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main class="tour-page">
+    <section class="tour-filter">
+        <h1>Danh sách tour của chúng tôi</h1>
+        <div class="filter-bar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+            <select id="locationFilter">
+                <option value="">Tất cả</option>
+                <option value="Đà Lạt">Đà Lạt</option>
+                <option value="Phú Quốc">Phú Quốc</option>
+                <option value="Sa Pa">Sa Pa</option>
+            </select>
+            <select id="priceFilter">
+                <option value="">Tất cả</option>
+                <option value="low">Dưới 3 triệu</option>
+                <option value="medium">3–6 triệu</option>
+                <option value="high">Trên 6 triệu</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="popular-tours" data-aos="zoom-in-up">
+        <h2>Các tour nổi bật</h2>
+        <div class="tour-cards">
+
+            <!-- Ha Long Bay -->
+            <div class="tour-card">
+                <img src="../assets/images/popular-1.jpg" alt="Vịnh Hạ Long">
+                <div class="tour-info">
+                    <h3>Vịnh Hạ Long</h3>
+                    <p>Di sản thế giới UNESCO – khám phá các đảo đá vôi & hang động huyền bí.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Phu Quoc -->
+            <div class="tour-card">
+                <img src="../assets/images/popular-2.jpg" alt="Đảo Phú Quốc">
+                <div class="tour-info">
+                    <h3>Đảo Phú Quốc</h3>
+                    <p>Bãi biển trong xanh và hệ sinh thái phong phú – thiên đường nghỉ dưỡng.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Hoi An -->
+            <div class="tour-card">
+                <img src="../assets/images/popular-3.jpg" alt="Phố cổ Hội An">
+                <div class="tour-info">
+                    <h3>Phố cổ Hội An</h3>
+                    <p>Thăm quan lịch sử và văn hóa với những con phố đèn lồng đầy mê hoặc.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Da Nang -->
+            <div class="tour-card">
+                <img src="../assets/images/da_nang.jpg" alt="Thành phố Đà Nẵng">
+                <div class="tour-info">
+                    <h3>Thành phố Đà Nẵng</h3>
+                    <p>Thành phố hiện đại với bãi biển tuyệt đẹp và Cầu Vàng nổi tiếng.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Sapa -->
+            <div class="tour-card">
+                <img src="../assets/images/sapa.jpg" alt="Sapa">
+                <div class="tour-info">
+                    <h3>Vùng cao Sapa</h3>
+                    <p>Khám phá bản làng dân tộc, ruộng bậc thang và trải nghiệm núi non.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Nha Trang -->
+            <div class="tour-card">
+                <img src="../assets/images/nha_trang.jpg" alt="Bãi biển Nha Trang">
+                <div class="tour-info">
+                    <h3>Bãi biển Nha Trang</h3>
+                    <p>Thư giãn bên làn nước xanh ngọc và trải nghiệm nhịp sống biển sôi động.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Hue -->
+            <div class="tour-card">
+                <img src="../assets/images/hue.jpg" alt="Kinh thành Huế">
+                <div class="tour-info">
+                    <h3>Kinh thành Huế</h3>
+                    <p>Khám phá hoàng thành và các ngôi đền cổ triều Nguyễn.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Mekong Delta -->
+            <div class="tour-card">
+                <img src="../assets/images/dong_bang_song_cuu_long.jpg" alt="Đồng bằng sông Cửu Long">
+                <div class="tour-info">
+                    <h3>Đồng bằng sông Cửu Long</h3>
+                    <p>Trải nghiệm chợ nổi và cảnh quan xanh tươi miền Nam Việt Nam.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+            <!-- Ha Giang -->
+            <div class="tour-card">
+                <img src="../assets/images/ha_giang.jpg" alt="Vòng cung Hà Giang">
+                <div class="tour-info">
+                    <h3>Vòng cung Hà Giang</h3>
+                    <p>Chinh phục những con đèo tuyệt đẹp và khám phá bản làng dân tộc.</p>
+                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>Về chúng tôi</h3>
+            <p>VietTravel là trang web đặt tour du lịch Việt Nam uy tín, giúp du khách tìm kiếm và đặt tour dễ dàng.</p>
+            <p>Chúng tôi cung cấp nhiều loại tour, từ phiêu lưu đến thư giãn, phù hợp với nhu cầu của bạn.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Liên kết nhanh</h3>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Các tour nổi bật</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Liên hệ</h3>
+            <p><i class="fa fa-phone"></i> +84 123 456 789</p>
+            <p><i class="fa fa-envelope"></i> contact@viettravel.vn</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 VietTravel - Bảo lưu mọi quyền.</p>
+    </div>
+</footer>
+
+<script src="../assets/js/tours.js"></script>
+</body>
+</html>
