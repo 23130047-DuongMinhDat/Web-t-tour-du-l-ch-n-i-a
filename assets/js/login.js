@@ -40,6 +40,31 @@ loginForm.addEventListener("submit", async (e) => {
     }
 });
 
+// Dùng cho logout
+document.addEventListener("DOMContentLoaded", () => {
+    const guestMenu = document.querySelector(".guest-menu");
+    const userDashboard = document.querySelector(".user-dashboard");
+
+    const currentUser = localStorage.getItem("currentUser");
+
+    if (currentUser) {
+        guestMenu.style.display = "none";
+        userDashboard.style.display = "block";
+    } else {
+        guestMenu.style.display = "block";
+        userDashboard.style.display = "none";
+    }
+
+    // Xử lý đăng xuất
+    const logoutLink = userDashboard.querySelector('a[href="login.html"]');
+    logoutLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        localStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    });
+});
+
+
 // Toggle password visibility on click
 document.addEventListener("DOMContentLoaded", () => {
     const togglePassword = document.querySelector(".toggle-pass");
