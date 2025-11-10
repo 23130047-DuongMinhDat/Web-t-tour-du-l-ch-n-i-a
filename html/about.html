@@ -5,61 +5,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Về Chúng Tôi - VietTravel</title>
     <!-- Google Fonts & Font Awesome -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giới Thiệu - VietTravel</title>
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/about.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="top-bar">
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-google"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="user-auth">
-            <div class="guest-menu">
-                <a href="login.html"><i class="fas fa-user"></i> Đăng Nhập</a>
-                <a href="register.html"><i class="fas fa-user-plus"></i> Đăng Ký</a>
+        <div class="container">
+            <div class="top-bar-left">
+                <!-- Thông tin liên hệ nhanh -->
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> Hotline: 1900 xxxx</span>
+                    <span><i class="fas fa-envelope"></i> support@viettravel.vn</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Hỗ trợ</span>
+                </div>
             </div>
-            <div class="user-dashboard" style="display:none;">
-                <i class="fas fa-user-circle"></i> Dashboard
-                <div class="dropdown-content">
-                    <a href="profile.html">Hồ Sơ</a>
-                    <a href="my-bookings.html">Đặt Tour Của Tôi</a>
-                    <a href="my-wishlist.html">Wishlist</a>
-                    <a href="login.html">Đăng Xuất</a>
+
+            <div class="top-bar-right">
+                <!-- Social Media -->
+                <div class="social-icons">
+                    <a href="#" title="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+
+
+                <!-- User Auth -->
+                <div class="user-auth">
+                    <!-- Khi chưa đăng nhập -->
+                    <div class="guest-menu">
+                        <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                        <span class="divider">|</span>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+
+                    <!-- Khi đã đăng nhập (ẩn mặc định) -->
+                    <div class="user-logged" style="display:none;">
+                        <div class="user-dropdown">
+                            <button class="user-btn">
+                                <img src="../assets/images/avatar-default.png" alt="Avatar" class="user-avatar">
+                                <span class="user-name">Nguyễn Văn A</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="profile.html"><i class="fas fa-user-circle"></i> Tài khoản của tôi</a>
+                                <a href="my-bookings.html"><i class="fas fa-ticket-alt"></i> Đơn đặt tour</a>
+                                <a href="favorites.html"><i class="fas fa-heart"></i> Yêu thích</a>
+                                <a href="wallet.html"><i class="fas fa-wallet"></i> Ví của tôi</a>
+                                <hr>
+                                <a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng
+                                    xuất</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="header">
+
+    <!-- Main Header -->
+    <div class="main-header">
         <div class="container">
+            <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
                     <i class="fas fa-plane-departure"></i>
-                    <p>VietTravel</p>
+                    <span class="logo-text">VietTravel</span>
+                    <span class="logo-slogan">Khám phá Việt Nam</span>
                 </a>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Trang Chủ</a></li>
-                    <li><a href="about.html" class="active">Về Chúng Tôi</a></li>
-                    <li><a href="destination.html">Điểm Đến</a></li>
-                    <li><a href="tours.html">Tour</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Liên Hệ</a></li>
-                </ul>
-            </nav>
+
+            <!-- Search Box (Quan trọng cho e-commerce) -->
+            <div class="search-box">
+                <form action="search.html" method="GET">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text"
+                               name="q"
+                               placeholder="Tìm điểm đến, tour du lịch..."
+                               class="search-input"
+                               autocomplete="off">
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
+                    </div>
+                    <!-- Search suggestions dropdown (có thể thêm) -->
+                </form>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Wishlist -->
+                <a href="favorites.html" class="header-icon" title="Yêu thích">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+
+                <!-- Notifications -->
+                <div class="header-icon notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                    <div class="notification-dropdown">
+                        <div class="notification-header">
+                            <h4>Thông báo</h4>
+                            <a href="#">Đánh dấu đã đọc</a>
+                        </div>
+                        <div class="notification-list">
+                            <a href="#" class="notification-item unread">
+                                <i class="fas fa-gift"></i>
+                                <div class="notification-content">
+                                    <p>Bạn có 1 voucher mới trị giá 500.000đ</p>
+                                    <span class="time">2 giờ trước</span>
+                                </div>
+                            </a>
+                            <!-- More notifications -->
+                        </div>
+                        <a href="notifications.html" class="view-all">Xem tất cả</a>
+                    </div>
+                </div>
+
+                <!-- Cart/Booking (Giỏ tour) -->
+                <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                    <span class="cart-text">Giỏ tour</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </div>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+
+                <!-- Mega Menu cho Tour -->
+                <li class="has-mega-menu">
+                    <a href="tours.html">
+                        <i class="fas fa-map-marked-alt"></i> Tour du lịch
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>Miền Bắc</h4>
+                                <ul>
+                                    <li><a href="#">Hà Nội</a></li>
+                                    <li><a href="#">Hạ Long</a></li>
+                                    <li><a href="#">Sapa</a></li>
+                                    <li><a href="#">Ninh Bình</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Miền Trung</h4>
+                                <ul>
+                                    <li><a href="#">Đà Nẵng</a></li>
+                                    <li><a href="#">Hội An</a></li>
+                                    <li><a href="#">Huế</a></li>
+                                    <li><a href="#">Quy Nhơn</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Miền Nam</h4>
+                                <ul>
+                                    <li><a href="#">TP. Hồ Chí Minh</a></li>
+                                    <li><a href="#">Phú Quốc</a></li>
+                                    <li><a href="#">Đà Lạt</a></li>
+                                    <li><a href="#">Vũng Tàu</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column mega-menu-promo">
+                                <h4>Khuyến mãi hot</h4>
+                                <div class="promo-banner">
+                                    <img src="../assets/images/promo-tour.jpg" alt="Promo">
+                                    <p>Giảm đến 30% tour mùa hè</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
+                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+            </ul>
+
+            <!-- Quick links bên phải -->
+            <div class="nav-right">
+                <a href="partner.html" class="nav-cta">
+                    <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
+                </a>
+            </div>
+        </div>
+    </nav>
 </header>
 
 <main>
@@ -76,6 +230,11 @@
         <div class="hero-content">
             <h1>Khám phá Việt Nam</h1>
             <p>Cuộc phiêu lưu đang chờ – tự mình khám phá Việt Nam</p>
+            <img src="../assets/images/about_hero.jpg" alt="Hành trình khám phá Việt Nam" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1>Hành trình khám phá Việt Nam</h1>
+            <p>Phiêu lưu đang chờ đón – khám phá Việt Nam theo cách của bạn</p>
         </div>
     </section>
 
@@ -92,6 +251,7 @@
                     <div class="story-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=800&q=80"
                              alt="Câu chuyện VietTravel" class="main-image">
+                        <img src="../assets/images/about-preview.jpg" alt="Câu chuyện VietTravel" class="main-image">
                     </div>
                 </div>
                 <div class="story-right">
@@ -112,6 +272,19 @@
                             Với hơn 15 năm kinh nghiệm, chúng tôi tự hào đã dẫn dắt hàng nghìn du khách
                             khám phá cảnh quan tuyệt đẹp của Việt Nam, từ ruộng bậc thang Sapa đến bãi biển
                             nguyên sơ Phú Quốc.
+                                Thành lập năm 2010, VietTravel ra đời từ niềm đam mê chia sẻ vẻ đẹp
+                                và văn hóa Việt Nam với du khách từ khắp nơi trên thế giới.
+                            </p>
+                        </div>
+                        <p>
+                            Bắt đầu như một doanh nghiệp gia đình nhỏ, chúng tôi đã phát triển thành một trong những
+                            công ty du lịch đáng tin cậy nhất Việt Nam. Hành trình của chúng tôi bắt đầu với sứ mệnh đơn giản:
+                            giới thiệu vẻ đẹp chân thực của Việt Nam thông qua những trải nghiệm được chọn lọc kỹ càng.
+                        </p>
+                        <p>
+                            Với hơn 15 năm kinh nghiệm, chúng tôi đã vinh dự được đồng hành cùng hàng ngàn
+                            du khách khám phá cảnh quan tuyệt đẹp của Việt Nam, từ những ruộng bậc thang
+                            ở Sapa đến những bãi biển nguyên sơ ở Phú Quốc.
                         </p>
                         <div class="story-highlights">
                             <div class="highlight-item">
@@ -125,6 +298,15 @@
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle"></i>
                                 <span>Du lịch bền vững</span>
+                                <span>Trải Nghiệm Địa Phương Chân Thực</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Hướng Dẫn Viên Chuyên Nghiệp</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Du Lịch Bền Vững</span>
                             </div>
                         </div>
                     </div>
@@ -143,6 +325,9 @@
                     <p>
                         Cung cấp trải nghiệm du lịch chân thực và đáng nhớ, giới thiệu văn hóa phong phú,
                         vẻ đẹp tự nhiên và lòng hiếu khách của Việt Nam, đồng thời đảm bảo du lịch bền vững.
+                        Cung cấp những trải nghiệm du lịch chân thực, đáng nhớ giới thiệu
+                        nền văn hóa phong phú, vẻ đẹp thiên nhiên và lòng hiếu khách ấm áp của Việt Nam
+                        đồng thời đảm bảo thực hành du lịch bền vững.
                     </p>
                 </div>
                 <div class="mv-card">
@@ -151,6 +336,9 @@
                     <p>
                         Trở thành công ty du lịch hàng đầu tại Việt Nam, được công nhận về dịch vụ xuất sắc,
                         trải nghiệm tour sáng tạo và cam kết du lịch có trách nhiệm.
+                        Trở thành công ty du lịch hàng đầu tại Việt Nam, được công nhận về
+                        sự xuất sắc trong dịch vụ khách hàng, trải nghiệm tour sáng tạo,
+                        và cam kết với du lịch có trách nhiệm.
                     </p>
                 </div>
             </div>
@@ -166,6 +354,7 @@
                     <i class="fas fa-heart"></i>
                     <h4>Đam Mê</h4>
                     <p>Chúng tôi yêu công việc và thể hiện trong từng tour</p>
+                    <p>Chúng tôi yêu công việc mình làm và điều đó thể hiện trong mọi tour du lịch</p>
                 </div>
                 <div class="value-item">
                     <i class="fas fa-certificate"></i>
@@ -176,11 +365,18 @@
                     <i class="fas fa-handshake"></i>
                     <h4>Niềm Tin</h4>
                     <p>Xây dựng mối quan hệ bền vững qua sự minh bạch và đáng tin cậy</p>
+                    <p>Xuất sắc trong dịch vụ và quan tâm đến từng chi tiết</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Tin Cậy</h4>
+                    <p>Xây dựng mối quan hệ lâu dài thông qua sự minh bạch và đáng tin cậy</p>
                 </div>
                 <div class="value-item">
                     <i class="fas fa-leaf"></i>
                     <h4>Bền Vững</h4>
                     <p>Cam kết du lịch có trách nhiệm, bảo vệ môi trường</p>
+                    <p>Cam kết du lịch có trách nhiệm bảo vệ môi trường</p>
                 </div>
             </div>
         </div>
@@ -193,6 +389,10 @@
             <p class="team-intro">
                 Đội ngũ chuyên gia du lịch của chúng tôi đam mê tạo ra những trải nghiệm
                 khó quên cho mọi du khách.
+            <h2>Gặp Gỡ Đội Ngũ</h2>
+            <p class="team-intro">
+                Đội ngũ chuyên gia du lịch tận tâm của chúng tôi đam mê tạo ra
+                những trải nghiệm khó quên cho mọi du khách.
             </p>
             <div class="team-grid">
                 <div class="team-member">
@@ -217,21 +417,42 @@
                     </div>
                     <h4>Phạm Thị D</h4>
                     <p class="role">Trưởng Phòng Marketing</p>
+                        <img src="../assets/images/dmd.jpg" alt="Dương Minh Đạt">
+                    </div>
+                    <h4>Dương Minh Đạt</h4>
+                    <p class="role">Nhà Sáng Lập & CEO</p>
+                    <p class="bio">Hơn 15 năm kinh nghiệm trong ngành du lịch</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="../assets/images/pqh.jpg" alt="Phan Quang Huy">
+                    </div>
+                    <h4>Phan Quang Huy</h4>
+                    <p class="role">Giám Đốc Tour</p>
+                    <p class="bio">Chuyên gia về tour văn hóa và di sản</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-photo">
+                        <img src="../assets/images/vts.png" alt="Võ Tấn Sang">
+                    </div>
+                    <h4>Võ Tấn Sang</h4>
+                    <p class="role">Quản Lý Marketing</p>
                     <p class="bio">Kết nối du khách với trải nghiệm tuyệt vời</p>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Statistics -->
     <section class="statistics" data-aos="fade-up">
         <div class="container">
             <h2>Thành Tích Của Chúng Tôi</h2>
+            <h2>Thành Tựu Của Chúng Tôi</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <i class="fas fa-users"></i>
                     <h3>50,000+</h3>
                     <p>Du Khách Hài Lòng</p>
+                    <p>Khách Hàng Hài Lòng</p>
                 </div>
                 <div class="stat-item">
                     <i class="fas fa-map-marked-alt"></i>
@@ -261,31 +482,38 @@
                     <i class="fas fa-globe-asia"></i>
                     <h4>Kiến Thức Địa Phương</h4>
                     <p>Hiểu biết sâu về những điểm đến ẩn giấu và trải nghiệm chân thực</p>
+                    <h4>Chuyên Môn Địa Phương</h4>
+                    <p>Kiến thức sâu về những viên ngọc ẩn và trải nghiệm chân thực của Việt Nam</p>
                 </div>
                 <div class="choose-item">
                     <i class="fas fa-dollar-sign"></i>
                     <h4>Giá Trị Tốt Nhất</h4>
                     <p>Giá cạnh tranh mà không làm giảm chất lượng</p>
+                    <p>Giá cạnh tranh không làm giảm chất lượng</p>
                 </div>
                 <div class="choose-item">
                     <i class="fas fa-headset"></i>
                     <h4>Hỗ Trợ 24/7</h4>
                     <p>Hỗ trợ xuyên suốt hành trình</p>
+                    <p>Hỗ trợ liên tục trong suốt hành trình của bạn</p>
                 </div>
                 <div class="choose-item">
                     <i class="fas fa-shield-alt"></i>
                     <h4>An Toàn & Bảo Mật</h4>
                     <p>An toàn của bạn là ưu tiên hàng đầu</p>
+                    <p>An toàn và bảo mật của bạn là ưu tiên hàng đầu</p>
                 </div>
                 <div class="choose-item">
                     <i class="fas fa-users-cog"></i>
                     <h4>Tour Tùy Chỉnh</h4>
                     <p>Lịch trình linh hoạt theo sở thích của bạn</p>
+                    <p>Lịch trình linh hoạt phù hợp với sở thích của bạn</p>
                 </div>
                 <div class="choose-item">
                     <i class="fas fa-check-circle"></i>
                     <h4>Đảm Bảo Chất Lượng</h4>
                     <p>Chọn lựa kỹ lưỡng chỗ ở và dịch vụ</p>
+                    <p>Chỗ ở và dịch vụ được chọn lọc kỹ càng</p>
                 </div>
             </div>
         </div>
@@ -296,6 +524,8 @@
         <div class="container">
             <h2>Sẵn Sàng Khám Phá Việt Nam?</h2>
             <p>Hãy để chúng tôi giúp bạn tạo nên những kỷ niệm khó quên</p>
+            <h2>Sẵn Sàng Bắt Đầu Cuộc Phiêu Lưu Việt Nam?</h2>
+            <p>Hãy để chúng tôi giúp bạn tạo ra những kỷ niệm khó quên tại Việt Nam xinh đẹp</p>
             <div class="cta-buttons">
                 <a href="tours.html" class="btn btn-primary">Khám Phá Tour</a>
                 <a href="contact.html" class="btn btn-secondary">Liên Hệ</a>
@@ -323,17 +553,37 @@
         </div>
         <div class="footer-contact">
             <h3>Liên Hệ</h3>
+            <h3>Về chúng tôi</h3>
+            <p>VietTravel là website đặt tour uy tín, giúp khách du lịch tìm và đặt tour nội địa dễ dàng và nhanh chóng.</p>
+            <p>Chúng tôi cung cấp đa dạng tour, từ khám phá mạo hiểm đến nghỉ dưỡng, phù hợp với mọi nhu cầu.</p>
+        </div>
+        <div class="footer-links">
+            <h3>Liên kết nhanh</h3>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="tours.html">Tour nổi bật</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Liên hệ</h3>
             <p><i class="fa fa-phone"></i> +84 123 456 789</p>
             <p><i class="fa fa-envelope"></i> contact@viettravel.vn</p>
         </div>
     </div>
     <div class="footer-bottom">
         <p>© 2025 VietTravel - Bảo lưu mọi quyền.</p>
+        <p>© 2025 VietTravel - Bản quyền thuộc về VietTravel.</p>
     </div>
 </footer>
 
 <!-- AOS JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="../assets/js/about.js"></script>
+
+<!-- About JS -->
+<script src="../assets/js/about.js"></script>
+
 </body>
 </html>
