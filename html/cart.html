@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VietTravel - Khám phá Việt Nam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - VietTravel</title>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -13,18 +11,9 @@
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/home.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-
-    <!-- AOS for scroll animations -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/cart.css">
 </head>
-
 <body>
-<div id="page-loader" class="page-loader">
-    <div class="loader-spinner"></div>
-</div>
-
 <header>
     <div class="top-bar">
         <div class="container">
@@ -92,21 +81,19 @@
                 </a>
             </div>
 
+            <!-- Search Box (Quan trọng cho e-commerce) -->
             <div class="search-box">
-                <!-- Search box -->
-                <form action="" method="GET" role="search">
+                <form action="search.html" method="GET">
                     <div class="search-input-wrapper">
-                        <label for="search-input" class="sr-only">Tìm kiếm tour</label>
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <i class="fas fa-search"></i>
                         <input type="text"
-                               id="search-input"
                                name="q"
                                placeholder="Tìm điểm đến, tour du lịch..."
                                class="search-input"
-                               autocomplete="off"
-                               aria-label="Tìm kiếm tour du lịch">
+                               autocomplete="off">
                         <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
+                    <!-- Search suggestions dropdown (có thể thêm) -->
                 </form>
             </div>
 
@@ -224,145 +211,54 @@
     </nav>
 </header>
 
-<main>
-    <!-- HERO -->
-    <section class="hero" aria-label="Khám phá Việt Nam">
-        <div class="container">
-            <h1>Hành trình khám phá Việt Nam</h1>
-            <p>Khám phá vẻ đẹp đất nước – du lịch theo cách của bạn</p>
-            <div class="hero-buttons">
-                <button class="btn">Tìm hiểu thêm</button>
-                <button class="btn">Đặt tour ngay</button>
-            </div>
-        </div>
-    </section>
+<main class="cart-page">
+    <section class="cart-section">
+        <h1>Giỏ hàng của bạn</h1>
+        <p>Các tour du lịch bạn đã chọn</p>
 
-    <!-- ABOUT PREVIEW -->
-    <section class="about-preview" data-aos="fade-up">
-        <div class="container">
-            <div class="about-content">
-                <img src="../assets/images/about-preview.jpg" alt="Về VietTravel">
-                <div>
-                    <h2>Về VietTravel</h2>
-                    <p>
-                        Với hơn 15 năm kinh nghiệm, VietTravel đã đồng hành cùng hàng ngàn du khách
-                        khám phá vẻ đẹp của Việt Nam – từ những bãi biển trong xanh đến núi rừng hùng vĩ
-                        và di sản văn hóa đặc sắc.
-                    </p>
-                    <a href="about.html" class="btn">Xem thêm</a>
+        <div class="cart-cards">
+
+            <!-- Card tour 1 -->
+            <div class="cart-card">
+                <img src="../assets/images/popular-2.jpg" alt="Tour Phú Quốc">
+                <div class="cart-info">
+                    <h3>Tour Phú Quốc 4N3Đ</h3>
+                    <p><strong>Ngày khởi hành:</strong> 20/12/2025</p>
+                    <div class="cart-details">
+                        <label>Số người: <input type="number" value="2" min="1" class="qty"></label>
+                        <span class="price">3,900,000đ/người</span>
+                    </div>
+                    <p class="total">Tổng: 7,800,000đ</p>
                 </div>
+                <button class="remove-btn"><i class="fas fa-trash"></i></button>
             </div>
-        </div>
-    </section>
 
-    <!-- Tour search form -->
-    <section class="tour-search" data-aos="fade-up">
-        <form action="" method="GET" id="tourSearchForm">
-            <div class="input-group">
-                <label for="destination">Điểm đến</label>
-                <input type="text" id="destination" placeholder="Nhập điểm đến">
-            </div>
-            <div class="input-group">
-                <label for="pax">Số người</label>
-                <input type="number" id="pax" placeholder="Số lượng khách">
-            </div>
-            <div class="input-group">
-                <label for="check-in">Ngày đi</label>
-                <input type="date" id="check-in">
-            </div>
-            <div class="input-group">
-                <label for="check-out">Ngày về</label>
-                <input type="date" id="check-out">
-            </div>
-            <div class="btn btn-group">
-                <button class="btn">Tìm tour</button>
-            </div>
-        </form>
-    </section>
-
-    <!-- POPULAR TOURS -->
-    <section class="popular-tours" data-aos="zoom-in-up">
-        <h2>Tour nổi bật</h2>
-        <div class="tour-cards">
-            <div class="tour-card">
-                <img src="../assets/images/popular-1.jpg" alt="Hạ Long">
-                <div class="tour-info">
-                    <h3>Vịnh Hạ Long</h3>
-                    <p>Di sản thế giới UNESCO – khám phá đảo đá vôi và hang động tuyệt đẹp.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+            <!-- Card tour 2 -->
+            <div class="cart-card">
+                <img src="../assets/images/popular-3.jpg" alt="Tour Hội An">
+                <div class="cart-info">
+                    <h3>Tour Hội An 2N1Đ</h3>
+                    <p><strong>Ngày khởi hành:</strong> 15/12/2025</p>
+                    <div class="cart-details">
+                        <label>Số người: <input type="number" value="1" min="1" class="qty"></label>
+                        <span class="price">2,200,000đ/người</span>
+                    </div>
+                    <p class="total">Tổng: 2,200,000đ</p>
                 </div>
+                <button class="remove-btn"><i class="fas fa-trash"></i></button>
             </div>
-            <div class="tour-card">
-                <img src="../assets/images/popular-2.jpg" alt="Phú Quốc">
-                <div class="tour-info">
-                    <h3>Đảo Phú Quốc</h3>
-                    <p>Khám phá bãi biển tuyệt đẹp và văn hóa đặc sắc của đảo ngọc.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
-                </div>
-            </div>
-            <div class="tour-card">
-                <img src="../assets/images/popular-3.jpg" alt="Hội An">
-                <div class="tour-info">
-                    <h3>Phố cổ Hội An</h3>
-                    <p>Khám phá di tích lịch sử và những ngôi chùa cổ kính của Hội An.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
-                </div>
+
+        </div>
+
+        <div class="cart-summary">
+            <h3>Tổng cộng: <span id="grandTotal">10,000,000đ</span></h3>
+            <div class="cart-buttons">
+                <a href="tours.html" class="continue-btn">Tiếp tục chọn tour</a>
+                <a href="checkout.html" class="checkout-btn">Thanh toán</a>
             </div>
         </div>
     </section>
-
-    <!-- WHY CHOOSE US -->
-    <section class="why-choose-us" data-aos="fade-right">
-        <h2>Tại sao chọn VietTravel?</h2>
-        <div class="features">
-            <div class="feature">
-                <i class="fas fa-globe-asia"></i>
-                <h4>Kinh nghiệm địa phương</h4>
-                <p>Chuyên tổ chức tour Việt Nam với trải nghiệm bản địa chân thực.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-dollar-sign"></i>
-                <h4>Giá tốt nhất</h4>
-                <p>Giá minh bạch và nhiều ưu đãi khi đặt sớm.</p>
-            </div>
-            <div class="feature">
-                <i class="fas fa-headset"></i>
-                <h4>Hỗ trợ 24/7</h4>
-                <p>Đội ngũ sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="testimonials" data-aos="fade-left">
-        <h2>Khách hàng nói gì?</h2>
-        <div class="testimonial-container">
-            <div class="testimonial-item">
-                <p>“Chuyến đi đến Việt Nam thật tuyệt vời! Dịch vụ rất tốt!”</p>
-                <span>— Linh Trần, Hà Nội</span>
-            </div>
-            <div class="testimonial-item">
-                <p>“VietTravel tổ chức mọi thứ hoàn hảo – tôi rất hài lòng.”</p>
-                <span>— John Smith, London</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" data-aos="fade-up">
-        <h2>Câu hỏi thường gặp</h2>
-        <div class="faq-item">
-            <h4>Làm sao để đặt tour?</h4>
-            <p>Bạn có thể đặt tour trực tuyến hoặc liên hệ đội ngũ hỗ trợ của chúng tôi.</p>
-        </div>
-        <div class="faq-item">
-            <h4>Có thể tùy chỉnh hành trình không?</h4>
-            <p>Có! Chuyên gia du lịch của chúng tôi sẽ giúp bạn thiết kế tour phù hợp.</p>
-        </div>
-    </section>
-
 </main>
-
 <footer class="site-footer">
     <!-- Newsletter -->
     <div class="newsletter-section">
@@ -501,26 +397,6 @@
 
 </footer>
 
-<!-- jQuery (sticky header hoặc hiệu ứng) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-<!-- AOS JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-<script>
-    AOS.init({
-        duration: 1000,
-        once: true
-    });
-
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() > 80) {
-            $(".main-header").addClass("scrolled");
-        } else {
-            $(".main-header").removeClass("scrolled");
-        }
-    });
-</script>
-
+<script src="../assets/js/cart.js"></script>
 </body>
 </html>

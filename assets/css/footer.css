@@ -385,6 +385,14 @@
 }
 
 @media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
     .newsletter-content {
         flex-direction: column;
         text-align: center;

@@ -299,7 +299,7 @@ header {
 }
 
 .search-btn:hover {
-    background: var(--blue-dark, #0056b3);
+    background-color: var(--dark-blue, #0056b3);
     transform: translateX(2px);
 }
 
