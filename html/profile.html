@@ -1,18 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/contact.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của tôi - [Tên Website Tour]</title>
+
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <title>Liên hệ - VietTravel</title>
+
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
 </head>
 <body>
 
@@ -212,70 +212,123 @@
         </div>
     </nav>
 </header>
-<!-- Contact Us Section -->
-<main>
-    <h1>Liên hệ</h1>
+
+<!-- Breadcrumb (Nên có cho UX) -->
+<div class="breadcrumb">
     <div class="container">
-        <div class="grid">
-            <!-- Contact Information -->
-            <div class="contact-info flex card">
-                <h2>Thông tin liên hệ</h2>
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>123 Đường Chính, Thành phố, Việt Nam</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <p>Điện thoại: +84 123 456 789</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>Email: contact@viettravel.vn</p>
-                </div>
+        <a href="index.html">Trang chủ</a> > <span>Tài khoản của tôi</span>
+    </div>
+</div>
+
+<main class="profile-page">
+    <div class="container grid">
+
+        <!-- SIDEBAR - Menu tài khoản -->
+        <aside class="side-bar">
+            <div class="user-info-card">
+                <img src="images/avatar.jpg" alt="Avatar" class="avatar">
+                <h3>Nguyễn Văn A</h3>
+                <p class="user-email">user@email.com</p>
             </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form flex card">
-                <h2>Mẫu liên hệ</h2>
-                <p>Chúng tôi rất vui khi nhận phản hồi từ bạn! Vui lòng điền thông tin dưới đây để liên hệ với chúng
-                    tôi.</p>
-                <form id="contact-form" action="" method="post">
-                    <div class="form-group">
-                        <label for="name">
-                            <input type="text" id="name" name="name" placeholder="Họ và tên" required>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">
-                            <input type="email" id="email" name="email" placeholder="Email của bạn" required>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">
-                            <input type="text" id="subject" name="subject" placeholder="Chủ đề" required>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">
-                            <textarea id="message" name="message" rows="4" placeholder="Nội dung tin nhắn"
-                                      required></textarea>
-                        </label>
-                    </div>
-                    <button type="submit">Gửi</button>
-                </form>
-            </div>
-        </div>
+            <nav class="profile-menu">
+                <ul>
+                    <li><a href="profile.html" class="active">📋 Thông tin cá nhân</a></li>
+                    <li><a href="my-tours.html">🎫 Đơn đặt tour</a></li>
+                    <li><a href="favorites.html">❤️ Yêu thích</a></li>
+                    <li><a href="history.html">📜 Lịch sử giao dịch</a></li>
+                    <li><a href="wallet.html">💰 Ví của tôi</a></li>
+                    <li><a href="vouchers.html">🎁 Voucher</a></li>
+                    <li><a href="change-password.html">🔒 Đổi mật khẩu</a></li>
+                    <li><a href="logout.html" class="logout">🚪 Đăng xuất</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <!-- Map Section -->
-        <div class="map card">
-            <h2>Bản đồ</h2>
-            <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.520691210555!2d106.80210557580563!3d10.84773925788154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8a4f3ad0077%3A0x5c47abfc98b1c2f1!2zVHLhuqduZyDEkOG7i2NoIENvbmcuIE5naOG7hyBUaMOgbmggVOG7mQ!5e0!3m2!1svi!2s!4v1708609420921!5m2!1svi!2s"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
+        <!-- MAIN CONTENT - Nội dung chính -->
+        <section class="main-content">
+            <div class="content-header">
+                <h1>Thông tin cá nhân</h1>
+                <button class="btn-edit" onclick="enableEdit()">✏️ Chỉnh sửa</button>
+            </div>
+
+            <form class="profile-form" id="profileForm">
+                <!-- Thông tin cơ bản -->
+                <div class="form-section">
+                    <h2>Thông tin cơ bản</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullname">Họ và tên <span class="required">*</span></label>
+                            <input type="text" id="fullname" name="fullname" value="Nguyễn Văn A" disabled required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" value="0901234567" disabled required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" value="user@email.com" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthday">Ngày sinh</label>
+                            <input type="date" id="birthday" name="birthday" value="1990-01-01" disabled>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Giới tính</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="male" disabled checked> Nam</label>
+                            <label><input type="radio" name="gender" value="female" disabled> Nữ</label>
+                            <label><input type="radio" name="gender" value="other" disabled> Khác</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Địa chỉ -->
+                <div class="form-section">
+                    <h2>Địa chỉ</h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="province">Tỉnh/Thành phố</label>
+                            <select id="province" name="province" disabled>
+                                <option value="">Chọn tỉnh/thành</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="hcm" selected>TP. Hồ Chí Minh</option>
+                                <option value="danang">Đà Nẵng</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="district">Quận/Huyện</label>
+                            <select id="district" name="district" disabled>
+                                <option value="">Chọn quận/huyện</option>
+                                <option value="q1" selected>Quận 1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Địa chỉ cụ thể</label>
+                        <input type="text" id="address" name="address" value="123 Nguyễn Huệ" disabled>
+                    </div>
+                </div>
+
+                <!-- Nút hành động -->
+                <div class="form-actions" style="display: none;">
+                    <button type="button" class="btn-cancel" onclick="cancelEdit()">Hủy</button>
+                    <button type="submit" class="btn-save">💾 Lưu thay đổi</button>
+                </div>
+            </form>
+        </section>
+
     </div>
 </main>
 
@@ -417,6 +470,30 @@
 
 </footer>
 
-<script src="../assets/js/contact.js"></script>
+<script>
+    // JavaScript cho chức năng chỉnh sửa
+    function enableEdit() {
+        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
+        inputs.forEach(input => input.disabled = false);
+
+        document.querySelector('.btn-edit').style.display = 'none';
+        document.querySelector('.form-actions').style.display = 'flex';
+    }
+
+    function cancelEdit() {
+        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
+        inputs.forEach(input => input.disabled = true);
+
+        document.querySelector('.btn-edit').style.display = 'block';
+        document.querySelector('.form-actions').style.display = 'none';
+    }
+
+    document.getElementById('profileForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Đã lưu thông tin thành công!');
+        cancelEdit();
+    });
+</script>
+
 </body>
 </html>
