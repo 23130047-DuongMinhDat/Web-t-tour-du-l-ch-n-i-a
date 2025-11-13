@@ -1,0 +1,588 @@
+<!-- blog-detail.html (gộp tất cả các bài blog detail vào một file với chung layout, các bài được phân cách bằng section và có thể dùng anchor link để navigate) -->
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog Chi Tiết - VietTravel</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/blog-detail.css">
+</head>
+
+<body>
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <!-- Thông tin liên hệ nhanh -->
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> Hotline: 1900 xxxx</span>
+                    <span><i class="fas fa-envelope"></i> support@viettravel.vn</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Hỗ trợ</span>
+                </div>
+            </div>
+
+            <div class="top-bar-right">
+                <!-- Social Media -->
+                <div class="social-icons">
+                    <a href="#" title="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <!-- User Auth -->
+                <div class="user-auth">
+                    <!-- Khi chưa đăng nhập -->
+                    <div class="guest-menu">
+                        <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                        <span class="divider">|</span>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+
+                    <!-- Khi đã đăng nhập (ẩn mặc định) -->
+                    <div class="user-logged" style="display:none;">
+                        <div class="user-dropdown">
+                            <button class="user-btn">
+                                <img src="../assets/images/avatar-default.png" alt="Avatar" class="user-avatar">
+                                <span class="user-name">Nguyễn Văn A</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="profile.html"><i class="fas fa-user-circle"></i> Tài khoản của tôi</a>
+                                <a href="my-bookings.html"><i class="fas fa-ticket-alt"></i> Đơn đặt tour</a>
+                                <a href="favorites.html"><i class="fas fa-heart"></i> Yêu thích</a>
+                                <a href="wallet.html"><i class="fas fa-wallet"></i> Ví của tôi</a>
+                                <hr>
+                                <a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng
+                                    xuất</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <div class="main-header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-plane-departure"></i>
+                    <span class="logo-text">VietTravel</span>
+                    <span class="logo-slogan">Khám phá Việt Nam</span>
+                </a>
+            </div>
+
+            <!-- Search Box (Quan trọng cho e-commerce) -->
+            <div class="search-box">
+                <form action="search.html" method="GET">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text"
+                               name="q"
+                               placeholder="Tìm điểm đến, tour du lịch..."
+                               class="search-input"
+                               autocomplete="off">
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
+                    </div>
+                    <!-- Search suggestions dropdown (có thể thêm) -->
+                </form>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Wishlist -->
+                <a href="favorites.html" class="header-icon" title="Yêu thích">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+
+                <!-- Notifications -->
+                <div class="header-icon notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                    <div class="notification-dropdown">
+                        <div class="notification-header">
+                            <h4>Thông báo</h4>
+                            <a href="#">Đánh dấu đã đọc</a>
+                        </div>
+                        <div class="notification-list">
+                            <a href="#" class="notification-item unread">
+                                <i class="fas fa-gift"></i>
+                                <div class="notification-content">
+                                    <p>Bạn có 1 voucher mới trị giá 500.000đ</p>
+                                    <span class="time">2 giờ trước</span>
+                                </div>
+                            </a>
+                            <!-- More notifications -->
+                        </div>
+                        <a href="notifications.html" class="view-all">Xem tất cả</a>
+                    </div>
+                </div>
+
+                <!-- Cart/Booking (Giỏ tour) -->
+                <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                    <span class="cart-text">Giỏ tour</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+
+                <!-- Mega Menu cho Tour -->
+                <li class="has-mega-menu">
+                    <a href="tours.html">
+                        <i class="fas fa-map-marked-alt"></i> Tour du lịch
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-content">
+                            <div class="mega-menu-column">
+                                <h4>Miền Bắc</h4>
+                                <ul>
+                                    <li><a href="#">Hà Nội</a></li>
+                                    <li><a href="#">Hạ Long</a></li>
+                                    <li><a href="#">Sapa</a></li>
+                                    <li><a href="#">Ninh Bình</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Miền Trung</h4>
+                                <ul>
+                                    <li><a href="#">Đà Nẵng</a></li>
+                                    <li><a href="#">Hội An</a></li>
+                                    <li><a href="#">Huế</a></li>
+                                    <li><a href="#">Quy Nhơn</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column">
+                                <h4>Miền Nam</h4>
+                                <ul>
+                                    <li><a href="#">TP. Hồ Chí Minh</a></li>
+                                    <li><a href="#">Phú Quốc</a></li>
+                                    <li><a href="#">Đà Lạt</a></li>
+                                    <li><a href="#">Vũng Tàu</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-menu-column mega-menu-promo">
+                                <h4>Khuyến mãi hot</h4>
+                                <div class="promo-banner">
+                                    <img src="../assets/images/promo-tour.jpg" alt="Promo">
+                                    <p>Giảm đến 30% tour mùa hè</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
+                <li><a href="blog.html" class="active"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+            </ul>
+
+            <!-- Quick links bên phải -->
+            <div class="nav-right">
+                <a href="partner.html" class="nav-cta">
+                    <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+
+    <!-- BÀI 1 -->
+    <section class="blog-detail-section" data-id="tips-vietnam" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Mẹo Du Lịch</span>
+                        <span class="date"><i class="far fa-calendar"></i> 3 Tháng 11, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 5 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-travel-tips.jpg" alt="Mẹo Du Lịch Việt Nam">
+                    </div>
+                    <h1>Mẹo Du Lịch Thiết Yếu Cho Người Lần Đầu Đến Việt Nam</h1>
+                    <p class="intro">Đang lên kế hoạch cho chuyến đi đầu tiên đến Việt Nam? Đây là những mẹo quan trọng bạn cần biết cho một hành trình suôn sẻ.</p>
+                    <p>Visa, thời tiết, giao thông, ăn uống... tất cả mẹo hay cho người mới!</p>
+
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Nguyễn Minh Anh</h4><p>Travel Blogger – Đã đi 63 tỉnh thành</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (8)</h3>
+                        <div class="comment"><img src="../assets/images/avatar-default.png" alt="User"><div><h5>Lan Hương</h5><p>Cảm ơn bài viết rất hữu ích!</p><span>2 giờ trước</span></div></div>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+                <!-- Sidebar -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BÀI 2 -->
+    <section class="blog-detail-section" data-id="food-street" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Ẩm Thực</span>
+                        <span class="date"><i class="far fa-calendar"></i> 1 Tháng 11, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 6 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-food-culture.jpg" alt="Ẩm Thực Đường Phố Việt Nam">
+                    </div>
+                    <h1>Ẩm Thực Đường Phố Việt Nam: Cuộc Phiêu Lưu Ẩm Thực</h1>
+                    <p class="intro">Khám phá thế giới sôi động của ẩm thực đường phố Việt Nam, từ phở đến bánh mì...</p>
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Trần Quốc Bảo</h4><p>Food Reviewer</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (12)</h3>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÀI 3 -->
+    <section class="blog-detail-section" data-id="sapa" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Điểm Đến</span>
+                        <span class="date"><i class="far fa-calendar"></i> 28 Tháng 10, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 7 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-sapa.jpg" alt="Khám Phá Sapa">
+                    </div>
+                    <h1>Khám Phá Sapa: Thiên Đường Núi Non Việt Nam</h1>
+                    <p class="intro">Hành trình đến những ruộng bậc thang tuyệt đẹp và làng dân tộc ở Sapa...</p>
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Hoàng Lan</h4><p>Photographer</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (9)</h3>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÀI 4 -->
+    <section class="blog-detail-section" data-id="halong-cruise" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Hướng Dẫn</span>
+                        <span class="date"><i class="far fa-calendar"></i> 25 Tháng 10, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 10 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-halong-cruise.jpg" alt="Du Thuyền Hạ Long">
+                    </div>
+                    <h1>Hướng Dẫn Toàn Diện Du Thuyền Vịnh Hạ Long</h1>
+                    <p class="intro">Mọi thứ bạn cần biết về việc du ngoạn qua những cột đá vôi hùng vĩ của Vịnh Hạ Long.</p>
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Phạm Đức Nam</h4><p>Chuyên gia du thuyền</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (15)</h3>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÀI 5 -->
+    <section class="blog-detail-section" data-id="hoian" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Điểm Đến</span>
+                        <span class="date"><i class="far fa-calendar"></i> 22 Tháng 10, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 6 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-hoian.jpg" alt="Phố Cổ Hội An">
+                    </div>
+                    <h1>Hội An: Hành Trình Xuyên Thời Gian</h1>
+                    <p class="intro">Khám phá phố cổ quyến rũ của Hội An, với những con phố đèn lồng và di sản văn hóa phong phú.</p>
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Kim Ngân</h4><p>Sống ở Hội An 8 năm</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (11)</h3>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- BÀI 6 -->
+    <section class="blog-detail-section" data-id="budget-travel" data-aos="fade-up">
+        <div class="container">
+            <div class="blog-layout">
+                <article class="blog-content">
+                    <div class="post-meta">
+                        <span class="category">Mẹo Du Lịch</span>
+                        <span class="date"><i class="far fa-calendar"></i> 20 Tháng 10, 2025</span>
+                        <span class="reading-time"><i class="far fa-clock"></i> 4 phút đọc</span>
+                    </div>
+                    <div class="featured-image">
+                        <img src="../assets/images/blog/blog-budget-travel.jpg" alt="Du Lịch Tiết Kiệm">
+                    </div>
+                    <h1>Du Lịch Tiết Kiệm: Việt Nam Với $50/Ngày</h1>
+                    <p class="intro">Học cách khám phá Việt Nam với ngân sách eo hẹp mà không bỏ lỡ những trải nghiệm tuyệt vời.</p>
+
+                    <div class="author-info">
+                        <img src="../assets/images/avatar-default.png" alt="Tác giả">
+                        <div><h4>Vũ Backpacker</h4><p>Đi vòng quanh Việt Nam chỉ với 15 triệu</p></div>
+                    </div>
+                    <div class="share-buttons">
+                        <h4>Chia sẻ bài viết:</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="comments-section">
+                        <h3>Bình luận (18)</h3>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+<footer class="site-footer">
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
+                    <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- About -->
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>VietTravel</span>
+                    </div>
+                    <p>VietTravel là nền tảng đặt tour du lịch nội địa uy tín hàng đầu Việt Nam.</p>
+
+                    <div class="footer-social">
+                        <h4>Kết nối với chúng tôi</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Links -->
+                <div class="footer-column">
+                    <h3>Tour nổi bật</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Bắc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Trung</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Nam</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Đà Lạt</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Phú Quốc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Sapa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách hủy tour</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Điều khoản sử dụng</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <h3>Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Hà Nội:</strong>
+                                <p>123 Phố Huế, Hai Bà Trưng</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>TP.HCM:</strong>
+                                <p>456 Nguyễn Huệ, Q.1</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <p><a href="tel:1900xxxx">1900 xxxx</a> (24/7)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p><a href="mailto:support@viettravel.vn">support@viettravel.vn</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="footer-payment">
+        <div class="container">
+            <div class="payment-info">
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="../assets/images/payment-momo.png" alt="MoMo">
+                    <img src="../assets/images/payment-zalopay.png" alt="ZaloPay">
+                    <img src="../assets/images/payment-vnpay.png" alt="VNPay">
+                    <img src="../assets/images/payment-visa.png" alt="Visa">
+                    <img src="../assets/images/payment-banking.png" alt="Banking">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p>© 2025 VietTravel. All rights reserved.</p>
+                <p class="company-info">
+                    <strong>Công ty TNHH Du Lịch VietTravel</strong> - GPKD: 0123456789
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+</footer>
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Blog Detail JS -->
+<script src="../assets/js/blog-detail.js"></script>
+
+</body>
+</html>
