@@ -1,8 +1,9 @@
 body {
     min-height: 100vh;
-    background-color: var(--light-blue);
-    color: var(--text-dark);
+    background-color: var(--light-blue, #f0f9ff); /* Fallback color */
+    color: var(--text-dark, #111); /* Fallback color */
     font-family: var(--ff-poppins, 'Poppins', sans-serif), serif;
+
 }
 
 /* Heading */
@@ -23,8 +24,6 @@ h2 {
 /* Container */
 .container {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
 }
 
 .grid {
@@ -102,7 +101,6 @@ input:focus, textarea:focus {
 
 button {
     padding: 12px 20px;
-    font-size: 1.1em;
     cursor: pointer;
     border: none;
     border-radius: 8px;
