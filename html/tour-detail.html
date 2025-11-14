@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chi Tiết Tour - Vịnh Hạ Long - VietTravel</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/tour-detail.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+
+<!-- Header (giống các trang khác) -->
+<header>
+    <!-- Copy toàn bộ header từ tours.html hoặc index.html -->
+    <!-- (Mình sẽ tóm tắt, bạn copy nguyên từ file cũ) -->
+    <div class="top-bar">...</div>
+    <div class="main-header">...</div>
+    <nav class="main-nav">...</nav>
+</header>
+
+<!-- Main Content -->
+<main class="tour-detail-page">
+    <section class="page-hero" id="tourHero">
+        <img src="../assets/images/popular-1.jpg" alt="Vịnh Hạ Long">
+        <div class="hero-overlay">
+            <h1 id="tourName">Tour Vịnh Hạ Long 3N2Đ</h1>
+            <p>Khám phá kỳ quan thiên nhiên thế giới</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" data-aos="fade-up">
+            <a href="index.html">Trang chủ</a> /
+            <a href="tours.html">Tour du lịch</a> /
+            <span id="breadcrumbName">Vịnh H...</span>
+        </nav>
+
+        <div class="tour-content">
+            <!-- Left: Info -->
+            <div class="tour-info-section" data-aos="fade-right">
+                <div class="tour-highlights">
+                    <h2>Thông tin nổi bật</h2>
+                    <ul>
+                        <li><i class="fas fa-clock"></i> <strong>Thời gian:</strong> <span id="duration">3 ngày 2 đêm</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <strong>Điểm khởi hành:</strong> Hà Nội</li>
+                        <li><i class="fas fa-users"></i> <strong>Số chỗ còn:</strong> <span id="slots">25</span>/30</li>
+                        <li><i class="fas fa-star"></i> <strong>Đánh giá:</strong> 4.8 (128)</li>
+                    </ul>
+                </div>
+
+                <div class="tour-price">
+                    <p>Chỉ từ</p>
+                    <h3 id="price">6.990.000đ</h3>
+                    <p class="old-price">8.500.000đ</p>
+                    <span class="discount">Giảm 18%</span>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-card">
+                    <h3>Đặt tour ngay</h3>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label>Ngày khởi hành</label>
+                            <input type="date" id="departDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số người lớn</label>
+                            <input type="number" id="adults" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label>Trẻ em (6-11 tuổi)</label>
+                            <input type="number" id="children" min="0" value="0">
+                        </div>
+                        <div class="total-price">
+                            <strong>Tổng tiền:</strong>
+                            <span id="totalAmount">6.990.000đ</span>
+                        </div>
+                        <button type="submit" class="btn-book">Đặt ngay</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Tabs -->
+            <div class="tour-tabs" data-aos="fade-left">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="overview">Tổng quan</button>
+                    <button class="tab-btn" data-tab="itinerary">Lịch trình</button>
+                    <button class="tab-btn" data-tab="policy">Chính sách</button>
+                    <button class="tab-btn" data-tab="reviews">Đánh giá</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="overview" class="tab-pane active">
+                        <h3>Giới thiệu tour</h3>
+                        <p>Khám phá Vịnh Hạ Long – Di sản thiên nhiên thế giới với hơn 1.600 đảo đá vôi, hang động kỳ vĩ và làn nước xanh ngọc...</p>
+                        <img src="../assets/images/tour-detail/halong-cave.jpg" alt="Hang Sửng Sốt">
+                    </div>
+                    <div id="itinerary" class="tab-pane">
+                        <h3>Lịch trình chi tiết</h3>
+                        <ul class="itinerary-list">
+                            <li><strong>Ngày 1:</strong> Hà Nội → Hạ Long → Du thuyền 5 sao</li>
+                            <li><strong>Ngày 2:</strong> Hang Sửng Sốt → Đảo Ti Tốp</li>
+                            <li><strong>Ngày 3:</strong> Chèo kayak → Hà Nội</li>
+                        </ul>
+                    </div>
+                    <div id="policy" class="tab-pane">
+                        <h3>Chính sách hủy tour</h3>
+                        <p>Hủy trước 15 ngày: hoàn 100%...</p>
+                    </div>
+                    <div id="reviews" class="tab-pane">
+                        <h3>Đánh giá từ khách hàng</h3>
+                        <div class="review-item">
+                            <div class="reviewer">Nguyễn Lan</div>
+                            <div class="rating">★★★★★</div>
+                            <p>Tour rất chuyên nghiệp, hướng dẫn viên nhiệt tình!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <!-- Copy từ footer cũ -->
+</footer>
+
+<!-- Back to top -->
+<div class="back-to-top">
+    <a href="#"><i class="fas fa-chevron-up"></i></a>
+</div>
+
+<!-- JS -->
+<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../assets/js/aos-init.js"></script>
+<script src="../assets/js/tour-detail.js"></script>
+</body>
+</html>
