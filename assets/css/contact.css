@@ -1,7 +1,9 @@
 body {
     min-height: 100vh;
-    background: var(--light-blue);: var(--text-dark);
-    font-family: var(--ff-poppins, 'Poppins', sans-serif), serif;
+    background: var(--light-blue);
+    color: var(--text-dark);
+    font-family: 'Poppins', sans-serif;
+
 }
 
 /* Heading */
@@ -20,12 +22,9 @@ h2 {
 }
 
 /* Container */
-.container {
+.containerbox {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
 }
-
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -101,7 +100,6 @@ input:focus, textarea:focus {
 
 button {
     padding: 12px 20px;
-    font-size: 1.1em;
     cursor: pointer;
     border: none;
     border-radius: 8px;
