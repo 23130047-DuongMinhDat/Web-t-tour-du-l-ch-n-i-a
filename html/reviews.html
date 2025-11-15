@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đánh giá khách hàng - VietTravel</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- CSS chung -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- CSS riêng cho Reviews -->
+    <link rel="stylesheet" href="../assets/css/reviews.css">
+</head>
+<body>
+
+<!-- HEADER (giống các trang khác) -->
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="contact-info">
+                    <span>Hotline: 1900 xxxx</span>
+                    <span>support@viettravel.vn</span>
+                    <span>24/7 Hỗ trợ</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" title="Google">Google</a>
+                    <a href="#" title="Facebook">Facebook</a>
+                    <a href="#" title="Instagram">Instagram</a>
+                    <a href="#" title="Youtube">Youtube</a>
+                </div>
+                <div class="user-auth">
+                    <div class="guest-menu">
+                        <a href="login.html">Đăng nhập</a>
+                        <span class="divider">|</span>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    VietTravel
+                    <span class="logo-slogan">Khám phá Việt Nam</span>
+                </a>
+            </div>
+            <div class="search-box">
+                <form action="search.html" method="GET">
+                    <div class="search-input-wrapper">
+                        <input type="text" name="q" placeholder="Tìm tour, điểm đến..." class="search-input">
+                        <button type="submit" class="search-btn">Tìm</button>
+                    </div>
+                </form>
+            </div>
+            <div class="header-actions">
+                <a href="favorites.html" class="header-icon" title="Yêu thích">
+                    <span class="badge">3</span>
+                </a>
+                <div class="header-icon notification-icon">
+                    <span class="badge">5</span>
+                    <div class="notification-dropdown">...</div>
+                </div>
+                <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
+                    <span class="badge">2</span>
+                    <span class="cart-text">Giỏ tour</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle">Menu</button>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li class="has-mega-menu">
+                    <a href="tours.html">Tour</a>
+                    <!-- mega menu -->
+                </li>
+                <li><a href="promotion.html">Khuyến mãi</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+                <li><a href="reviews.html" class="active">Đánh giá</a></li>
+                <li><a href="policy.html">Chính sách</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="checkout.html" class="nav-cta">Đặt tour ngay</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="reviews-page">
+    <div class="container">
+        <h1 class="page-title">Đánh giá từ khách hàng</h1>
+
+        <!-- Bộ lọc -->
+        <div class="filter-bar">
+            <select id="filter-tour">
+                <option value="">Tất cả tour</option>
+                <option value="sapa">Sapa - Fansipan</option>
+                <option value="halong">Vịnh Hạ Long</option>
+                <option value="danang">Đà Nẵng - Hội An</option>
+            </select>
+            <select id="filter-rating">
+                <option value="">Tất cả sao</option>
+                <option value="5">5 sao</option>
+                <option value="4">4 sao trở lên</option>
+                <option value="3">3 sao trở lên</option>
+            </select>
+            <button class="btn btn-filter">Lọc</button>
+        </div>
+
+        <!-- Danh sách đánh giá -->
+        <div class="reviews-list">
+            <!-- Review 1 -->
+            <div class="review-card" data-tour="sapa" data-rating="5">
+                <div class="review-header">
+                    <img src="../assets/images/avatar1.jpg" alt="Nguyễn Lan" class="review-avatar">
+                    <div>
+                        <h4>Nguyễn Lan</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <p class="review-tour">Tour Sapa - Fansipan 3N2Đ</p>
+                    </div>
+                </div>
+                <p class="review-content">
+                    "Hướng dẫn viên nhiệt tình, cảnh đẹp mê hồn. Đặc biệt là bữa ăn dân dã rất ngon.
+                    Sẽ quay lại vào mùa lúa chín!"
+                </p>
+                <small class="review-date">15/10/2025</small>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card" data-tour="halong" data-rating="4">
+                <div class="review-header">
+                    <img src="../assets/images/avatar2.jpg" alt="Trần Minh" class="review-avatar">
+                    <div>
+                        <h4>Trần Minh</h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0</span>
+                        </div>
+                        <p class="review-tour">Vịnh Hạ Long - 2N1Đ</p>
+                    </div>
+                </div>
+                <p class="review-content">
+                    "Tàu sạch sẽ, dịch vụ tốt. Chỉ tiếc thời tiết hơi mưa.
+                    Nên cải thiện bữa ăn trên tàu."
+                </p>
+                <small class="review-date">10/10/2025</small>
+            </div>
+
+            <!-- Thêm 3-4 review nữa nếu cần -->
+        </div>
+
+        <!-- Phân trang -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span>...</span>
+            <button class="page-btn">10</button>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
+                    <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- About -->
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>VietTravel</span>
+                    </div>
+                    <p>VietTravel là nền tảng đặt tour du lịch nội địa uy tín hàng đầu Việt Nam.</p>
+
+                    <div class="footer-social">
+                        <h4>Kết nối với chúng tôi</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Links -->
+                <div class="footer-column">
+                    <h3>Tour nổi bật</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Bắc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Trung</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Nam</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Đà Lạt</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Phú Quốc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Sapa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <h3>Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Hà Nội:</strong>
+                                <p>123 Phố Huế, Hai Bà Trưng</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>TP.HCM:</strong>
+                                <p>456 Nguyễn Huệ, Q.1</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <p><a href="tel:1900xxxx">1900 xxxx</a> (24/7)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p><a href="mailto:support@viettravel.vn">support@viettravel.vn</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="footer-payment">
+        <div class="container">
+            <div class="payment-info">
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="../assets/images/payment-momo.png" alt="MoMo">
+                    <img src="../assets/images/payment-zalopay.png" alt="ZaloPay">
+                    <img src="../assets/images/payment-vnpay.png" alt="VNPay">
+                    <img src="../assets/images/payment-visa.png" alt="Visa">
+                    <img src="../assets/images/payment-banking.png" alt="Banking">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p>© 2025 VietTravel. All rights reserved.</p>
+                <p class="company-info">
+                    <strong>Công ty TNHH Du Lịch VietTravel</strong> - GPKD: 0123456789
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+</footer>
+
+<!-- JS (tùy chọn: lọc, phân trang) -->
+<script src="../assets/js/reviews.js"></script>
+</body>
+</html>
