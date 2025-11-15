@@ -7,7 +7,7 @@
 .page-title {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--blue);
+    color: var(--primary);
     margin-bottom: 50px;
     position: relative;
 }
@@ -20,7 +20,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: var(--blue);
+    background: var(--primary);
     border-radius: 2px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .policy-section h3 {
-    color: var(--blue);
+    color: var(--primary);
     font-size: 1.4rem;
     margin-bottom: 15px;
     position: relative;
@@ -58,7 +58,7 @@
     bottom: 0;
     width: 40px;
     height: 3px;
-    background: var(--blue);
+    background: var(--primary);
     border-radius: 2px;
 }
 
@@ -80,7 +80,7 @@
     content: '\f058';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
-    color: var(--blue);
+    color: var(--primary);
     position: absolute;
     left: 0;
     top: 2px;
@@ -101,7 +101,7 @@
 }
 
 .refund-table th {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
     font-weight: 600;
 }

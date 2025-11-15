@@ -9,7 +9,7 @@ header {
 
 /* Top Bar */
 .top-bar {
-    background: var(--blue);
+    background: var(--primary);
     padding: 10px 0;
     color: white;
     font-size: 14px;
@@ -70,7 +70,7 @@ header {
 
 .social-icons a:hover {
     background: white;
-    color: var(--blue);
+    color: var(--primary);
     border-color: white;
     transform: translateY(-2px);
 }
@@ -94,7 +94,7 @@ header {
 
 .lang-select option,
 .currency-select option {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
 }
 
@@ -196,7 +196,7 @@ header {
 
 .dropdown-menu a:hover {
     background: #f5f5f5;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .dropdown-menu hr {
@@ -232,7 +232,7 @@ header {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .logo i {
@@ -269,7 +269,7 @@ header {
 }
 
 .search-input-wrapper:focus-within {
-    border-color: var(--blue);
+    border-color: var(--primary);
     background: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -288,7 +288,7 @@ header {
 }
 
 .search-btn {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
     border: none;
     padding: 8px 20px;
@@ -299,7 +299,7 @@ header {
 }
 
 .search-btn:hover {
-    background-color: var(--dark-blue, #0056b3);
+    background-color: var(--primary-hover, #0056b3);
     transform: translateX(2px);
 }
 
@@ -324,7 +324,7 @@ header {
 
 .header-icon:hover {
     background: #f5f5f5;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .header-icon i {
@@ -386,7 +386,7 @@ header {
 
 .notification-header a {
     font-size: 13px;
-    color: var(--blue);
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -415,7 +415,7 @@ header {
 
 .notification-item i {
     font-size: 24px;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .notification-content {
@@ -436,7 +436,7 @@ header {
     display: block;
     text-align: center;
     padding: 12px;
-    color: var(--blue);
+    color: var(--primary);
     text-decoration: none;
     font-weight: 600;
     border-top: 1px solid #eee;
@@ -448,13 +448,13 @@ header {
     background: transparent;
     border: none;
     font-size: 24px;
-    color: var(--blue);
+    color: var(--primary);
     cursor: pointer;
 }
 
 /* Main Navigation */
 .main-nav {
-    background: linear-gradient(135deg, var(--blue) 0%, #0056b3 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -526,10 +526,10 @@ header {
 }
 
 .mega-menu-column h4 {
-    color: var(--blue);
+    color: var(--primary);
     margin: 0 0 15px;
     font-size: 16px;
-    border-bottom: 2px solid var(--blue);
+    border-bottom: 2px solid var(--primary);
     padding-bottom: 8px;
 }
 
@@ -553,7 +553,7 @@ header {
 }
 
 .mega-menu-column a:hover {
-    color: var(--blue);
+    color: var(--primary);
     padding-left: 5px;
 }
 
@@ -591,7 +591,7 @@ header {
 
 .nav-right .nav-cta:hover {
     background: white;
-    color: var(--blue);
+    color: var(--primary);
 }
 
 /* Sticky Header Effect */

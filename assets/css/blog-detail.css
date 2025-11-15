@@ -1,17 +1,5 @@
 /* blog-detail.css (cập nhật thêm cho navigation và conclusion) */
 
-/* Root variables */
-:root {
-    --primary: #0099CC;
-    --primary-hover: #0077AA;
-    --primary-light: #e6f7ff;
-    --text-dark: #1a1a1a;
-    --text-medium: #555;
-    --text-light: #777;
-    --bg-light: #f8f9fa;
-    --white: #ffffff;
-}
-
 /* Page Hero (removed since no hero in detail, but if needed) */
 
 /* Blog Navigation */
@@ -113,44 +101,55 @@
     color: var(--text-light);
     margin-bottom: 20px;
 }
+
 .blog-detail-section {
     display: none;
 }
+
 .blog-navigation {
-    background:#f8f9fa;
-    padding:15px 0;
-    margin-bottom:30px;
-    border-bottom:2px solid #00a8e8;
+    background: #f8f9fa;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #00a8e8;
 }
+
 .blog-navigation ul {
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
 .blog-navigation a {
-    color:#333;
-    font-weight:600;
-    padding:8px 16px;
-    border-radius:30px;
-    transition:all 0.3s;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s;
 }
 
 .blog-navigation a:hover,
 .blog-navigation a.active {
-    background:#00a8e8; color:white;
-}
-.blog-layout {
-    display:grid;
-    grid-template-columns:1fr 350px;
-    gap:40px;
+    background: #00a8e8;
+    color: white;
 }
 
-@media (max-width:992px) {
+.blog-layout {
+    display: grid;
+    grid-template-columns:1fr 350px;
+    gap: 40px;
+}
+
+@media (max-width: 992px) {
     .blog-layout {
         grid-template-columns:1fr;
     }
+
     .blog-sidebar {
-        order:-1;
+        order: -1;
     }
 }
 
@@ -293,6 +292,7 @@
 .comment-form button:hover {
     background: var(--primary-hover);
 }
+
 /* Pagination */
 .pagination {
     display: flex;
@@ -323,7 +323,7 @@
 }
 
 .sidebar-widget.newsletter-widget {
-    background: linear-gradient(135deg, var(--blue) 0%, #0078a8 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #0078a8 100%);
     color: white;
     padding: 30px;
     border-radius: 15px;
@@ -374,7 +374,7 @@
     width: 100%;
     padding: 14px 20px;
     background: white;
-    color: var(--blue);
+    color: var(--primary);
     border: none;
     border-radius: 50px;
     font-weight: 600;

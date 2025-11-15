@@ -6,12 +6,15 @@
 }
 
 :root {
-    --blue: #0099cc;
-    --dark-blue: #0077aa;
-    --light-blue: #e6f7ff;
+    --primary: #0099cc;
+    --primary-hover: #0077aa;
+    --primary-light: #e6f7ff;
     --text-dark: #333;
+    --text-medium: #555;
     --text-light: #777;
+    --bg-light: #f8f9fa;
     --white: #fff;
+    --border: #e0e0e0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --radius: 12px;
 
@@ -49,12 +52,12 @@ body {
     border-radius: 8px;
     cursor: pointer;
     color: var(--white);
-    background: var(--blue);
+    background: var(--primary);
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: var(--dark-blue);
+    background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
@@ -78,7 +81,7 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: var(--blue);
+    border-color: var(--primary);
 }
 
 /* MAIN WRAPPER */

@@ -8,7 +8,7 @@
 
 .checkout-container h1 {
     text-align: center;
-    color: var(--blue);
+    color: var(--primary);
     margin-bottom: 30px;
 }
 
@@ -19,14 +19,14 @@
 }
 
 .customer-info, .payment-method, .checkout-summary {
-    background: var(--light-blue);
+    background: var(--primary-light);
     padding: 20px;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
 }
 
 .customer-info h2, .payment-method h2, .checkout-summary h2 {
-    color: var(--dark-blue);
+    color: var(--primary-hover);
     margin-bottom: 15px;
 }
 
@@ -60,7 +60,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 
 .btn {
     display: inline-block;
-    background: var(--blue);
+    background: var(--primary);
     color: white;
     text-decoration: none;
     text-align: center;
@@ -72,7 +72,7 @@ input[type="text"], input[type="email"], input[type="tel"] {
 }
 
 .btn:hover {
-    background: var(--dark-blue);
+    background: var(--primary-hover);
 }
 
 @media (max-width: 768px) {
