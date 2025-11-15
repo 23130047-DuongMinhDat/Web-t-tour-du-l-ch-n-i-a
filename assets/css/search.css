@@ -192,7 +192,7 @@
 }
 /* Ẩn tour mặc định khi load */
 .tour-card {
-    display: none; /* Sẽ được JS bật lại nếu phù hợp */
+    display: none;
 }
 
 /* Khi tìm kiếm xong, chỉ hiện tour phù hợp */
@@ -203,4 +203,56 @@
     color: #999;
     font-style: italic;
     padding: 40px;
+}
+.search-box-overlay {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 999;
+    display: none; /* Ẩn mặc định, JS sẽ bật khi cần */
+}
+
+.main-header:hover + .search-box-overlay,
+.search-box-overlay.active {
+    display: block;
+}
+
+/* Đảm bảo .search-box nằm đúng */
+.search-box.highlight {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* SUGGESTIONS */
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 1000;
+    display: none;
+}
+
+.suggestion-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s;
+}
+
+.suggestion-item:hover {
+    background: #f0f7ff;
+    color: var(--blue);
 }
