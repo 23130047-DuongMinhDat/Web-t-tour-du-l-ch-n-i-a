@@ -91,117 +91,138 @@
                                autocomplete="off">
                         <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
+                    <!-- SEARCH BOX NỔI BẬT -->
+                    <div class="search-box highlight">
+                        <form action="search.html" method="GET" id="search-form">
+                            <div class="search-input-wrapper">
+                                <i class="fas fa-search"></i>
+                                <input
+                                        type="text"
+                                        name="q"
+                                        id="search-input"
+                                        placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                        class="search-input"
+                                        autocomplete="off"
+                                >
+                                <button type="submit" class="search-btn">Tìm ngay</button>
+                            </div>
+                            <!-- Gợi ý tìm kiếm -->
+                            <div class="search-suggestions" id="suggestions"></div>
+                        </form>
+                    </div>
+
+
+                    <!-- Header Actions -->
+                    <div class="header-actions">
+                        <a href="favorites.html" class="header-icon" title="Yêu thích">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge">3</span>
+                        </a>
+
+                        <div class="header-icon notification-icon">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                            <div class="notification-dropdown">
+                                <div class="notification-header">
+                                    <h4>Thông báo</h4>
+                                    <a href="#">Đánh dấu đã đọc</a>
+                                </div>
+                                <div class="notification-list">
+                                    <a href="#" class="notification-item unread">
+                                        <i class="fas fa-gift"></i>
+                                        <div class="notification-content">
+                                            <p>Bạn có 1 voucher mới trị giá 500.000đ</p>
+                                            <span class="time">2 giờ trước</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <a href="notifications.html" class="view-all">Xem tất cả</a>
+                            </div>
+                        </div>
+
+                        <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge">2</span>
+                            <span class="cart-text">Giỏ tour</span>
+                        </a>
+                    </div>
+
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
                 </form>
             </div>
 
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <a href="favorites.html" class="header-icon" title="Yêu thích">
-                    <i class="fas fa-heart"></i>
-                    <span class="badge">3</span>
-                </a>
-
-                <div class="header-icon notification-icon">
-                    <i class="fas fa-bell"></i>
-                    <span class="badge">5</span>
-                    <div class="notification-dropdown">
-                        <div class="notification-header">
-                            <h4>Thông báo</h4>
-                            <a href="#">Đánh dấu đã đọc</a>
-                        </div>
-                        <div class="notification-list">
-                            <a href="#" class="notification-item unread">
-                                <i class="fas fa-gift"></i>
-                                <div class="notification-content">
-                                    <p>Bạn có 1 voucher mới trị giá 500.000đ</p>
-                                    <span class="time">2 giờ trước</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="notifications.html" class="view-all">Xem tất cả</a>
-                    </div>
-                </div>
-
-                <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="badge">2</span>
-                    <span class="cart-text">Giỏ tour</span>
-                </a>
-            </div>
-
-            <button class="mobile-menu-toggle">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
-    </div>
 
-    <!-- Navigation Bar -->
-    <nav class="main-nav">
-        <div class="container">
-            <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
-                <li class="has-mega-menu">
-                    <a href="tours.html">
-                        <i class="fas fa-map-marked-alt"></i> Tour du lịch
-                        <i class="fas fa-chevron-down"></i>
+        <!-- Navigation Bar -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li class="has-mega-menu">
+                        <a href="tours.html">
+                            <i class="fas fa-map-marked-alt"></i> Tour du lịch
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <h4>Miền Bắc</h4>
+                                    <ul>
+                                        <li><a href="#">Hà Nội</a></li>
+                                        <li><a href="#">Hạ Long</a></li>
+                                        <li><a href="#">Sapa</a></li>
+                                        <li><a href="#">Ninh Bình</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>Miền Trung</h4>
+                                    <ul>
+                                        <li><a href="#">Đà Nẵng</a></li>
+                                        <li><a href="#">Hội An</a></li>
+                                        <li><a href="#">Huế</a></li>
+                                        <li><a href="#">Quy Nhơn</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>Miền Nam</h4>
+                                    <ul>
+                                        <li><a href="#">TP. Hồ Chí Minh</a></li>
+                                        <li><a href="#">Phú Quốc</a></li>
+                                        <li><a href="#">Đà Lạt</a></li>
+                                        <li><a href="#">Vũng Tàu</a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-column mega-menu-promo">
+                                    <h4>Khuyến mãi hot</h4>
+                                    <div class="promo-banner">
+                                        <img src="../assets/images/promo-tour.jpg" alt="Promo">
+                                        <p>Giảm đến 30% tour mùa hè</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
+                    <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
+                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li><a href="contact.html" class="active"><i class="fas fa-phone"></i> Liên hệ</a></li>
+
+                    <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
+                    <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                    <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
+                </ul>
+
+                <div class="nav-right">
+                    <a href="partner.html" class="nav-cta">
+                        <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
                     </a>
-                    <div class="mega-menu">
-                        <div class="mega-menu-content">
-                            <div class="mega-menu-column">
-                                <h4>Miền Bắc</h4>
-                                <ul>
-                                    <li><a href="#">Hà Nội</a></li>
-                                    <li><a href="#">Hạ Long</a></li>
-                                    <li><a href="#">Sapa</a></li>
-                                    <li><a href="#">Ninh Bình</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-column">
-                                <h4>Miền Trung</h4>
-                                <ul>
-                                    <li><a href="#">Đà Nẵng</a></li>
-                                    <li><a href="#">Hội An</a></li>
-                                    <li><a href="#">Huế</a></li>
-                                    <li><a href="#">Quy Nhơn</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-column">
-                                <h4>Miền Nam</h4>
-                                <ul>
-                                    <li><a href="#">TP. Hồ Chí Minh</a></li>
-                                    <li><a href="#">Phú Quốc</a></li>
-                                    <li><a href="#">Đà Lạt</a></li>
-                                    <li><a href="#">Vũng Tàu</a></li>
-                                </ul>
-                            </div>
-                            <div class="mega-menu-column mega-menu-promo">
-                                <h4>Khuyến mãi hot</h4>
-                                <div class="promo-banner">
-                                    <img src="../assets/images/promo-tour.jpg" alt="Promo">
-                                    <p>Giảm đến 30% tour mùa hè</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                <li><a href="contact.html" class="active"><i class="fas fa-phone"></i> Liên hệ</a></li>
-
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
-                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
-            </ul>
-
-            <div class="nav-right">
-                <a href="partner.html" class="nav-cta">
-                    <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
-                </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>
 <!-- Contact Us Section -->
 <main>
