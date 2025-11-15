@@ -1,0 +1,195 @@
+/* tour-detail.css */
+.tour-detail-page {
+    margin-top: 80px;
+}
+
+.page-hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0 0 20px 20px;
+}
+
+.page-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-overlay h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.breadcrumb {
+    margin: 30px 0;
+    font-size: 0.95rem;
+}
+
+.tour-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.tour-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.tour-highlights ul {
+    list-style: none;
+    padding: 0;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.tour-highlights li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.tour-price {
+    background: linear-gradient(135deg, #0099cc, #0077aa);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.discount {
+    background: #e63946;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.booking-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.booking-card h3 {
+    margin-top: 0;
+    color: #0099cc;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.total-price {
+    font-size: 1.2rem;
+    padding: 15px 0;
+    border-top: 1px dashed #ddd;
+    margin-top: 10px;
+}
+
+.btn-book {
+    width: 100%;
+    background: #e63946;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-book:hover {
+    background: #c1121f;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 12px 20px;
+    background: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    color: #0099cc;
+    border-bottom: 3px solid #0099cc;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.itinerary-list li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+.review-item {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.rating {
+    color: #f39c12;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .tour-content {
+        grid-template-columns: 1fr;
+    }
+    .tour-info-section {
+        order: 2;
+    }
+}
