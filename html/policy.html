@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài khoản của tôi - [Tên Website Tour]</title>
+    <title>Chính sách - VietTravel</title>
 
+    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+    <!-- CSS chung -->
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- CSS riêng cho trang Policy -->
+    <link rel="stylesheet" href="../assets/css/policy.css">
 </head>
 
 <body>
-
+<!-- HEADER (giống index.html và tours.html) -->
 <header>
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <!-- Thông tin liên hệ nhanh -->
                 <div class="contact-info">
                     <span><i class="fas fa-phone-alt"></i> Hotline: 1900 xxxx</span>
                     <span><i class="fas fa-envelope"></i> support@viettravel.vn</span>
@@ -30,7 +34,6 @@
             </div>
 
             <div class="top-bar-right">
-                <!-- Social Media -->
                 <div class="social-icons">
                     <a href="#" title="Google"><i class="fab fa-google"></i></a>
                     <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -38,17 +41,12 @@
                     <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
                 </div>
 
-
-                <!-- User Auth -->
                 <div class="user-auth">
-                    <!-- Khi chưa đăng nhập -->
                     <div class="guest-menu">
                         <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
                         <span class="divider">|</span>
                         <a href="register.html">Đăng ký</a>
                     </div>
-
-                    <!-- Khi đã đăng nhập (ẩn mặc định) -->
                     <div class="user-logged" style="display:none;">
                         <div class="user-dropdown">
                             <button class="user-btn">
@@ -62,8 +60,7 @@
                                 <a href="favorites.html"><i class="fas fa-heart"></i> Yêu thích</a>
                                 <a href="wallet.html"><i class="fas fa-wallet"></i> Ví của tôi</a>
                                 <hr>
-                                <a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng
-                                    xuất</a>
+                                <a href="login.html" class="logout-link"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
                             </div>
                         </div>
                     </div>
@@ -72,10 +69,8 @@
         </div>
     </div>
 
-    <!-- Main Header -->
     <div class="main-header">
         <div class="container">
-            <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
                     <i class="fas fa-plane-departure"></i>
@@ -84,31 +79,22 @@
                 </a>
             </div>
 
-            <!-- Search Box (Quan trọng cho e-commerce) -->
             <div class="search-box">
                 <form action="search.html" method="GET">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text"
-                               name="q"
-                               placeholder="Tìm điểm đến, tour du lịch..."
-                               class="search-input"
-                               autocomplete="off">
+                        <input type="text" name="q" placeholder="Tìm điểm đến, tour du lịch..." class="search-input" autocomplete="off">
                         <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Search suggestions dropdown (có thể thêm) -->
                 </form>
             </div>
 
-            <!-- Header Actions -->
             <div class="header-actions">
-                <!-- Wishlist -->
                 <a href="favorites.html" class="header-icon" title="Yêu thích">
                     <i class="fas fa-heart"></i>
                     <span class="badge">3</span>
                 </a>
 
-                <!-- Notifications -->
                 <div class="header-icon notification-icon">
                     <i class="fas fa-bell"></i>
                     <span class="badge">5</span>
@@ -125,13 +111,11 @@
                                     <span class="time">2 giờ trước</span>
                                 </div>
                             </a>
-                            <!-- More notifications -->
                         </div>
                         <a href="notifications.html" class="view-all">Xem tất cả</a>
                     </div>
                 </div>
 
-                <!-- Cart/Booking (Giỏ tour) -->
                 <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">2</span>
@@ -139,202 +123,131 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </div>
 
-    <!-- Navigation Bar -->
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
-
-                <!-- Mega Menu cho Tour -->
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
                 <li class="has-mega-menu">
-                    <a href="tours.html">
-                        <i class="fas fa-map-marked-alt"></i> Tour du lịch
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
+                    <a href="tours.html"><i class="fas fa-map-marker-alt"></i> Tour <i class="fas fa-chevron-down"></i></a>
                     <div class="mega-menu">
                         <div class="mega-menu-content">
                             <div class="mega-menu-column">
                                 <h4>Miền Bắc</h4>
                                 <ul>
                                     <li><a href="#">Hà Nội</a></li>
-                                    <li><a href="#">Hạ Long</a></li>
                                     <li><a href="#">Sapa</a></li>
-                                    <li><a href="#">Ninh Bình</a></li>
+                                    <li><a href="#">Hạ Long</a></li>
                                 </ul>
                             </div>
                             <div class="mega-menu-column">
                                 <h4>Miền Trung</h4>
                                 <ul>
                                     <li><a href="#">Đà Nẵng</a></li>
-                                    <li><a href="#">Hội An</a></li>
                                     <li><a href="#">Huế</a></li>
-                                    <li><a href="#">Quy Nhơn</a></li>
+                                    <li><a href="#">Hội An</a></li>
                                 </ul>
                             </div>
                             <div class="mega-menu-column">
                                 <h4>Miền Nam</h4>
                                 <ul>
-                                    <li><a href="#">TP. Hồ Chí Minh</a></li>
+                                    <li><a href="#">TP.HCM</a></li>
                                     <li><a href="#">Phú Quốc</a></li>
                                     <li><a href="#">Đà Lạt</a></li>
-                                    <li><a href="#">Vũng Tàu</a></li>
                                 </ul>
                             </div>
                             <div class="mega-menu-column mega-menu-promo">
-                                <h4>Khuyến mãi hot</h4>
                                 <div class="promo-banner">
-                                    <img src="../assets/images/promo-tour.jpg" alt="Promo">
-                                    <p>Giảm đến 30% tour mùa hè</p>
+                                    <img src="../assets/images/promo.jpg" alt="Khuyến mãi">
+                                    <p>Giảm 20% tour hè 2025!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </li>
-
-                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-                <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="promotions.html"><i class="fas fa-tags"></i> Khuyến mãi</a></li>
+                <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-headset"></i> Liên hệ</a></li>
+                <li><a href="policy.html" class="active"><i class="fas fa-shield-alt"></i> Chính sách</a></li>
             </ul>
-
-            <!-- Quick links bên phải -->
             <div class="nav-right">
-                <a href="partner.html" class="nav-cta">
-                    <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
-                </a>
+                <a href="book-tour.html" class="nav-cta"><i class="fas fa-plane"></i> Đặt tour ngay</a>
             </div>
         </div>
     </nav>
 </header>
 
-<!-- Breadcrumb (Nên có cho UX) -->
-<div class="breadcrumb">
+<!-- MAIN CONTENT -->
+<main class="policy-page">
     <div class="container">
-        <a href="index.html">Trang chủ</a> > <span>Tài khoản của tôi</span>
-    </div>
-</div>
+        <h1 class="page-title">Chính sách của VietTravel</h1>
 
-<main class="profile-page">
-    <div class="container grid">
-
-        <!-- SIDEBAR - Menu tài khoản -->
-        <aside class="side-bar">
-            <div class="user-info-card">
-                <img src="images/avatar.jpg" alt="Avatar" class="avatar">
-                <h3>Nguyễn Văn A</h3>
-                <p class="user-email">user@email.com</p>
-            </div>
-
-            <nav class="profile-menu">
+        <div class="policy-grid">
+            <!-- 1. Điều khoản sử dụng -->
+            <section class="policy-section">
+                <h3>1. Điều khoản sử dụng</h3>
+                <p>Bằng việc sử dụng website và đặt tour tại <strong>VietTravel</strong>, bạn đồng ý tuân thủ các điều khoản sau:</p>
                 <ul>
-                    <li><a href="profile.html" class="active">📋 Thông tin cá nhân</a></li>
-                    <li><a href="my-tours.html">🎫 Đơn đặt tour</a></li>
-                    <li><a href="favorites.html">❤️ Yêu thích</a></li>
-                    <li><a href="history.html">📜 Lịch sử giao dịch</a></li>
-                    <li><a href="wallet.html">💰 Ví của tôi</a></li>
-                    <li><a href="vouchers.html">🎁 Voucher</a></li>
-                    <li><a href="change-password.html">🔒 Đổi mật khẩu</a></li>
-                    <li><a href="login.html" class="logout">🚪 Đăng xuất</a></li>
+                    <li>Không sao chép, phát tán nội dung mà không có sự cho phép.</li>
+                    <li>Thông tin cá nhân phải chính xác và đầy đủ.</li>
+                    <li>Giá tour có thể thay đổi mà không cần thông báo trước.</li>
+                    <li>VietTravel có quyền từ chối dịch vụ nếu phát hiện hành vi gian lận.</li>
                 </ul>
-            </nav>
-        </aside>
+            </section>
 
-        <!-- MAIN CONTENT - Nội dung chính -->
-        <section class="main-content">
-            <div class="content-header">
-                <h1>Thông tin cá nhân</h1>
-                <button class="btn-edit" onclick="enableEdit()">✏️ Chỉnh sửa</button>
-            </div>
+            <!-- 2. Chính sách bảo mật -->
+            <section class="policy-section">
+                <h3>2. Chính sách bảo mật</h3>
+                <p>Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn:</p>
+                <ul>
+                    <li>Chỉ thu thập dữ liệu cần thiết để xử lý đơn hàng.</li>
+                    <li>Không chia sẻ thông tin với bên thứ ba nếu không có sự đồng ý.</li>
+                    <li>Sử dụng cookie để cải thiện trải nghiệm người dùng.</li>
+                    <li>Áp dụng mã hóa SSL cho mọi giao dịch thanh toán.</li>
+                </ul>
+            </section>
 
-            <form class="profile-form" id="profileForm">
-                <!-- Thông tin cơ bản -->
-                <div class="form-section">
-                    <h2>Thông tin cơ bản</h2>
+            <!-- 3. Chính sách hủy & hoàn tiền -->
+            <section class="policy-section">
+                <h3>3. Chính sách hủy & hoàn tiền</h3>
+                <table class="refund-table">
+                    <thead>
+                    <tr>
+                        <th>Thời gian hủy</th>
+                        <th>Mức hoàn tiền</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>Trước 7 ngày</td><td>100% (trừ phí 5%)</td></tr>
+                    <tr><td>3–7 ngày trước</td><td>50%</td></tr>
+                    <tr><td>Dưới 3 ngày</td><td>Không hoàn tiền</td></tr>
+                    <tr><td>Do thiên tai/dịch bệnh</td><td>Xem xét riêng</td></tr>
+                    </tbody>
+                </table>
+                <p><small>Hoàn tiền trong 7–14 ngày làm việc qua chuyển khoản.</small></p>
+            </section>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullname">Họ và tên <span class="required">*</span></label>
-                            <input type="text" id="fullname" name="fullname" value="Nguyễn Văn A" disabled required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Số điện thoại <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" value="0901234567" disabled required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" value="user@email.com" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="birthday">Ngày sinh</label>
-                            <input type="date" id="birthday" name="birthday" value="1990-01-01" disabled>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Giới tính</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="gender" value="male" disabled checked> Nam</label>
-                            <label><input type="radio" name="gender" value="female" disabled> Nữ</label>
-                            <label><input type="radio" name="gender" value="other" disabled> Khác</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Địa chỉ -->
-                <div class="form-section">
-                    <h2>Địa chỉ</h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="province">Tỉnh/Thành phố</label>
-                            <select id="province" name="province" disabled>
-                                <option value="">Chọn tỉnh/thành</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="hcm" selected>TP. Hồ Chí Minh</option>
-                                <option value="danang">Đà Nẵng</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="district">Quận/Huyện</label>
-                            <select id="district" name="district" disabled>
-                                <option value="">Chọn quận/huyện</option>
-                                <option value="q1" selected>Quận 1</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Địa chỉ cụ thể</label>
-                        <input type="text" id="address" name="address" value="123 Nguyễn Huệ" disabled>
-                    </div>
-                </div>
-
-                <!-- Nút hành động -->
-                <div class="form-actions" style="display: none;">
-                    <button type="button" class="btn-cancel" onclick="cancelEdit()">Hủy</button>
-                    <button type="submit" class="btn-save">💾 Lưu thay đổi</button>
-                </div>
-            </form>
-        </section>
-
+            <!-- 4. Trách nhiệm -->
+            <section class="policy-section">
+                <h3>4. Trách nhiệm của VietTravel</h3>
+                <ul>
+                    <li>Đảm bảo chất lượng tour như cam kết.</li>
+                    <li>Bồi thường 100% nếu lỗi do VietTravel.</li>
+                    <li>Không chịu trách nhiệm cho mất mát cá nhân, thay đổi do bên thứ ba (hãng bay, khách sạn).</li>
+                    <li>Hỗ trợ 24/7 qua hotline và email.</li>
+                </ul>
+            </section>
+        </div>
     </div>
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
-    <!-- Newsletter -->
     <div class="newsletter-section">
         <div class="container">
             <div class="newsletter-content">
@@ -350,19 +263,15 @@
         </div>
     </div>
 
-    <!-- Main Footer -->
     <div class="footer-main">
         <div class="container">
             <div class="footer-grid">
-
-                <!-- About -->
                 <div class="footer-column footer-about">
                     <div class="footer-logo">
                         <i class="fas fa-plane-departure"></i>
                         <span>VietTravel</span>
                     </div>
                     <p>VietTravel là nền tảng đặt tour du lịch nội địa uy tín hàng đầu Việt Nam.</p>
-
                     <div class="footer-social">
                         <h4>Kết nối với chúng tôi</h4>
                         <div class="social-links">
@@ -374,7 +283,6 @@
                     </div>
                 </div>
 
-                <!-- Tour Links -->
                 <div class="footer-column">
                     <h3>Tour nổi bật</h3>
                     <ul class="footer-links">
@@ -387,55 +295,31 @@
                     </ul>
                 </div>
 
-                <!-- Support -->
                 <div class="footer-column">
                     <h3>Hỗ trợ khách hàng</h3>
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Chính sách hủy tour</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản sử dụng</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Chính sách bảo mật</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact -->
                 <div class="footer-column footer-contact">
                     <h3>Liên hệ</h3>
                     <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Hà Nội:</strong>
-                                <p>123 Phố Huế, Hai Bà Trưng</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>TP.HCM:</strong>
-                                <p>456 Nguyễn Huệ, Q.1</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <p><a href="tel:1900xxxx">1900 xxxx</a> (24/7)</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <p><a href="mailto:support@viettravel.vn">support@viettravel.vn</a></p>
-                            </div>
-                        </li>
+                        <li><i class="fas fa-map-marker-alt"></i><div><strong>Hà Nội:</strong><p>123 Phố Huế, Hai Bà Trưng</p></div></li>
+                        <li><i class="fas fa-map-marker-alt"></i><div><strong>TP.HCM:</strong><p>456 Nguyễn Huệ, Q.1</p></div></li>
+                        <li><i class="fas fa-phone-alt"></i><div><p><a href="tel:1900xxxx">1900 xxxx</a> (24/7)</p></div></li>
+                        <li><i class="fas fa-envelope"></i><div><p><a href="mailto:support@viettravel.vn">support@viettravel.vn</a></p></div></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>
 
-    <!-- Payment Methods -->
     <div class="footer-payment">
         <div class="container">
             <div class="payment-info">
@@ -451,7 +335,6 @@
         </div>
     </div>
 
-    <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom-content">
@@ -466,33 +349,6 @@
     <div class="back-to-top">
         <a href="#"><i class="fas fa-chevron-up"></i></a>
     </div>
-
 </footer>
-
-<script>
-    // JavaScript cho chức năng chỉnh sửa
-    function enableEdit() {
-        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
-        inputs.forEach(input => input.disabled = false);
-
-        document.querySelector('.btn-edit').style.display = 'none';
-        document.querySelector('.form-actions').style.display = 'flex';
-    }
-
-    function cancelEdit() {
-        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
-        inputs.forEach(input => input.disabled = true);
-
-        document.querySelector('.btn-edit').style.display = 'block';
-        document.querySelector('.form-actions').style.display = 'none';
-    }
-
-    document.getElementById('profileForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Đã lưu thông tin thành công!');
-        cancelEdit();
-    });
-</script>
-
 </body>
 </html>
