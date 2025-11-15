@@ -10,7 +10,7 @@
 
 .page-title {
     font-size: 2.2rem;
-    color: var(--blue);
+    color: var(--primary);
     margin: 0 0 10px;
 }
 
@@ -45,7 +45,7 @@
 
 .filter-group h3 {
     font-size: 1.1rem;
-    color: var(--blue);
+    color: var(--primary);
     margin-bottom: 12px;
     border-bottom: 1px solid #eee;
     padding-bottom: 8px;
@@ -64,7 +64,7 @@
 
 .btn-apply {
     width: 100%;
-    background: var(--blue);
+    background: var(--primary);
     color: white;
     margin-top: 10px;
 }
@@ -109,7 +109,7 @@
 }
 
 .tour-info h3 a:hover {
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .tour-meta {
@@ -146,7 +146,7 @@
 }
 
 .btn-book {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
     font-size: 0.9rem;
     padding: 8px 16px;
@@ -159,10 +159,12 @@
     .search-content {
         grid-template-columns: 1fr;
     }
+
     .filter-sidebar {
         order: 2;
     }
 }
+
 /* Thêm vào search.css */
 .search-suggestions {
     position: absolute;
@@ -177,7 +179,7 @@
     overflow-y: auto;
     display: none;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .suggestion-item {
@@ -188,8 +190,9 @@
 
 .suggestion-item:hover {
     background: #f0f7ff;
-    color: var(--blue);
+    color: var(--primary);
 }
+
 /* Ẩn tour mặc định khi load */
 .tour-card {
     display: none; /* Sẽ được JS bật lại nếu phù hợp */
