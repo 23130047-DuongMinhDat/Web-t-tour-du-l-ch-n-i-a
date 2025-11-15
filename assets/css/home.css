@@ -1,5 +1,4 @@
 /* Hero Section */
-
 .hero {
     position: relative;
     background: url('../images/hero.jpg');
@@ -140,6 +139,52 @@
     padding: 40px 0;
     margin-top: 40px;
     border-radius: 10px;
+}
+
+/* WHY CHOOSE */
+.why-choose {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.why-choose h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.choose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.choose-item {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.choose-item:hover {
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.choose-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.choose-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.choose-item p {
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 /* Newsletter hover */
