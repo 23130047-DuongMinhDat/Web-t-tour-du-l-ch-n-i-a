@@ -34,49 +34,42 @@ document.addEventListener("DOMContentLoaded", () => {
             price: 5990000,
             duration: "3 ngày 2 đêm",
             slots: 22,
-            image: "../assets/images/popular-4.jpg"
+            image: "../assets/images/da_nang.jpg"
         },
         sapa: {
             name: "Tour Sapa - Fansipan 3N2Đ",
             price: 4990000,
             duration: "3 ngày 2 đêm",
             slots: 15,
-            image: "../assets/images/popular-5.jpg"
+            image: "../assets/images/sapa.jpg"
         },
         nhatrang: {
             name: "Tour Nha Trang - Vinpearl 4N3Đ",
             price: 7990000,
             duration: "4 ngày 3 đêm",
             slots: 20,
-            image: "../assets/images/popular-6.jpg"
+            image: "../assets/images/nha_trang.jpg"
         },
         hue: {
             name: "Tour Huế - Đà Lạt 5N4Đ",
             price: 7490000,
             duration: "5 ngày 4 đêm",
             slots: 12,
-            image: "../assets/images/popular-7.jpg"
+            image: "../assets/images/hue.jpg"
         },
         mekong: {
             name: "Tour Đồng Bằng Sông Cửu Long 3N2Đ",
             price: 4290000,
             duration: "3 ngày 2 đêm",
             slots: 28,
-            image: "../assets/images/popular-8.jpg"
+            image: "../assets/images/dong_bang_song_cuu_long.jpg"
         },
         hagiang: {
             name: "Tour Hà Giang - Cột Cờ Lũng Cú 4N3Đ",
             price: 5890000,
             duration: "4 ngày 3 đêm",
             slots: 10,
-            image: "../assets/images/popular-9.jpg"
-        },
-        dalat: {
-            name: "Tour Đà Lạt - Thác Datanla 3N2Đ",
-            price: 4590000,
-            duration: "3 ngày 2 đêm",
-            slots: 32,
-            image: "../assets/images/popular-10.jpg"
+            image: "../assets/images/ha_giang.jpg"
         }
     };
 

@@ -83,19 +83,23 @@
                 </a>
             </div>
 
-            <!-- Search Box (Quan trọng cho e-commerce) -->
-            <div class="search-box">
-                <form action="search.html" method="GET">
+            <!-- Search Box -->
+            <div class="search-box highlight">
+                <form action="search.html" method="GET" id="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text"
-                               name="q"
-                               placeholder="Tìm điểm đến, tour du lịch..."
-                               class="search-input"
-                               autocomplete="off">
-                        <button type="submit" class="search-btn">Tìm kiếm</button>
+                        <input
+                                type="text"
+                                name="q"
+                                id="search-input"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Tìm ngay</button>
                     </div>
-                    <!-- Search suggestions dropdown (có thể thêm) -->
+                    <!-- Gợi ý tìm kiếm -->
+                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -149,7 +153,7 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
 
                 <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
@@ -196,14 +200,12 @@
                         </div>
                     </div>
                 </li>
-
-                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html" class="active"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
-
-
+            <!-- Quick links bên phải -->
             <div class="nav-right">
                 <a href="partner.html" class="nav-cta">
                     <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
@@ -701,10 +703,9 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách hủy tour</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Điều khoản sử dụng</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách bảo mật</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+
                     </ul>
                 </div>
 
