@@ -89,14 +89,16 @@
                 <form action="search.html" method="GET" id="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input
-                                type="text"
-                                name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                class="search-input"
-                                autocomplete="off"
-                        >
+                        <label for="search-input">
+                            <input
+                                    type="text"
+                                    name="q"
+                                    id="search-input"
+                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                    class="search-input"
+                                    autocomplete="off"
+                            >
+                        </label>
                         <button type="submit" class="search-btn">Tìm ngay</button>
                     </div>
                     <!-- Gợi ý tìm kiếm -->
@@ -202,7 +204,7 @@
                     </div>
                 </li>
 
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
@@ -222,19 +224,26 @@
     <section class="tour-filter">
         <h1>Danh sách tour của chúng tôi</h1>
         <div class="filter-bar">
-            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-            <select id="locationFilter">
-                <option value="">Tất cả</option>
-                <option value="Đà Lạt">Đà Lạt</option>
-                <option value="Phú Quốc">Phú Quốc</option>
-                <option value="Sa Pa">Sa Pa</option>
-            </select>
-            <select id="priceFilter">
-                <option value="">Tất cả</option>
-                <option value="low">Dưới 3 triệu</option>
-                <option value="medium">3–6 triệu</option>
-                <option value="high">Trên 6 triệu</option>
-            </select>
+            <label for="search-input">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+            </label>
+            <label for="locationFilter">
+                <select id="locationFilter">
+                    <option value="">Tất cả</option>
+                    <option value="Đà Lạt">Đà Lạt</option>
+                    <option value="Phú Quốc">Phú Quốc</option>
+                    <option value="Sa Pa">Sa Pa</option>
+                </select>
+            </label>
+
+            <label for="priceFilter">
+                <select id="priceFilter">
+                    <option value="">Tất cả</option>
+                    <option value="low">Dưới 3 triệu</option>
+                    <option value="medium">3–6 triệu</option>
+                    <option value="high">Trên 6 triệu</option>
+                </select>
+            </label>
         </div>
     </section>
 
@@ -347,7 +356,9 @@
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <label for="email">
+                        <input id="email" name="email" type="email" placeholder="Nhập email của bạn..." required>
+                    </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
             </div>
@@ -398,7 +409,8 @@
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật
+                        </a></li>
                     </ul>
                 </div>
 
