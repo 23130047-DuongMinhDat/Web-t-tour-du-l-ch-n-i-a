@@ -1,18 +1,28 @@
+/* RESET + BASE */
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
-    --blue: #0099cc;
-    --dark-blue: #0077aa;
-    --light-blue: #e6f7ff;
+    --primary: #0099cc;
+    --primary-hover: #0077aa;
+    --primary-light: #e6f7ff;
     --text-dark: #333;
+    --text-medium: #555;
     --text-light: #777;
+    --bg-light: #f8f9fa;
     --white: #fff;
+    --border: #e0e0e0;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     --radius: 12px;
+
+    /* Thêm biến responsive */
+    --container-width: 1200px;
 }
 
+/* Typography & Body */
 html {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -20,51 +30,66 @@ html {
 }
 
 body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
     background: #fafafa;
     color: var(--text-dark);
-    line-height: 1.35;
+    line-height: 1.6;
     min-height: 100vh;
 }
 
-/* Buttons */
+/* Layout container */
+.container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* BUTTON */
 .btn {
+    display: inline-block;
     padding: 10px 20px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     border: none;
     border-radius: 8px;
-    outline: none;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--white);
+    background: var(--primary);
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
+    background: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow);
 }
 
+/* IMG */
 img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-input {
-    padding: 10px;
-    border: solid #ccc;
+/* INPUT */
+input, select, textarea {
+    padding: 10px 12px;
+    border: 2px solid #ccc;
     border-radius: 8px;
     outline: none;
     font-size: 1em;
-    border-width: 2px;
+    width: 100%;
+    transition: border-color 0.2s;
 }
 
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+}
 
+/* MAIN WRAPPER */
 main {
-    padding: 20px;
+    padding: 40px 20px;
 }
 
-
+/* ANIMATIONS */
 @keyframes fadeUp {
     from {
         transform: translateY(30px);
@@ -75,6 +100,3 @@ main {
         opacity: 1;
     }
 }
-
-
-

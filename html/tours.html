@@ -84,19 +84,23 @@
                 </a>
             </div>
 
-            <!-- Search Box (Quan trọng cho e-commerce) -->
-            <div class="search-box">
-                <form action="search.html" method="GET">
+            <!-- SEARCH BOX NỔI BẬT -->
+            <div class="search-box highlight">
+                <form action="search.html" method="GET" id="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text"
-                               name="q"
-                               placeholder="Tìm điểm đến, tour du lịch..."
-                               class="search-input"
-                               autocomplete="off">
-                        <button type="submit" class="search-btn">Tìm kiếm</button>
+                        <input
+                                type="text"
+                                name="q"
+                                id="search-input"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Tìm ngay</button>
                     </div>
-                    <!-- Search suggestions dropdown (có thể thêm) -->
+                    <!-- Gợi ý tìm kiếm -->
+                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -198,10 +202,10 @@
                     </div>
                 </li>
 
-                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
 
             <!-- Quick links bên phải -->
@@ -244,7 +248,7 @@
                 <div class="tour-info">
                     <h3>Vịnh Hạ Long</h3>
                     <p>Di sản thế giới UNESCO – khám phá các đảo đá vôi & hang động huyền bí.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=halong" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -254,7 +258,7 @@
                 <div class="tour-info">
                     <h3>Đảo Phú Quốc</h3>
                     <p>Bãi biển trong xanh và hệ sinh thái phong phú – thiên đường nghỉ dưỡng.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=phuquoc" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -264,7 +268,7 @@
                 <div class="tour-info">
                     <h3>Phố cổ Hội An</h3>
                     <p>Thăm quan lịch sử và văn hóa với những con phố đèn lồng đầy mê hoặc.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=hoian" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -274,7 +278,7 @@
                 <div class="tour-info">
                     <h3>Thành phố Đà Nẵng</h3>
                     <p>Thành phố hiện đại với bãi biển tuyệt đẹp và Cầu Vàng nổi tiếng.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=danang" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -284,7 +288,7 @@
                 <div class="tour-info">
                     <h3>Vùng cao Sapa</h3>
                     <p>Khám phá bản làng dân tộc, ruộng bậc thang và trải nghiệm núi non.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=sapa" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -294,7 +298,7 @@
                 <div class="tour-info">
                     <h3>Bãi biển Nha Trang</h3>
                     <p>Thư giãn bên làn nước xanh ngọc và trải nghiệm nhịp sống biển sôi động.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=nhatrang" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -304,7 +308,7 @@
                 <div class="tour-info">
                     <h3>Kinh thành Huế</h3>
                     <p>Khám phá hoàng thành và các ngôi đền cổ triều Nguyễn.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=hue" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -314,7 +318,7 @@
                 <div class="tour-info">
                     <h3>Đồng bằng sông Cửu Long</h3>
                     <p>Trải nghiệm chợ nổi và cảnh quan xanh tươi miền Nam Việt Nam.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=mekong" class="btn">Xem chi tiết</a>
                 </div>
             </div>
 
@@ -324,7 +328,8 @@
                 <div class="tour-info">
                     <h3>Vòng cung Hà Giang</h3>
                     <p>Chinh phục những con đèo tuyệt đẹp và khám phá bản làng dân tộc.</p>
-                    <a href="tour-details.html" class="btn">Xem chi tiết</a>
+                    <a href="tour-detail.html?id=hagiang" class="btn">Xem chi tiết</a>
+
                 </div>
             </div>
 
@@ -392,10 +397,8 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách hủy tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Điều khoản sử dụng</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách bảo mật</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
                     </ul>
                 </div>
 

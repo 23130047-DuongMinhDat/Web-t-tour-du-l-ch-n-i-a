@@ -37,7 +37,6 @@
                     <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
                 </div>
 
-
                 <!-- User Auth -->
                 <div class="user-auth">
                     <!-- Khi chưa đăng nhập -->
@@ -83,31 +82,33 @@
                 </a>
             </div>
 
-            <!-- Search Box (Quan trọng cho e-commerce) -->
-            <div class="search-box">
-                <form action="search.html" method="GET">
+            <!-- Search Box -->
+            <div class="search-box highlight">
+                <form action="search.html" method="GET" id="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input type="text"
-                               name="q"
-                               placeholder="Tìm điểm đến, tour du lịch..."
-                               class="search-input"
-                               autocomplete="off">
-                        <button type="submit" class="search-btn">Tìm kiếm</button>
+                        <input
+                                type="text"
+                                name="q"
+                                id="search-input"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Tìm ngay</button>
                     </div>
-                    <!-- Search suggestions dropdown (có thể thêm) -->
+                    <!-- Gợi ý tìm kiếm -->
+                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
             <!-- Header Actions -->
             <div class="header-actions">
-                <!-- Wishlist -->
                 <a href="favorites.html" class="header-icon" title="Yêu thích">
                     <i class="fas fa-heart"></i>
                     <span class="badge">3</span>
                 </a>
 
-                <!-- Notifications -->
                 <div class="header-icon notification-icon">
                     <i class="fas fa-bell"></i>
                     <span class="badge">5</span>
@@ -124,13 +125,11 @@
                                     <span class="time">2 giờ trước</span>
                                 </div>
                             </a>
-                            <!-- More notifications -->
                         </div>
                         <a href="notifications.html" class="view-all">Xem tất cả</a>
                     </div>
                 </div>
 
-                <!-- Cart/Booking (Giỏ tour) -->
                 <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">2</span>
@@ -138,7 +137,6 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
@@ -197,10 +195,10 @@
                     </div>
                 </li>
 
-                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Điểm đến</a></li>
                 <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
 
             <!-- Quick links bên phải -->
@@ -215,7 +213,7 @@
 <!-- Contact Us Section -->
 <main>
     <h1>Liên hệ</h1>
-    <div class="container">
+    <div class="containerbox">
         <div class="grid">
             <!-- Contact Information -->
             <div class="contact-info flex card">
@@ -300,7 +298,6 @@
     <div class="footer-main">
         <div class="container">
             <div class="footer-grid">
-
                 <!-- About -->
                 <div class="footer-column footer-about">
                     <div class="footer-logo">
@@ -308,7 +305,6 @@
                         <span>VietTravel</span>
                     </div>
                     <p>VietTravel là nền tảng đặt tour du lịch nội địa uy tín hàng đầu Việt Nam.</p>
-
                     <div class="footer-social">
                         <h4>Kết nối với chúng tôi</h4>
                         <div class="social-links">
@@ -339,10 +335,10 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách hủy tour</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Điều khoản sử dụng</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Chính sách bảo mật</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật
+                        </a></li>
+
                     </ul>
                 </div>
 
@@ -378,7 +374,6 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </div>
@@ -414,7 +409,6 @@
     <div class="back-to-top">
         <a href="#"><i class="fas fa-chevron-up"></i></a>
     </div>
-
 </footer>
 
 <script src="../assets/js/contact.js"></script>

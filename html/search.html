@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm tour - VietTravel</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- CSS chung -->
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- CSS riêng -->
+    <link rel="stylesheet" href="../assets/css/search.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone-alt"></i> Hotline: 1900 xxxx</span>
+                    <span><i class="fas fa-envelope"></i> support@viettravel.vn</span>
+                    <span><i class="fas fa-clock"></i> 24/7 Hỗ trợ</span>
+                </div>
+            </div>
+            <div class="top-bar-right">
+                <div class="social-icons">
+                    <a href="#" title="Google"><i class="fab fa-google"></i></a>
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="user-auth">
+                    <div class="guest-menu">
+                        <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
+                        <span class="divider">|</span>
+                        <a href="register.html">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-plane-departure"></i>
+                    <span class="logo-text">VietTravel</span>
+                    <span class="logo-slogan">Khám phá Việt Nam</span>
+                </a>
+            </div>
+
+            <!-- SEARCH BOX NỔI BẬT -->
+            <div class="search-box highlight">
+                <form action="search.html" method="GET" id="search-form">
+                    <div class="search-input-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input
+                                type="text"
+                                name="q"
+                                id="search-input"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                        >
+                        <button type="submit" class="search-btn">Tìm ngay</button>
+                    </div>
+                    <!-- Gợi ý tìm kiếm -->
+                    <div class="search-suggestions" id="suggestions"></div>
+                </form>
+            </div>
+
+            <div class="header-actions">
+                <a href="favorites.html" class="header-icon" title="Yêu thích">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge">3</span>
+                </a>
+                <div class="header-icon notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">5</span>
+                </div>
+                <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge">2</span>
+                    <span class="cart-text">Giỏ tour</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li class="has-mega-menu">
+                    <a href="tours.html"><i class="fas fa-map-marked-alt"></i> Tour du lịch <i class="fas fa-chevron-down"></i></a>
+                    <!-- mega menu -->
+                </li>
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
+                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
+            </ul>
+            <div class="nav-right">
+
+                <a href="partner.html" class="nav-cta">
+                    <i class="fas fa-handshake">
+                    </i>
+                    Hợp tác với chúng tôi
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="search-page">
+    <div class="container">
+        <div class="search-header">
+            <h1 class="page-title">Kết quả tìm kiếm: <span id="query-text">"Sapa"</span></h1>
+            <p class="result-count">Tìm thấy <strong>12</strong> tour phù hợp</p>
+        </div>
+
+        <div class="search-content">
+            <!-- Bộ lọc bên trái -->
+            <aside class="filter-sidebar">
+                <div class="filter-group">
+                    <h3>Giá tour</h3>
+                    <label><input type="radio" name="price" value="all" checked> Tất cả</label>
+                    <label><input type="radio" name="price" value="under2"> Dưới 2 triệu</label>
+                    <label><input type="radio" name="price" value="2to5"> 2 - 5 triệu</label>
+                    <label><input type="radio" name="price" value="5to10"> 5 - 10 triệu</label>
+                    <label><input type="radio" name="price" value="over10"> Trên 10 triệu</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Thời gian</h3>
+                    <label><input type="radio" name="duration" value="all" checked> Tất cả</label>
+                    <label><input type="radio" name="duration" value="1-2"> 1-2 ngày</label>
+                    <label><input type="radio" name="duration" value="3-4"> 3-4 ngày</label>
+                    <label><input type="radio" name="duration" value="5plus"> 5+ ngày</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Điểm khởi hành</h3>
+                    <select>
+                        <option>Hà Nội</option>
+                        <option>TP. HCM</option>
+                        <option>Đà Nẵng</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-apply">Áp dụng bộ lọc</button>
+            </aside>
+
+            <!-- Danh sách tour -->
+           <div class="search-results">
+
+                <!-- 1. Vịnh Hạ Long -->
+                <div class="tour-card" data-keyword="hạ long halong bay vinh">
+                    <img src="../assets/images/popular-1.jpg" alt="Vịnh Hạ Long">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=halong">Vịnh Hạ Long - Du Thuyền 5* 2N1Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>2 ngày 1 đêm</span>
+                            <span>Hà Nội → Hạ Long</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.8</span> (201 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">2.800.000đ</span>
+                            <span class="new-price">2.450.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=halong" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 2. Đảo Phú Quốc -->
+                <div class="tour-card" data-keyword="phú quốc phuquoc biển đảo">
+                    <img src="../assets/images/popular-2.jpg" alt="Đảo Phú Quốc">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=phuquoc">Phú Quốc - Thiên Đường Biển 4N3Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>4 ngày 3 đêm</span>
+                            <span>TP.HCM → Phú Quốc</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.9</span> (156 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">7.500.000đ</span>
+                            <span class="new-price">6.800.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=phuquoc" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 3. Phố cổ Hội An -->
+                <div class="tour-card" data-keyword="hội an hoian cổ kính đèn lồng">
+                    <img src="../assets/images/popular-3.jpg" alt="Phố cổ Hội An">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=hoian">Hội An - Phố Cổ Đèn Lồng 2N1Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>2 ngày 1 đêm</span>
+                            <span>Đà Nẵng → Hội An</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.8</span> (112 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">1.800.000đ</span>
+                            <span class="new-price">1.590.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=hoian" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 4. Thành phố Đà Nẵng -->
+                <div class="tour-card" data-keyword="đà nẵng danang cầu vàng biển">
+                    <img src="../assets/images/da_nang.jpg" alt="Thành phố Đà Nẵng">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=danang">Đà Nẵng - Cầu Vàng & Biển Mỹ Khê 3N2Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>3 ngày 2 đêm</span>
+                            <span>TP.HCM → Đà Nẵng</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.7</span> (145 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">4.500.000đ</span>
+                            <span class="new-price">3.990.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=danang" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 5. Vùng cao Sapa -->
+                <div class="tour-card" data-keyword="sapa fansipan ruộng bậc thang">
+                    <img src="../assets/images/sapa.jpg" alt="Sapa">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=sapa">Sapa - Fansipan & Bản Làng 3N2Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>3 ngày 2 đêm</span>
+                            <span>Hà Nội → Sapa</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.8</span> (128 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">3.500.000đ</span>
+                            <span class="new-price">2.990.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=sapa" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 6. Bãi biển Nha Trang -->
+                <div class="tour-card" data-keyword="nha trang nhatrang vinpearl biển">
+                    <img src="../assets/images/nha_trang.jpg" alt="Bãi biển Nha Trang">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=nhatrang">Nha Trang - Vinpearl & Lặn Biển 3N2Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>3 ngày 2 đêm</span>
+                            <span>TP.HCM → Nha Trang</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.6</span> (97 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">5.200.000đ</span>
+                            <span class="new-price">4.699.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=nhatrang" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 7. Kinh thành Huế -->
+                <div class="tour-card" data-keyword="huế hue cố đô kinh thành">
+                    <img src="../assets/images/hue.jpg" alt="Kinh thành Huế">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=hue">Huế - Cố Đô & Lăng Tẩm 3N2Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>3 ngày 2 đêm</span>
+                            <span>Đà Nẵng → Huế</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.5</span> (78 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">3.200.000đ</span>
+                            <span class="new-price">2.890.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=hue" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 8. Đồng bằng sông Cửu Long -->
+                <div class="tour-card" data-keyword="cửu long mekong chợ nổi miền tây">
+                    <img src="../assets/images/dong_bang_song_cuu_long.jpg" alt="Đồng bằng sông Cửu Long">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=mekong">Mekong - Chợ Nổi Cái Răng 2N1Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>2 ngày 1 đêm</span>
+                            <span>TP.HCM → Cần Thơ</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.7</span> (89 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">1.900.000đ</span>
+                            <span class="new-price">1.690.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=mekong" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+                <!-- 9. Vòng cung Hà Giang -->
+                <div class="tour-card" data-keyword="hà giang hagiang đèo mả pí lùng cờ">
+                    <img src="../assets/images/ha_giang.jpg" alt="Vòng cung Hà Giang">
+                    <div class="tour-info">
+                        <h3><a href="tour-detail.html?id=hagiang">Hà Giang - Đèo Mã Pí Lèng 4N3Đ</a></h3>
+                        <p class="tour-meta">
+                            <span>4 ngày 3 đêm</span>
+                            <span>Hà Nội → Hà Giang</span>
+                        </p>
+                        <div class="tour-rating">
+                            <span>4.9</span> (67 đánh giá)
+                        </div>
+                        <div class="tour-price">
+                            <span class="old-price">5.800.000đ</span>
+                            <span class="new-price">5.200.000đ</span>
+                        </div>
+                        <a href="tour-detail.html?id=hagiang" class="btn btn-book">Xem chi tiết</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Phân trang -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span>...</span>
+            <button class="page-btn">5</button>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <!-- Newsletter -->
+    <div class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
+                    <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Footer -->
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- About -->
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane-departure"></i>
+                        <span>VietTravel</span>
+                    </div>
+                    <p>VietTravel là nền tảng đặt tour du lịch nội địa uy tín hàng đầu Việt Nam.</p>
+
+                    <div class="footer-social">
+                        <h4>Kết nối với chúng tôi</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Links -->
+                <div class="footer-column">
+                    <h3>Tour nổi bật</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Bắc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Trung</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Miền Nam</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Đà Lạt</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Phú Quốc</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Tour Sapa</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <h3>Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Hà Nội:</strong>
+                                <p>123 Phố Huế, Hai Bà Trưng</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>TP.HCM:</strong>
+                                <p>456 Nguyễn Huệ, Q.1</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <p><a href="tel:1900xxxx">1900 xxxx</a> (24/7)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p><a href="mailto:support@viettravel.vn">support@viettravel.vn</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Methods -->
+    <div class="footer-payment">
+        <div class="container">
+            <div class="payment-info">
+                <h4>Phương thức thanh toán</h4>
+                <div class="payment-methods">
+                    <img src="../assets/images/payment-momo.png" alt="MoMo">
+                    <img src="../assets/images/payment-zalopay.png" alt="ZaloPay">
+                    <img src="../assets/images/payment-vnpay.png" alt="VNPay">
+                    <img src="../assets/images/payment-visa.png" alt="Visa">
+                    <img src="../assets/images/payment-banking.png" alt="Banking">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <p>© 2025 VietTravel. All rights reserved.</p>
+                <p class="company-info">
+                    <strong>Công ty TNHH Du Lịch VietTravel</strong> - GPKD: 0123456789
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top">
+        <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+</footer>
+
+<!-- JS -->
+<script src="../assets/js/search.js"></script>
+</body>
+</html>
