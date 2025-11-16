@@ -84,21 +84,23 @@
 
             <!-- Search Box -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
                         <input
                                 type="text"
+                                id="searchQuery"
                                 name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                placeholder="Tìm điểm đến, tour du lịch..."
                                 class="search-input"
                                 autocomplete="off"
+                                required
                         >
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -212,8 +214,8 @@
 </header>
 <!-- Contact Us Section -->
 <main>
-    <h1>Liên hệ</h1>
-    <div class="containerbox">
+    <h1>Liên hệ với chúng tôi</h1>
+    <div class="container">
         <div class="grid">
             <!-- Contact Information -->
             <div class="contact-info flex card">
@@ -286,8 +288,11 @@
                     <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
+                <form class="newsletter-form" method="POST" action="">
+                    <label>
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Nhập email của bạn..."
+                               required>
+                    </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
             </div>

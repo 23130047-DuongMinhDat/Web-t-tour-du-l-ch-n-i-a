@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Chi Tiết Tour - Vịnh Hạ Long - VietTravel</title>
 
@@ -93,14 +93,16 @@
                 <form action="search.html" method="GET" id="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <input
-                                type="text"
-                                name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                class="search-input"
-                                autocomplete="off"
-                        >
+                        <label for="search-input">
+                            <input
+                                    type="text"
+                                    name="q"
+                                    id="search-input"
+                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                    class="search-input"
+                                    autocomplete="off"
+                            >
+                        </label>
                         <button type="submit" class="search-btn">Tìm ngay</button>
                     </div>
                     <!-- Gợi ý tìm kiếm -->
@@ -207,7 +209,7 @@
                     </div>
                 </li>
 
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
@@ -247,7 +249,8 @@
                 <div class="tour-highlights">
                     <h2>Thông tin nổi bật</h2>
                     <ul>
-                        <li><i class="fas fa-clock"></i> <strong>Thời gian:</strong> <span id="duration">3 ngày 2 đêm</span></li>
+                        <li><i class="fas fa-clock"></i> <strong>Thời gian:</strong> <span
+                                id="duration">3 ngày 2 đêm</span></li>
                         <li><i class="fas fa-map-marker-alt"></i> <strong>Điểm khởi hành:</strong> Hà Nội</li>
                         <li><i class="fas fa-users"></i> <strong>Số chỗ còn:</strong> <span id="slots">25</span>/30</li>
                         <li><i class="fas fa-star"></i> <strong>Đánh giá:</strong> 4.8 (128)</li>
@@ -264,18 +267,18 @@
                 <!-- Booking Form -->
                 <div class="booking-card">
                     <h3>Đặt tour ngay</h3>
-                    <form id="bookingForm">
+                    <form id="bookingForm" method="POST" action="">
                         <div class="form-group">
-                            <label>Ngày khởi hành</label>
-                            <input type="date" id="departDate" required>
+                            <label for="departDate">Ngày khởi hành</label>
+                            <input type="date" id="departDate" name="departDate" required>
                         </div>
                         <div class="form-group">
-                            <label>Số người lớn</label>
-                            <input type="number" id="adults" min="1" value="1">
+                            <label for="adults">Số người lớn</label>
+                            <input type="number" id="adults" name="adults" min="1" value="1">
                         </div>
                         <div class="form-group">
-                            <label>Trẻ em (6-11 tuổi)</label>
-                            <input type="number" id="children" min="0" value="0">
+                            <label for="children">Trẻ em (6-11 tuổi)</label>
+                            <input type="number" id="children" name="children" min="0" value="0">
                         </div>
                         <div class="total-price">
                             <strong>Tổng tiền:</strong>
@@ -298,7 +301,8 @@
                 <div class="tab-content">
                     <div id="overview" class="tab-pane active">
                         <h3>Giới thiệu tour</h3>
-                        <p>Khám phá Vịnh Hạ Long – Di sản thiên nhiên thế giới với hơn 1.600 đảo đá vôi, hang động kỳ vĩ và làn nước xanh ngọc...</p>
+                        <p>Khám phá Vịnh Hạ Long – Di sản thiên nhiên thế giới với hơn 1.600 đảo đá vôi, hang động kỳ vĩ
+                            và làn nước xanh ngọc...</p>
                         <img src="../assets/images/tour-detail/halong-cave.jpg" alt="Hang Sửng Sốt">
                     </div>
                     <div id="itinerary" class="tab-pane">
@@ -338,7 +342,9 @@
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <label for="email">
+                        <input id="email" name="email" type="email" placeholder="Nhập email của bạn..." required>
+                    </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
             </div>
@@ -389,7 +395,8 @@
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật
+                        </a></li>
 
                     </ul>
                 </div>

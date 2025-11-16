@@ -35,6 +35,10 @@ input[type="text"], input[type="email"], input[type="tel"] {
     margin-bottom: 12px;
 }
 
+#searchQuery {
+    margin-bottom: 0;
+}
+
 .summary-item {
     display: flex;
     align-items: center;

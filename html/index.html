@@ -90,21 +90,23 @@
 
             <!-- Search Box (Quan trọng cho e-commerce) -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
                         <input
                                 type="text"
+                                id="searchQuery"
                                 name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                placeholder="Tìm điểm đến, tour du lịch..."
                                 class="search-input"
                                 autocomplete="off"
+                                required
                         >
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -253,25 +255,53 @@
 
     <!-- TOUR SEARCH -->
     <section class="tour-search">
-        <form action="">
+        <form method="GET" action="">
             <div class="input-group">
                 <label for="destination">Điểm đến</label>
-                <input type="text" id="destination" placeholder="Nhập điểm đến">
+                <input
+                        type="text"
+                        id="destination"
+                        name="destination"
+                        placeholder="Nhập điểm đến"
+                        required
+                        autocomplete="off"
+                >
             </div>
+
             <div class="input-group">
                 <label for="pax">Số người</label>
-                <input type="number" id="pax" placeholder="Số lượng khách">
+                <input
+                        type="number"
+                        id="pax"
+                        name="pax"
+                        placeholder="Số lượng khách"
+                        min="1"
+                        required
+                >
             </div>
+
             <div class="input-group">
                 <label for="check-in">Ngày đi</label>
-                <input type="date" id="check-in">
+                <input
+                        type="date"
+                        id="check-in"
+                        name="checkIn"
+                        required
+                >
             </div>
+
             <div class="input-group">
                 <label for="check-out">Ngày về</label>
-                <input type="date" id="check-out">
+                <input
+                        type="date"
+                        id="check-out"
+                        name="checkOut"
+                        required
+                >
             </div>
+
             <div class="btn btn-group">
-                <button class="btn">Tìm tour</button>
+                <button type="submit" class="btn">Tìm tour</button>
             </div>
         </form>
     </section>
@@ -361,14 +391,28 @@
     <section class="newsletter" data-aos="fade-up">
         <h2>Đăng ký nhận tin</h2>
         <p>Cập nhật các tour mới và ưu đãi hấp dẫn</p>
-        <form>
-            <label for="name">
-                <input id="name" type="text" placeholder="Họ và tên" required>
-            </label>
-            <label for="email">
-                <input id="email" type="email" placeholder="Email của bạn" required>
-            </label>
-            <button class="btn">Đăng ký</button>
+        <form method="POST" action="">
+            <label for="fullName" class="visually-hidden"></label>
+            <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="Họ và tên"
+                    required
+                    autocomplete="name"
+            >
+
+            <label for="userEmail" class="visually-hidden"></label>
+            <input
+                    id="userEmail"
+                    name="userEmail"
+                    type="email"
+                    placeholder="Email của bạn"
+                    required
+                    autocomplete="email"
+            >
+
+            <button type="submit" class="btn">Đăng ký</button>
         </form>
     </section>
 </main>
@@ -382,8 +426,10 @@
                     <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
+                <form class="newsletter-form" method="POST" action="">
+                    <label>
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn..." required>
+                    </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
             </div>

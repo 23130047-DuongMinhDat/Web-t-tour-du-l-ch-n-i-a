@@ -85,21 +85,23 @@
 
             <!-- Search Box -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                        <label for="searchQuery" class="visually-hidden">Tìm kiếm tour hoặc điểm đến</label>
                         <input
                                 type="text"
+                                id="searchQuery"
                                 name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                placeholder="Tìm điểm đến, tour du lịch..."
                                 class="search-input"
                                 autocomplete="off"
+                                required
                         >
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -200,7 +202,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
@@ -231,50 +233,63 @@
                     </div>
                     <h1>Mẹo Du Lịch Thiết Yếu Cho Người Lần Đầu Đến Việt Nam</h1>
                     <p class="intro">
-                        Đang lên kế hoạch cho chuyến đi đầu tiên đến Việt Nam? Quốc gia hình chữ S nổi tiếng với cảnh quan đa dạng,
+                        Đang lên kế hoạch cho chuyến đi đầu tiên đến Việt Nam? Quốc gia hình chữ S nổi tiếng với cảnh
+                        quan đa dạng,
                         văn hóa phong phú và con người hiếu khách sẽ là điểm dừng chân tuyệt vời cho mọi du khách.
-                        Tuy nhiên, nếu đây là lần đầu bạn đến Việt Nam, có một số điều quan trọng cần nắm rõ để chuyến đi của bạn thật suôn sẻ.
+                        Tuy nhiên, nếu đây là lần đầu bạn đến Việt Nam, có một số điều quan trọng cần nắm rõ để chuyến
+                        đi của bạn thật suôn sẻ.
                     </p>
 
                     <p>
-                        <strong>1. Visa & thủ tục nhập cảnh:</strong> Đa số du khách có thể xin e-visa nhanh chóng qua trang chính thức của
-                        Chính phủ Việt Nam. Nên chuẩn bị ảnh, hộ chiếu còn hạn 6 tháng và thông tin nơi lưu trú. Đến sân bay, hãy theo
+                        <strong>1. Visa & thủ tục nhập cảnh:</strong> Đa số du khách có thể xin e-visa nhanh chóng qua
+                        trang chính thức của
+                        Chính phủ Việt Nam. Nên chuẩn bị ảnh, hộ chiếu còn hạn 6 tháng và thông tin nơi lưu trú. Đến sân
+                        bay, hãy theo
                         bảng hướng dẫn “Immigration” để làm thủ tục dễ dàng.
                     </p>
 
                     <p>
-                        <strong>2. Thời tiết & mùa du lịch:</strong> Khí hậu Việt Nam chia theo vùng. Miền Bắc có bốn mùa rõ rệt, miền Trung
-                        thường có mưa bão từ tháng 9–11, trong khi miền Nam nắng quanh năm. Kiểm tra thời tiết trước khi đi giúp bạn chuẩn
+                        <strong>2. Thời tiết & mùa du lịch:</strong> Khí hậu Việt Nam chia theo vùng. Miền Bắc có bốn
+                        mùa rõ rệt, miền Trung
+                        thường có mưa bão từ tháng 9–11, trong khi miền Nam nắng quanh năm. Kiểm tra thời tiết trước khi
+                        đi giúp bạn chuẩn
                         bị trang phục phù hợp.
                     </p>
 
                     <p>
-                        <strong>3. Phương tiện di chuyển:</strong> Taxi công nghệ (Grab, Be), xe máy cho thuê, tàu hỏa và máy bay nội địa
-                        đều rất dễ tiếp cận. Nếu đi xe máy, bạn nên biết luật giao thông cơ bản và luôn đội mũ bảo hiểm đạt chuẩn.
+                        <strong>3. Phương tiện di chuyển:</strong> Taxi công nghệ (Grab, Be), xe máy cho thuê, tàu hỏa
+                        và máy bay nội địa
+                        đều rất dễ tiếp cận. Nếu đi xe máy, bạn nên biết luật giao thông cơ bản và luôn đội mũ bảo hiểm
+                        đạt chuẩn.
                     </p>
 
                     <p>
-                        <strong>4. Ẩm thực & an toàn ăn uống:</strong> Việt Nam có hàng ngàn món ngon, nhưng hãy chọn quán đông khách,
+                        <strong>4. Ẩm thực & an toàn ăn uống:</strong> Việt Nam có hàng ngàn món ngon, nhưng hãy chọn
+                        quán đông khách,
                         sạch sẽ. Tránh uống nước đá ở các quán vỉa hè nếu bạn có hệ tiêu hóa nhạy cảm.
                     </p>
 
                     <p>
-                        <strong>5. Tiền tệ & thanh toán:</strong> Tiền mặt vẫn rất phổ biến, nhưng các ví điện tử và thanh toán QR ngày càng
+                        <strong>5. Tiền tệ & thanh toán:</strong> Tiền mặt vẫn rất phổ biến, nhưng các ví điện tử và
+                        thanh toán QR ngày càng
                         phổ biến tại thành phố lớn. Luôn mang theo một chút tiền mặt để dùng khi cần.
                     </p>
 
                     <p>
-                        <strong>6. Giao tiếp & văn hóa:</strong> Người Việt rất thân thiện, sẵn sàng giúp đỡ. Hãy học vài câu cơ bản như
+                        <strong>6. Giao tiếp & văn hóa:</strong> Người Việt rất thân thiện, sẵn sàng giúp đỡ. Hãy học
+                        vài câu cơ bản như
                         “Xin chào” và “Cảm ơn” để tạo thiện cảm.
                     </p>
 
                     <p>
-                        Đây chỉ là một phần trong số những điều bạn cần biết, nhưng nếu chuẩn bị kỹ lưỡng, chuyến du lịch Việt Nam của bạn chắc chắn sẽ đầy ắp trải nghiệm đáng nhớ.
+                        Đây chỉ là một phần trong số những điều bạn cần biết, nhưng nếu chuẩn bị kỹ lưỡng, chuyến du
+                        lịch Việt Nam của bạn chắc chắn sẽ đầy ắp trải nghiệm đáng nhớ.
                     </p>
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Nguyễn Minh Anh</h4><p>Travel Blogger – Đã đi 63 tỉnh thành</p></div>
+                        <div><h4>Nguyễn Minh Anh</h4>
+                            <p>Travel Blogger – Đã đi 63 tỉnh thành</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -285,8 +300,14 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (8)</h3>
-                        <div class="comment"><img src="../assets/images/avatar-default.png" alt="User"><div><h5>Lan Hương</h5><p>Cảm ơn bài viết rất hữu ích!</p><span>2 giờ trước</span></div></div>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <div class="comment"><img src="../assets/images/avatar-default.png" alt="User">
+                            <div><h5>Lan Hương</h5>
+                                <p>Cảm ơn bài viết rất hữu ích!</p><span>2 giờ trước</span></div>
+                        </div>
+                        <form class="comment-form">
+                            <textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
 
@@ -309,39 +330,48 @@
                     </div>
                     <h1>Ẩm Thực Đường Phố Việt Nam: Cuộc Phiêu Lưu Ẩm Thực</h1>
                     <p class="intro">
-                        Khám phá thế giới sôi động của ẩm thực đường phố Việt Nam – một trong những “thiên đường ẩm thực” được du khách
-                        quốc tế ca ngợi. Mỗi món ăn không chỉ ngon mà còn phản ánh văn hóa, lối sống và tinh thần của từng vùng đất.
+                        Khám phá thế giới sôi động của ẩm thực đường phố Việt Nam – một trong những “thiên đường ẩm
+                        thực” được du khách
+                        quốc tế ca ngợi. Mỗi món ăn không chỉ ngon mà còn phản ánh văn hóa, lối sống và tinh thần của
+                        từng vùng đất.
                     </p>
 
                     <p>
-                        <strong>1. Phở – tinh hoa ẩm thực Việt:</strong> Dù Bắc hay Nam đều có cách nấu riêng, phở vẫn giữ linh hồn từ
-                        nước dùng trong, vị ngọt tự nhiên và bánh phở mềm. Một tô phở nóng vào sáng sớm chắc chắn sẽ làm bạn nhớ mãi.
+                        <strong>1. Phở – tinh hoa ẩm thực Việt:</strong> Dù Bắc hay Nam đều có cách nấu riêng, phở vẫn
+                        giữ linh hồn từ
+                        nước dùng trong, vị ngọt tự nhiên và bánh phở mềm. Một tô phở nóng vào sáng sớm chắc chắn sẽ làm
+                        bạn nhớ mãi.
                     </p>
 
                     <p>
-                        <strong>2. Bánh mì – biểu tượng ẩm thực đường phố:</strong> Với lớp vỏ giòn đặc trưng, bánh mì Việt Nam được kết hợp
+                        <strong>2. Bánh mì – biểu tượng ẩm thực đường phố:</strong> Với lớp vỏ giòn đặc trưng, bánh mì
+                        Việt Nam được kết hợp
                         cùng pate, thịt nguội, rau thơm và nước sốt đặc biệt, tạo nên món ăn vừa rẻ vừa ngon.
                     </p>
 
                     <p>
-                        <strong>3. Bún chả, bún bò, hủ tiếu:</strong> Mỗi vùng có món ăn đặc sản riêng. Nếu Hà Nội nổi bật với bún chả thì
+                        <strong>3. Bún chả, bún bò, hủ tiếu:</strong> Mỗi vùng có món ăn đặc sản riêng. Nếu Hà Nội nổi
+                        bật với bún chả thì
                         Huế ghi dấu bằng bún bò cay nồng, còn miền Nam mang hương vị đậm đà của hủ tiếu.
                     </p>
 
                     <p>
-                        <strong>4. Ẩm thực vỉa hè – nơi văn hóa hội tụ:</strong> Ngồi trên những chiếc ghế nhựa nhỏ, thưởng thức món ăn
+                        <strong>4. Ẩm thực vỉa hè – nơi văn hóa hội tụ:</strong> Ngồi trên những chiếc ghế nhựa nhỏ,
+                        thưởng thức món ăn
                         nóng hổi và quan sát dòng người qua lại là một trải nghiệm rất “Việt Nam”.
                     </p>
 
                     <p>
-                        Từ món mặn đến món ngọt, từ đồ ăn nhanh đến những món ăn cầu kỳ – ẩm thực đường phố Việt Nam luôn khiến du khách
+                        Từ món mặn đến món ngọt, từ đồ ăn nhanh đến những món ăn cầu kỳ – ẩm thực đường phố Việt Nam
+                        luôn khiến du khách
                         phải ngỡ ngàng trước sự đa dạng và hương vị cuốn hút.
                     </p>
 
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Trần Quốc Bảo</h4><p>Food Reviewer</p></div>
+                        <div><h4>Trần Quốc Bảo</h4>
+                            <p>Food Reviewer</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -352,7 +382,9 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (12)</h3>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
             </div>
@@ -374,38 +406,46 @@
                     </div>
                     <h1>Khám Phá Sapa: Thiên Đường Núi Non Việt Nam</h1>
                     <p class="intro">
-                        Sapa là thiên đường cho những ai yêu thiên nhiên. Với khí hậu se lạnh, sương mờ buổi sớm và những thửa ruộng bậc thang
-                        kỳ vĩ được công nhận là di sản thế giới, nơi đây là điểm đến không thể bỏ qua cho du khách trong và ngoài nước.
+                        Sapa là thiên đường cho những ai yêu thiên nhiên. Với khí hậu se lạnh, sương mờ buổi sớm và
+                        những thửa ruộng bậc thang
+                        kỳ vĩ được công nhận là di sản thế giới, nơi đây là điểm đến không thể bỏ qua cho du khách trong
+                        và ngoài nước.
                     </p>
 
                     <p>
-                        <strong>1. Ruộng bậc thang – kiệt tác của đồng bào dân tộc:</strong> Vào mùa lúa chín (tháng 9–10), cả ngọn đồi được
+                        <strong>1. Ruộng bậc thang – kiệt tác của đồng bào dân tộc:</strong> Vào mùa lúa chín (tháng
+                        9–10), cả ngọn đồi được
                         bao phủ bởi sắc vàng rực. Đây cũng là thời điểm lý tưởng để săn ảnh.
                     </p>
 
                     <p>
-                        <strong>2. Bản Cát Cát, Tả Van, Lao Chải:</strong> Du khách có thể trải nghiệm cuộc sống bản địa, xem thổ cẩm,
+                        <strong>2. Bản Cát Cát, Tả Van, Lao Chải:</strong> Du khách có thể trải nghiệm cuộc sống bản
+                        địa, xem thổ cẩm,
                         thưởng thức món ăn truyền thống và tìm hiểu phong tục độc đáo của người H’Mông, Dao, Tày.
                     </p>
 
                     <p>
-                        <strong>3. Đỉnh Fansipan – nóc nhà Đông Dương:</strong> Cáp treo hiện đại đưa bạn lên đỉnh núi chỉ trong 15 phút,
+                        <strong>3. Đỉnh Fansipan – nóc nhà Đông Dương:</strong> Cáp treo hiện đại đưa bạn lên đỉnh núi
+                        chỉ trong 15 phút,
                         nhưng cảm xúc khi chạm vào mốc cao 3.143m vẫn vô cùng đặc biệt.
                     </p>
 
                     <p>
-                        <strong>4. Thời tiết & chuẩn bị:</strong> Sapa lạnh nhất vào mùa đông (có tuyết nhẹ), nên hãy mang áo ấm và giày
+                        <strong>4. Thời tiết & chuẩn bị:</strong> Sapa lạnh nhất vào mùa đông (có tuyết nhẹ), nên hãy
+                        mang áo ấm và giày
                         chống trượt nếu trekking.
                     </p>
 
                     <p>
-                        Sapa không chỉ đẹp mà còn mang theo hồn núi rừng – một nơi mà chỉ cần đến một lần là muốn quay lại.
+                        Sapa không chỉ đẹp mà còn mang theo hồn núi rừng – một nơi mà chỉ cần đến một lần là muốn quay
+                        lại.
                     </p>
 
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Hoàng Lan</h4><p>Photographer</p></div>
+                        <div><h4>Hoàng Lan</h4>
+                            <p>Photographer</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -416,7 +456,9 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (9)</h3>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
             </div>
@@ -438,39 +480,48 @@
                     </div>
                     <h1>Hướng Dẫn Toàn Diện Du Thuyền Vịnh Hạ Long</h1>
                     <p class="intro">
-                        Vịnh Hạ Long – kỳ quan thiên nhiên thế giới – luôn nằm trong danh sách điểm đến mơ ước của mọi du khách.
-                        Đi du thuyền là cách tuyệt vời nhất để tận hưởng trọn vẹn vẻ đẹp ngoạn mục của hàng nghìn cột đá vôi sừng sững giữa biển.
+                        Vịnh Hạ Long – kỳ quan thiên nhiên thế giới – luôn nằm trong danh sách điểm đến mơ ước của mọi
+                        du khách.
+                        Đi du thuyền là cách tuyệt vời nhất để tận hưởng trọn vẹn vẻ đẹp ngoạn mục của hàng nghìn cột đá
+                        vôi sừng sững giữa biển.
                     </p>
 
                     <p>
-                        <strong>1. Các loại du thuyền:</strong> Từ du thuyền 3 sao bình dân đến du thuyền 6 sao xa hoa, mỗi phân khúc đều
-                        có phong cách phục vụ khác nhau. Du thuyền cao cấp có phòng ngủ hướng biển, bồn tắm, spa và nhà hàng đạt chuẩn.
+                        <strong>1. Các loại du thuyền:</strong> Từ du thuyền 3 sao bình dân đến du thuyền 6 sao xa hoa,
+                        mỗi phân khúc đều
+                        có phong cách phục vụ khác nhau. Du thuyền cao cấp có phòng ngủ hướng biển, bồn tắm, spa và nhà
+                        hàng đạt chuẩn.
                     </p>
 
                     <p>
-                        <strong>2. Hoạt động nổi bật:</strong> Kayak xuyên hang, bơi lội, ngắm bình minh trên boong tàu, lớp học nấu ăn
+                        <strong>2. Hoạt động nổi bật:</strong> Kayak xuyên hang, bơi lội, ngắm bình minh trên boong tàu,
+                        lớp học nấu ăn
                         Việt Nam, câu mực đêm và tham quan hang Sửng Sốt – một trong những hang động lớn nhất vịnh.
                     </p>
 
                     <p>
-                        <strong>3. Lựa chọn tour:</strong> Tour 2 ngày 1 đêm rất phổ biến, còn tour 3 ngày dành cho ai muốn trải nghiệm sâu hơn.
+                        <strong>3. Lựa chọn tour:</strong> Tour 2 ngày 1 đêm rất phổ biến, còn tour 3 ngày dành cho ai
+                        muốn trải nghiệm sâu hơn.
                         Nên đặt trước 2–4 tuần nếu đi mùa cao điểm.
                     </p>
 
                     <p>
-                        <strong>4. Lưu ý quan trọng:</strong> Kiểm tra thời tiết, mang theo đồ bơi, kem chống nắng và thuốc say sóng.
+                        <strong>4. Lưu ý quan trọng:</strong> Kiểm tra thời tiết, mang theo đồ bơi, kem chống nắng và
+                        thuốc say sóng.
                         Du thuyền sẽ di chuyển nhẹ, nhưng chuẩn bị trước sẽ giúp bạn thoải mái hơn.
                     </p>
 
                     <p>
-                        Du ngoạn vịnh bằng du thuyền là trải nghiệm kết hợp giữa thư giãn và khám phá – nơi bạn có thể tạm gác mọi ồn ào
+                        Du ngoạn vịnh bằng du thuyền là trải nghiệm kết hợp giữa thư giãn và khám phá – nơi bạn có thể
+                        tạm gác mọi ồn ào
                         để hoà mình vào thiên nhiên kỳ vĩ.
                     </p>
 
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Phạm Đức Nam</h4><p>Chuyên gia du thuyền</p></div>
+                        <div><h4>Phạm Đức Nam</h4>
+                            <p>Chuyên gia du thuyền</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -481,7 +532,9 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (15)</h3>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
             </div>
@@ -503,21 +556,25 @@
                     </div>
                     <h1>Hội An: Hành Trình Xuyên Thời Gian</h1>
                     <p class="intro">
-                        Hội An là thành phố mang vẻ đẹp cổ kính và bình yên. Đi bộ giữa những dãy phố đèn lồng, ăn cao lầu hay thả hoa đăng
+                        Hội An là thành phố mang vẻ đẹp cổ kính và bình yên. Đi bộ giữa những dãy phố đèn lồng, ăn cao
+                        lầu hay thả hoa đăng
                         trên sông Hoài là những trải nghiệm khiến du khách say lòng.
                     </p>
 
                     <p>
-                        <strong>1. Phố cổ – nơi thời gian ngừng trôi:</strong> Những ngôi nhà gỗ phủ sắc vàng cổ điển, mái ngói rêu phong
+                        <strong>1. Phố cổ – nơi thời gian ngừng trôi:</strong> Những ngôi nhà gỗ phủ sắc vàng cổ điển,
+                        mái ngói rêu phong
                         và những chiếc đèn lồng lung linh tạo nên khung cảnh đẹp như tranh.
                     </p>
 
                     <p>
-                        <strong>2. Ẩm thực Hội An:</strong> Cao lầu, cơm gà, mì Quảng và bánh mì Phượng là những món nổi tiếng du khách nhất định phải thử.
+                        <strong>2. Ẩm thực Hội An:</strong> Cao lầu, cơm gà, mì Quảng và bánh mì Phượng là những món nổi
+                        tiếng du khách nhất định phải thử.
                     </p>
 
                     <p>
-                        <strong>3. Hoạt động:</strong> Đạp xe ra biển An Bàng, thăm làng gốm Thanh Hà, thuê áo dài chụp ảnh hoặc tham gia lớp nấu ăn.
+                        <strong>3. Hoạt động:</strong> Đạp xe ra biển An Bàng, thăm làng gốm Thanh Hà, thuê áo dài chụp
+                        ảnh hoặc tham gia lớp nấu ăn.
                     </p>
 
                     <p>
@@ -530,7 +587,8 @@
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Kim Ngân</h4><p>Sống ở Hội An 8 năm</p></div>
+                        <div><h4>Kim Ngân</h4>
+                            <p>Sống ở Hội An 8 năm</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -541,7 +599,9 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (11)</h3>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
             </div>
@@ -563,38 +623,46 @@
                     </div>
                     <h1>Du Lịch Tiết Kiệm: Việt Nam Với $50/Ngày</h1>
                     <p class="intro">
-                        Không cần ngân sách lớn, bạn hoàn toàn có thể khám phá Việt Nam chỉ với 50 USD/ngày. Điều quan trọng là lên kế hoạch
+                        Không cần ngân sách lớn, bạn hoàn toàn có thể khám phá Việt Nam chỉ với 50 USD/ngày. Điều quan
+                        trọng là lên kế hoạch
                         hợp lý và lựa chọn thông minh.
                     </p>
 
                     <p>
-                        <strong>1. Lưu trú:</strong> Homestay và hostel là lựa chọn hàng đầu với giá chỉ 150.000–300.000đ/đêm. Một số nơi
+                        <strong>1. Lưu trú:</strong> Homestay và hostel là lựa chọn hàng đầu với giá chỉ
+                        150.000–300.000đ/đêm. Một số nơi
                         còn bao gồm bữa sáng miễn phí.
                     </p>
 
                     <p>
-                        <strong>2. Ăn uống:</strong> Mỗi bữa ăn đường phố chỉ 30.000–60.000đ. Bạn có thể thử nhiều món mà không lo tốn kém.
+                        <strong>2. Ăn uống:</strong> Mỗi bữa ăn đường phố chỉ 30.000–60.000đ. Bạn có thể thử nhiều món
+                        mà không lo tốn kém.
                     </p>
 
                     <p>
-                        <strong>3. Di chuyển:</strong> Xe buýt công cộng, xe máy thuê theo ngày hoặc taxi công nghệ giúp tiết kiệm đáng kể chi phí.
+                        <strong>3. Di chuyển:</strong> Xe buýt công cộng, xe máy thuê theo ngày hoặc taxi công nghệ giúp
+                        tiết kiệm đáng kể chi phí.
                     </p>
 
                     <p>
-                        <strong>4. Hoạt động vui chơi:</strong> Tham quan chùa, biển, chợ đêm, bảo tàng… đa số đều miễn phí hoặc giá rẻ.
+                        <strong>4. Hoạt động vui chơi:</strong> Tham quan chùa, biển, chợ đêm, bảo tàng… đa số đều miễn
+                        phí hoặc giá rẻ.
                     </p>
 
                     <p>
-                        <strong>5. Mẹo tiết kiệm:</strong> Tránh mùa cao điểm, đặt vé trước, mua sim 4G dung lượng lớn và luôn hỏi giá trước khi mua.
+                        <strong>5. Mẹo tiết kiệm:</strong> Tránh mùa cao điểm, đặt vé trước, mua sim 4G dung lượng lớn
+                        và luôn hỏi giá trước khi mua.
                     </p>
 
                     <p>
-                        Với một chút kinh nghiệm, bạn sẽ ngạc nhiên khi thấy chi phí du lịch Việt Nam dễ chịu đến mức nào.
+                        Với một chút kinh nghiệm, bạn sẽ ngạc nhiên khi thấy chi phí du lịch Việt Nam dễ chịu đến mức
+                        nào.
                     </p>
 
                     <div class="author-info">
                         <img src="../assets/images/avatar-default.png" alt="Tác giả">
-                        <div><h4>Vũ Backpacker</h4><p>Đi vòng quanh Việt Nam chỉ với 15 triệu</p></div>
+                        <div><h4>Vũ Backpacker</h4>
+                            <p>Đi vòng quanh Việt Nam chỉ với 15 triệu</p></div>
                     </div>
                     <div class="share-buttons">
                         <h4>Chia sẻ bài viết:</h4>
@@ -605,7 +673,9 @@
                     </div>
                     <div class="comments-section">
                         <h3>Bình luận (18)</h3>
-                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea><button type="submit">Gửi bình luận</button></form>
+                        <form class="comment-form"><textarea placeholder="Viết bình luận của bạn..."></textarea>
+                            <button type="submit">Gửi bình luận</button>
+                        </form>
                     </div>
                 </article>
             </div>
@@ -617,7 +687,9 @@
             <div class="sidebar-widget" data-aos="fade-left">
                 <h3>Tìm Kiếm</h3>
                 <form class="search-form">
-                    <input type="text" placeholder="Tìm bài viết...">
+                    <label for="searchInput">
+                        <input id="searchInput" type="text" placeholder="Tìm bài viết...">
+                    </label>
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -626,15 +698,18 @@
                 <div class="popular-posts">
                     <div class="popular-post-item">
                         <img src="../assets/images/blog/blog-travel-tips.jpg" alt="">
-                        <div><a href="blog-detail.html?id=tips-vietnam">Mẹo Du Lịch Thiết Yếu</a><span>3 Tháng 11</span></div>
+                        <div><a href="blog-detail.html?id=tips-vietnam">Mẹo Du Lịch Thiết Yếu</a><span>3 Tháng 11</span>
+                        </div>
                     </div>
                     <div class="popular-post-item">
                         <img src="../assets/images/blog/blog-halong-cruise.jpg" alt="">
-                        <div><a href="blog-detail.html?id=halong-cruise">Du Thuyền Vịnh Hạ Long</a><span>25 Tháng 10</span></div>
+                        <div><a href="blog-detail.html?id=halong-cruise">Du Thuyền Vịnh Hạ
+                            Long</a><span>25 Tháng 10</span></div>
                     </div>
                     <div class="popular-post-item">
                         <img src="../assets/images/blog/blog-food-culture.jpg" alt="">
-                        <div><a href="blog-detail.html?id=food-street">Ẩm Thực Đường Phố</a><span>1 Tháng 11</span></div>
+                        <div><a href="blog-detail.html?id=food-street">Ẩm Thực Đường Phố</a><span>1 Tháng 11</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -652,8 +727,11 @@
                     <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Nhập email của bạn..." required>
+                <form class="newsletter-form" method="POST" action="/subscribe">
+                    <label>
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Nhập email của bạn..."
+                               required>
+                    </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
             </div>
@@ -704,7 +782,8 @@
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
                         <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
-                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật </a></li>
+                        <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật
+                        </a></li>
 
                     </ul>
                 </div>

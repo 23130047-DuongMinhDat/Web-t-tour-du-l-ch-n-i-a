@@ -17,7 +17,7 @@
 
 <body>
 <!-- ==================== HEADER ==================== -->
-<header class="">
+<header>
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
@@ -58,21 +58,23 @@
             </div>
 
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
                         <input
                                 type="text"
+                                id="searchQuery"
                                 name="q"
-                                id="search-input"
-                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                placeholder="Tìm điểm đến, tour du lịch..."
                                 class="search-input"
                                 autocomplete="off"
+                                required
                         >
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -441,9 +443,19 @@
             <aside class="deals-sidebar">
                 <div class="sidebar-widget">
                     <h3>Tìm ưu đãi</h3>
-                    <form class="search-form">
-                        <input type="text" placeholder="Tìm theo tên tour...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                    <form class="search-form" method="GET" action="/search">
+                        <input
+                                type="text"
+                                id="searchTour"
+                                name="query"
+                                placeholder="Tìm theo tên tour..."
+                                aria-label="Tìm theo tên tour"
+                                required
+                                autocomplete="off"
+                        >
+                        <button type="submit">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
                     </form>
                 </div>
 
@@ -472,8 +484,17 @@
                 <div class="sidebar-widget newsletter-widget">
                     <h3>Nhận ưu đãi mới</h3>
                     <p>Đăng ký để nhận deal hot hàng tuần!</p>
-                    <form class="newsletter-form" id="sidebarNewsletterForm">
-                        <input type="email" placeholder="Email của bạn..." required>
+
+                    <form class="newsletter-form" id="sidebarNewsletterForm" method="POST" action="/subscribe">
+                        <label for="sidebarEmail" class="visually-hidden"></label>
+                        <input
+                                type="email"
+                                id="sidebarEmail"
+                                name="email"
+                                placeholder="Email của bạn..."
+                                required
+                                autocomplete="email"
+                        >
                         <button type="submit">Đăng ký</button>
                     </form>
                 </div>
