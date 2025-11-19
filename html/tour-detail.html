@@ -90,23 +90,21 @@
 
             <!-- SEARCH BOX NỔI BẬT -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <label for="search-input">
-                            <input
-                                    type="text"
-                                    name="q"
-                                    id="search-input"
-                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                    class="search-input"
-                                    autocomplete="off"
-                            >
-                        </label>
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
+                        <input type="text"
+                               id="searchQuery"
+                               name="q"
+                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                               class="search-input"
+                               autocomplete="off"
+                               required>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -394,7 +392,7 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Hướng dẫn đặt tour</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Phương thức thanh toán</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
+                        <li><a href="faq.html"><i class="fas fa-angle-right"></i> Câu hỏi thường gặp</a></li>
                         <li><a href="policy.html"><i class="fas fa-angle-right"></i> Điều khoản & Chính sách bảo mật
                         </a></li>
 

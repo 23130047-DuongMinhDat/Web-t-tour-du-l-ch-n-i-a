@@ -9,11 +9,12 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-    <!-- dùng lại css từ trang home -->
+
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
     <link rel="stylesheet" href="../assets/css/tours.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -86,23 +87,21 @@
 
             <!-- SEARCH BOX NỔI BẬT -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <label for="search-input">
-                            <input
-                                    type="text"
-                                    name="q"
-                                    id="search-input"
-                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                    class="search-input"
-                                    autocomplete="off"
-                            >
-                        </label>
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
+                        <input type="text"
+                               id="searchQuery"
+                               name="q"
+                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                               class="search-input"
+                               autocomplete="off"
+                               required>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -156,11 +155,11 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Trang chủ</a></li>
 
                 <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
-                    <a href="tours.html">
+                    <a href="tours.html" class="active">
                         <i class="fas fa-map-marked-alt"></i> Tour du lịch
                         <i class="fas fa-chevron-down"></i>
                     </a>
@@ -224,7 +223,7 @@
     <section class="tour-filter">
         <h1>Danh sách tour của chúng tôi</h1>
         <div class="filter-bar">
-            <label for="search-input">
+            <label for="searchinput">
                 <input type="text" id="searchInput" placeholder="Tìm kiếm...">
             </label>
             <label for="locationFilter">
@@ -484,8 +483,15 @@
     </div>
 
 </footer>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-quart',
+        once: true,
+        offset: 50
+    });
+</script>
 <script src="../assets/js/tours.js"></script>
 </body>
 </html>
