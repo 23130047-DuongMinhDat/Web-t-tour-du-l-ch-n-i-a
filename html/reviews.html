@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="assets/client/css/footer.css">
     <link rel="stylesheet" href="assets/client/css/responsive.css">
 
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+          rel="stylesheet">
     <!-- CSS riêng cho Reviews -->
     <link rel="stylesheet" href="assets/client/css/reviews.css">
 </head>
@@ -91,26 +97,23 @@
 
             <!-- Search Box (Quan trọng cho e-commerce) -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
                         <i class="fas fa-search"></i>
-                        <label for="search-input">
-                            <input
-                                    type="text"
-                                    name="q"
-                                    id="search-input"
-                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                    class="search-input"
-                                    autocomplete="off"
-                            >
-                        </label>
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
+                        <input type="text"
+                               id="searchQuery"
+                               name="q"
+                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                               class="search-input"
+                               autocomplete="off"
+                               required>
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
-
             <!-- Header Actions -->
             <div class="header-actions">
                 <!-- Wishlist -->
@@ -161,7 +164,7 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Trang chủ</a></li>
 
                 <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
@@ -212,7 +215,7 @@
                 <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
-                <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
+                <li><a href="reviews.html" class="active"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
 
             <!-- Quick links bên phải -->
@@ -257,7 +260,7 @@
         <!-- Danh sách đánh giá -->
         <div class="reviews-list">
 
-            <!-- ==================== VỊNH HẠ LONG (3) ==================== -->
+            <!------ VỊNH HẠ LONG (3) ------>
             <div class="review-card" data-tour="halong" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar1.jpg" alt="Nguyễn Lan" class="review-avatar">
@@ -312,7 +315,7 @@
                 <small class="review-date">08/11/2025</small>
             </div>
 
-            <!-- ==================== PHÚ QUỐC (3) ==================== -->
+            <!------ PHÚ QUỐC (3) ------>
             <div class="review-card" data-tour="phuquoc" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar4.jpg" alt="Phạm Văn Hùng" class="review-avatar">
@@ -366,7 +369,7 @@
                 <small class="review-date">05/11/2025</small>
             </div>
 
-            <!-- ==================== HỘI AN (3) ==================== -->
+            <!------ HỘI AN (3) ------>
             <div class="review-card" data-tour="hoian" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar7.jpg" alt="Trần Thị Hương" class="review-avatar">
@@ -419,7 +422,7 @@
                 <small class="review-date">03/11/2025</small>
             </div>
 
-            <!-- ==================== ĐÀ NẴNG (3) ==================== -->
+            <!------ ĐÀ NẴNG (3) ------>
             <div class="review-card" data-tour="danang" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar10.jpg" alt="Lê Văn Nam" class="review-avatar">
@@ -437,7 +440,7 @@
                 <small class="review-date">11/11/2025</small>
             </div>
 
-            <!-- ==================== SAPA (3) ==================== -->
+            <!------ SAPA (3) ------>
             <div class="review-card" data-tour="sapa" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar11.jpg" alt="Nguyễn Thu Huyền" class="review-avatar">
@@ -490,7 +493,7 @@
                 <small class="review-date">06/11/2025</small>
             </div>
 
-            <!-- ==================== NHA TRANG (3) ==================== -->
+            <!------ NHA TRANG (3) ------>
             <div class="review-card" data-tour="nhatrang" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar14.jpg" alt="Hoàng Minh Tuấn" class="review-avatar">
@@ -543,7 +546,7 @@
                 <small class="review-date">04/11/2025</small>
             </div>
 
-            <!-- ==================== HUẾ (3) ==================== -->
+            <!------ HUẾ (3)  ------>
             <div class="review-card" data-tour="hue" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar17.jpg" alt="Phạm Thị Lan" class="review-avatar">
@@ -596,7 +599,7 @@
                 <small class="review-date">02/11/2025</small>
             </div>
 
-            <!-- ==================== MEKONG (3) ==================== -->
+            <!------ MEKONG (3) ------>
             <div class="review-card" data-tour="mekong" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar20.jpeg" alt="Lê Văn Hùng" class="review-avatar">
@@ -648,7 +651,7 @@
                 <small class="review-date">01/11/2025</small>
             </div>
 
-            <!-- ==================== HÀ GIANG (3) ==================== -->
+            <!------ HÀ GIANG (3)  ------>
             <div class="review-card" data-tour="hagiang" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar23.jpg" alt="Phạm Minh Châu" class="review-avatar">
@@ -702,7 +705,6 @@
                 <small class="review-date">30/10/2025</small>
             </div>
 
-            <!-- CÒN 2 ĐÁNH GIÁ NỮA ĐỂ ĐỦ 27 -->
             <div class="review-card" data-tour="danang" data-rating="5">
                 <div class="review-header">
                     <img src="assets/client/images/reviews/avatar26.jpg" alt="Võ Minh Tuấn" class="review-avatar">

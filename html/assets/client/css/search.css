@@ -60,6 +60,7 @@
 
 .filter-group input[type="radio"] {
     margin-right: 8px;
+    width: 10%;
 }
 
 .btn-apply {
@@ -153,7 +154,33 @@
     width: 100%;
     text-align: center;
 }
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
 
+.page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.page-link:hover,
+.page-link.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
 /* Responsive */
 @media (max-width: 992px) {
     .search-content {
@@ -257,5 +284,5 @@
 
 .suggestion-item:hover {
     background: #f0f7ff;
-    color: var(--blue);
+    color: var(--primary);
 }

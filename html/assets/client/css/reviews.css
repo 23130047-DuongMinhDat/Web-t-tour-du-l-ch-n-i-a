@@ -7,7 +7,7 @@
 .page-title {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--blue);
+    color: var(--primary);
     margin-bottom: 40px;
     position: relative;
 }
@@ -20,7 +20,7 @@
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: var(--blue);
+    background: var(--primary);
     border-radius: 2px;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .btn-filter {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
 }
 
@@ -97,7 +97,7 @@
 
 .review-tour {
     font-size: 0.9rem;
-    color: var(--blue);
+    color: var(--primary);
     margin: 4px 0 0;
     font-weight: 500;
 }
@@ -133,9 +133,9 @@
 
 .page-btn:hover,
 .page-btn.active {
-    background: var(--blue);
+    background: var(--primary);
     color: white;
-    border-color: var(--blue);
+    border-color: var(--primary);
 }
 
 /* Responsive */
