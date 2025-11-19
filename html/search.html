@@ -60,23 +60,23 @@
 
             <!-- SEARCH BOX NỔI BẬT -->
             <div class="search-box highlight">
-                <form action="search.html" method="GET" id="search-form">
+                <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
-                        <label for="search-input">
-                            <input
-                                    type="text"
-                                    name="q"
-                                    id="search-input"
-                                    placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                                    class="search-input"
-                                    autocomplete="off"
-                            >
-                        </label>
-                        <button type="submit" class="search-btn">Tìm ngay</button>
+                        <i class="fas fa-search" aria-hidden="true"></i>
+
+                        <label for="searchQuery" class="visually-hidden"></label>
+                        <input
+                                type="text"
+                                id="searchQuery"
+                                name="q"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                                required
+                        >
+
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
-                    <!-- Gợi ý tìm kiếm -->
-                    <div class="search-suggestions" id="suggestions"></div>
                 </form>
             </div>
 
@@ -355,11 +355,11 @@
 
         <!-- Phân trang -->
         <div class="pagination">
-            <button class="page-btn active">1</button>
-            <button class="page-btn">2</button>
-            <button class="page-btn">3</button>
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
             <span>...</span>
-            <button class="page-btn">5</button>
+            <a href="#" class="page-link">5</a>
         </div>
     </div>
 </main>

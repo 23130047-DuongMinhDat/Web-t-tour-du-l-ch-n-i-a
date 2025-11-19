@@ -60,18 +60,16 @@
             <div class="search-box highlight">
                 <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <i class="fas fa-search"></i>
 
                         <label for="searchQuery" class="visually-hidden"></label>
-                        <input
-                                type="text"
-                                id="searchQuery"
-                                name="q"
-                                placeholder="Tìm điểm đến, tour du lịch..."
-                                class="search-input"
-                                autocomplete="off"
-                                required
-                        >
+                        <input type="text"
+                               id="searchQuery"
+                               name="q"
+                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                               class="search-input"
+                               autocomplete="off"
+                               required>
 
                         <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
@@ -105,7 +103,7 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
 
                 <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
@@ -152,7 +150,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li >
+                <li><a href="deals.html" class="active"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
                 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
@@ -443,7 +441,7 @@
             <aside class="deals-sidebar">
                 <div class="sidebar-widget">
                     <h3>Tìm ưu đãi</h3>
-                    <form class="search-form" method="GET" action="/search">
+                    <form class="sidebar-search-form" method="GET" action="/search">
                         <input
                                 type="text"
                                 id="searchTour"
@@ -481,23 +479,6 @@
                     </ul>
                 </div>
 
-                <div class="sidebar-widget newsletter-widget">
-                    <h3>Nhận ưu đãi mới</h3>
-                    <p>Đăng ký để nhận deal hot hàng tuần!</p>
-
-                    <form class="newsletter-form" id="sidebarNewsletterForm" method="POST" action="/subscribe">
-                        <label for="sidebarEmail" class="visually-hidden"></label>
-                        <input
-                                type="email"
-                                id="sidebarEmail"
-                                name="email"
-                                placeholder="Email của bạn..."
-                                required
-                                autocomplete="email"
-                        >
-                        <button type="submit">Đăng ký</button>
-                    </form>
-                </div>
             </aside>
         </div>
     </div>
