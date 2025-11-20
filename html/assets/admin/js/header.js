@@ -7,26 +7,36 @@ document.addEventListener('DOMContentLoaded', function () {
     const userBtn = document.getElementById('userBtn');
     const userMenu = document.getElementById('userMenu');
 
+    // Notification dropdown
     if (notificationBtn && notificationMenu) {
         notificationBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             notificationMenu.classList.toggle('show');
-            userMenu?.classList.remove('show');
+            if (userMenu) {
+                userMenu.classList.remove('show');
+            }
         });
     }
 
+    // User dropdown
     if (userBtn && userMenu) {
         userBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             userMenu.classList.toggle('show');
-            notificationMenu?.classList.remove('show');
+            if (notificationMenu) {
+                notificationMenu.classList.remove('show');
+            }
         });
     }
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', function () {
-        notificationMenu?.classList.remove('show');
-        userMenu?.classList.remove('show');
+        if (notificationMenu) {
+            notificationMenu.classList.remove('show');
+        }
+        if (userMenu) {
+            userMenu.classList.remove('show');
+        }
     });
 
     // Sync menu toggle with sidebar toggle
@@ -38,4 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
             sidebarToggle.click();
         });
     }
+
+    // Mark notification as read when clicked
+    const notificationItems = document.querySelectorAll('.notification-item');
+    notificationItems.forEach(item => {
+        item.addEventListener('click', function () {
+            this.classList.remove('unread');
+        });
+    });
 });
