@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 icon.className = 'fas fa-angle-left';
             }
 
-            console.log('Sidebar collapsed:', isCollapsed);
-            console.log('Icon class:', icon.className);
+            // Debugging
+            // console.log('Sidebar collapsed:', isCollapsed);
+            // console.log('Icon class:', icon.className);
         });
     }
 
