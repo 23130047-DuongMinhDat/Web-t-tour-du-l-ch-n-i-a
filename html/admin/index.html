@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <!--begin::Head-->
 <head>
@@ -28,7 +28,7 @@
     <!--begin::Accessibility Features-->
     <!-- Skip links will be dynamically added by accessibility.js -->
     <meta name="supported-color-schemes" content="light dark"/>
-    <link rel="preload" href="./css/adminlte.css" as="style"/>
+    <link rel="preload" href="../assets/admin/css/adminlte.css" as="style"/>
     <!--end::Accessibility Features-->
 
     <!--begin::Fonts-->
@@ -59,7 +59,7 @@
     <!--end::Third Party Plugin(Bootstrap Icons)-->
 
     <!--begin::Required Plugin(AdminLTE)-->
-    <link rel="stylesheet" href="./css/adminlte.css"/>
+    <link rel="stylesheet" href="../assets/admin/css/adminlte.css"/>
     <!--end::Required Plugin(AdminLTE)-->
 
     <!-- apexcharts -->
@@ -125,7 +125,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
-                                            src="./assets/img/user1-128x128.jpg"
+                                            src="../assets/admin/img/user1-128x128.jpg"
                                             alt="User Avatar"
                                             class="img-size-50 rounded-circle me-3"
                                     />
@@ -151,7 +151,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
-                                            src="./assets/img/user8-128x128.jpg"
+                                            src="../assets/admin/img/user8-128x128.jpg"
                                             alt="User Avatar"
                                             class="img-size-50 rounded-circle me-3"
                                     />
@@ -177,7 +177,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0">
                                     <img
-                                            src="./assets/img/user3-128x128.jpg"
+                                            src="../assets/admin/img/user3-128x128.jpg"
                                             alt="User Avatar"
                                             class="img-size-50 rounded-circle me-3"
                                     />
@@ -245,7 +245,7 @@
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                         <img
-                                src="./assets/img/user2-160x160.jpg"
+                                src="../assets/admin/img/user2-160x160.jpg"
                                 class="user-image rounded-circle shadow"
                                 alt="User Image"
                         />
@@ -255,7 +255,7 @@
                         <!--begin::User Image-->
                         <li class="user-header text-bg-primary">
                             <img
-                                    src="./assets/img/user2-160x160.jpg"
+                                    src="../assets/admin/img/user2-160x160.jpg"
                                     class="rounded-circle shadow"
                                     alt="User Image"
                             />
@@ -305,13 +305,13 @@
             <a href="./index.html" class="brand-link">
                 <!--begin::Brand Image-->
                 <img
-                        src="./assets/img/AdminLTELogo.png"
+                        src="../assets/admin/img/AdminLTELogo.png"
                         alt="Tour Vietnam Logo"
                         class="brand-image opacity-75 shadow"
                 />
                 <!--end::Brand Image-->
                 <!--begin::Brand Text-->
-                <span class="brand-text fw-light">Tour Vietnam</span>
+                <span class="brand-text fw-light">VietTravel</span>
                 <!--end::Brand Text-->
             </a>
             <!--end::Brand Link-->
@@ -321,14 +321,8 @@
         <div class="sidebar-wrapper">
             <nav class="mt-2">
                 <!--begin::Sidebar Menu-->
-                <ul
-                        class="nav sidebar-menu flex-column"
-                        data-lte-toggle="treeview"
-                        role="navigation"
-                        aria-label="Main navigation"
-                        data-accordion="false"
-                        id="navigation"
-                >
+                <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview">
+                    <!-- Dashboard -->
                     <li class="nav-item">
                         <a href="./index.html" class="nav-link active">
                             <i class="nav-icon bi bi-speedometer"></i>
@@ -338,13 +332,32 @@
 
                     <li class="nav-header">QUẢN LÝ</li>
 
+                    <!-- Quản lý Tour -->
                     <li class="nav-item">
-                        <a href="./tours/list.html" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon bi bi-geo-alt-fill"></i>
-                            <p>Quản lý Tour</p>
+                            <p>
+                                Quản lý Tour
+                                <i class="nav-arrow bi bi-chevron-right"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="./tours/list.html" class="nav-link">
+                                    <i class="nav-icon bi bi-circle"></i>
+                                    <p>Danh sách Tour</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./tours/add.html" class="nav-link">
+                                    <i class="nav-icon bi bi-circle"></i>
+                                    <p>Thêm Tour Mới</p>
+                                </a>
+                            </li>
+                        </ul>
                     </li>
 
+                    <!-- Đơn đặt tour -->
                     <li class="nav-item">
                         <a href="./bookings/list.html" class="nav-link">
                             <i class="nav-icon bi bi-calendar-check"></i>
@@ -352,6 +365,7 @@
                         </a>
                     </li>
 
+                    <!-- Khách hàng -->
                     <li class="nav-item">
                         <a href="./customers/list.html" class="nav-link">
                             <i class="nav-icon bi bi-people-fill"></i>
@@ -359,13 +373,15 @@
                         </a>
                     </li>
 
+                    <!-- Điểm đến -->
                     <li class="nav-item">
-                        <a href="./payments/list.html" class="nav-link">
-                            <i class="nav-icon bi bi-credit-card"></i>
-                            <p>Quản lý Thanh Toán</p>
+                        <a href="./destination/list.html" class="nav-link">
+                            <i class="nav-icon bi bi-map"></i>
+                            <p>Quản lý Điểm Đến</p>
                         </a>
                     </li>
 
+                    <!-- Đánh giá -->
                     <li class="nav-item">
                         <a href="./reviews/list.html" class="nav-link">
                             <i class="nav-icon bi bi-star-fill"></i>
@@ -373,53 +389,17 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a href="./destinations/list.html" class="nav-link">
-                            <i class="nav-icon bi bi-map"></i>
-                            <p>Quản lý Điểm Đến</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="./guides/list.html" class="nav-link">
-                            <i class="nav-icon bi bi-person-badge"></i>
-                            <p>Quản lý HDV</p>
-                        </a>
-                    </li>
-
                     <li class="nav-header">HỆ THỐNG</li>
 
+                    <!-- Cài đặt -->
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="./settings/general.html" class="nav-link">
                             <i class="nav-icon bi bi-gear-fill"></i>
-                            <p>
-                                Cài Đặt
-                                <i class="nav-arrow bi bi-chevron-right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="./settings/general.html" class="nav-link">
-                                    <i class="nav-icon bi bi-circle"></i>
-                                    <p>Cài Đặt Chung</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./settings/payment.html" class="nav-link">
-                                    <i class="nav-icon bi bi-circle"></i>
-                                    <p>Cài Đặt Thanh Toán</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="./reports/dashboard.html" class="nav-link">
-                            <i class="nav-icon bi bi-bar-chart-fill"></i>
-                            <p>Báo Cáo & Thống Kê</p>
+                            <p>Cài Đặt</p>
                         </a>
                     </li>
                 </ul>
+
                 <!--end::Sidebar Menu-->
             </nav>
         </div>
@@ -615,7 +595,7 @@
         crossorigin="anonymous"
 ></script>
 <!--end::Required Plugin(Bootstrap 5)--><!--begin::Required Plugin(AdminLTE)-->
-<script src="./js/adminlte.js"></script>
+<script src="../assets/admin/js/adminlte.js"></script>
 <!--end::Required Plugin(AdminLTE)--><!--begin::OverlayScrollbars Configure-->
 <script>
     const SELECTOR_SIDEBAR_WRAPPER = '.sidebar-wrapper';
@@ -735,12 +715,12 @@
     sales_chart.render();
 </script>
 
-<!-- jsvectormap -->
 <script
         src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/js/jsvectormap.min.js"
         integrity="sha256-/t1nN2956BT869E6H4V1dnt0X5pAQHPytli+1nTZm2Y="
         crossorigin="anonymous"
 ></script>
+
 <script
         src="https://cdn.jsdelivr.net/npm/jsvectormap@1.5.3/dist/maps/world.js"
         integrity="sha256-XPpPaZlU8S/HWf7FZLAncLg2SAkP8ScUTII89x9D3lY="

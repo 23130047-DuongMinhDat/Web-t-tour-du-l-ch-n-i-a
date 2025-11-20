@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../assets/admin/css/sidebar.css">
+
+</head>
+<body>
+
+
+<!-- Sidebar -->
+<div class="wrapper">
+
+    <header class="main-header">
+        <!--        <nav class="navbar navbar-expand navbar-white navbar-light">-->
+        <!--            <ul class="navbar-nav">-->
+        <!--                <li class="nav-item">-->
+        <!--                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+        <!--        </nav>-->
+    </header>
+
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span class="logo-text">VietTravel</span>
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-angle-left"></i>
+            </button>
+
+        </div>
+        <div class="sidebar-wrapper">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <!-- Dashboard -->
+                    <li class="nav-item active">
+                        <a href="../index.html" class="nav-link" data-tooltip="Dashboard">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Quản lý</li>
+
+                    <!-- Quản lý tour -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý Tour">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../tours/list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách tour</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tours/add.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Thêm tour mới</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý đặt tour -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <span class="nav-text">Quản lý đặt Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../bookings/list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách đơn đặt</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../bookings/detail.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Chi tiết đơn đặt</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý khách hàng -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý khách hàng">
+                            <i class="nav-icon fas fa-users"></i>
+                            <span class="nav-text">Quản lý khách hàng</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../customers/list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách khách hàng</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../customers/detail.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Chi tiết khách hàng</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý điểm đến -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý điểm đến">
+                            <i class="nav-icon fas fa-map-marker-alt"></i>
+                            <span class="nav-text">Quản lý điểm đến</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../destination/list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách điểm đến</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../destination/add.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Thêm điểm đến mới</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý đánh giá -->
+                    <li class="nav-item">
+                        <a href="../reviews/list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
+                            <i class="nav-icon fas fa-star"></i>
+                            <span class="nav-text">Quản lý đánh giá</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Hệ thống</li>
+
+                    <!-- Cài đặt -->
+                    <li class="nav-item">
+                        <a href="../settings/general.html" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <span class="nav-text">Cài đặt</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+
+    <main class="content-wrapper">
+
+    </main>
+    <footer class="main-footer">
+
+    </footer>
+</div>
+
+<script src="../assets/admin/js/sidebar.js"></script>
+
+</body>
+</html>
