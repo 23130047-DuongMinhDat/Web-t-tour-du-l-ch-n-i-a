@@ -357,57 +357,57 @@
     margin-bottom: 20px;
     line-height: 1.6;
 }
+/* Sidebar */
+.blog-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
 
-.sidebar-widget.newsletter-widget .newsletter-form {
+.sidebar-widget {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+}
+
+.sidebar-widget h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary);
+}
+
+
+/* Sidebar Lists */
+.sidebar-search-form {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    min-width: 300px;
+    gap: 10px;
 }
 
-.sidebar-widget.newsletter-widget .newsletter-form input {
-    width: 100%;
-    padding: 14px 18px;
+.sidebar-search-form input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.sidebar-search-form button {
+    padding: 12px 20px;
+    background: var(--primary);
+    color: white;
     border: none;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    background: rgba(255, 255, 255, 0.95);
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
-
-.sidebar-widget.newsletter-widget .newsletter-form input:focus {
-    outline: none;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-}
-
-.sidebar-widget.newsletter-widget .newsletter-form button {
-    width: 100%;
-    padding: 14px 20px;
-    background: white;
-    color: var(--primary);
-    border: none;
-    border-radius: 50px;
-    font-weight: 600;
+    border-radius: 8px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    font-size: 0.95rem;
+    transition: all 0.3s;
 }
 
-.sidebar-widget.newsletter-widget .newsletter-form button:hover {
-    background: #f8f9fa;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.sidebar-search-form button:hover {
+    background: #0078a8;
 }
-
 /* Popular Posts */
 .popular-posts {
     display: flex;
