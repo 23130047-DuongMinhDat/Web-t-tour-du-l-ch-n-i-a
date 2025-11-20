@@ -25,7 +25,7 @@ const dataTableConfig = {
 // Function tạo action buttons
 function createActionButtons(id, editUrl = '#', deleteFunc = 'deleteItem') {
     return `
-        <div class="action-buttons">
+        <div class="#tourTable__action-buttons">
             <a href="${editUrl}?id=${id}" class="btn btn-sm btn-success" title="Sửa">
                 <i class="fas fa-edit"></i>
             </a>

@@ -256,18 +256,18 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="actions-bar">
-                            <a href="add.html" class="btn btn-primary">
+                            <a href="add.html" class="btn btn--primary">
                                 <i class="fas fa-plus"></i> Thêm Tour Mới
                             </a>
-                            <div class="filter-group">
+                            <div class="actions-bar__filter-group">
                                 <label for="statusFilter"></label>
-                                <select id="statusFilter" class="filter-select">
+                                <select id="statusFilter" class="actions-bar__filter-select">
                                     <option value="">Tất cả trạng thái</option>
                                     <option value="Hoạt động">Hoạt động</option>
                                     <option value="Dừng">Dừng</option>
                                 </select>
                                 <label for="regionFilter"></label>
-                                <select id="regionFilter" class="filter-select">
+                                <select id="regionFilter" class="actions-bar__filter-select">
                                     <option value="">Tất cả khu vực</option>
                                     <option value="Miền Bắc">Miền Bắc</option>
                                     <option value="Miền Trung">Miền Trung</option>
@@ -358,12 +358,12 @@
                 {data: 'id'},
                 {
                     data: 'image',
-                    render: (data) => `<img src="${data}" alt="Tour" class="tour-image-cell">`,
+                    render: (data) => `<img src="${data}" alt="Tour" class="#tourTable__image-cell">`,
                     orderable: false
                 },
                 {
                     data: 'name',
-                    render: (data) => `<span class="tour-name">${data}</span>`
+                    render: (data) => `<span class="#tourTable__name-cell">${data}</span>`
                 },
                 {data: 'region'},
                 {

@@ -10,12 +10,12 @@
     gap: 15px;
 }
 
-.filter-group {
+.actions-bar__filter-group {
     display: flex;
     gap: 10px;
 }
 
-.filter-select {
+.actions-bar__filter-select {
     padding: 8px 15px;
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -27,7 +27,7 @@
     min-width: 150px;
 }
 
-.filter-select:focus {
+.actions-bar__filter-select:focus {
     border-color: var(--primary);
 }
 
@@ -49,59 +49,63 @@
     transition: all 0.3s ease;
 }
 
-.btn-primary {
+/* Modifier: Kiểu dáng */
+.btn--primary {
     background: var(--primary);
     color: white;
 }
 
-.btn-primary:hover {
+.btn--primary:hover {
     background: var(--primary-hover);
 }
 
-.btn-sm {
-    padding: 6px 12px;
-    font-size: 13px;
-}
-
-.btn-success {
+.btn--success {
     background: #28a745;
     color: white;
 }
 
-.btn-success:hover {
+.btn--success:hover {
     background: #218838;
 }
 
-.btn-danger {
+.btn--danger {
     background: #ff4444;
     color: white;
 }
 
-.btn-danger:hover {
+.btn--danger:hover {
     background: #cc0000;
+}
+
+/* Modifier: Kích thước */
+.btn--sm {
+    padding: 6px 12px;
+    font-size: 13px;
 }
 
 /* ===========================
    DATATABLE CUSTOM STYLE
    =========================== */
 
-.dataTables_wrapper {
+.data-table-wrapper {
     padding: 0;
 }
 
-.dataTables_wrapper .dataTables_length,
-.dataTables_wrapper .dataTables_filter {
+/* Datatable Library Styles */
+
+.dataTables_length,
+.dataTables_filter {
     margin-bottom: 15px;
 }
 
-.dataTables_wrapper .dataTables_length select {
+.dataTables_length select {
     padding: 6px 12px;
     border: 1px solid var(--border);
     border-radius: 6px;
     margin: 0 5px;
 }
 
-.dataTables_wrapper .dataTables_filter input {
+.dataTables_filter input {
     padding: 8px 12px;
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -109,20 +113,20 @@
     outline: none;
 }
 
-.dataTables_wrapper .dataTables_filter input:focus {
+.dataTables_filter input:focus {
     border-color: var(--primary);
 }
 
-.dataTables_wrapper .dataTables_info {
+.dataTables_info {
     padding-top: 15px;
     color: var(--text-light);
 }
 
-.dataTables_wrapper .dataTables_paginate {
+.dataTables_paginate {
     padding-top: 15px;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
+.dataTables_paginate .paginate_button {
     padding: 6px 12px;
     margin: 0 2px;
     border: 1px solid var(--border);
@@ -132,12 +136,12 @@
     cursor: pointer;
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+.dataTables_paginate .paginate_button:hover {
     background: var(--bg-light);
     border-color: var(--primary);
 }
 
-.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+.dataTables_paginate .paginate_button.current {
     background: var(--primary);
     color: white;
     border-color: var(--primary);
@@ -147,22 +151,26 @@
    TABLE CUSTOM STYLE
    =========================== */
 
-.tour-image-cell {
+#tourTable__image-cell {
     width: 60px;
     height: 60px;
     border-radius: 6px;
     object-fit: cover;
 }
 
-.tour-name {
+#tourTable__name-cell {
     font-weight: 600;
     color: var(--text-dark);
 }
 
-.action-buttons {
+#tourTable__actions-buttons {
     display: flex;
     gap: 8px;
 }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
 
 /* ===========================
    RESPONSIVE
@@ -174,11 +182,11 @@
         align-items: stretch;
     }
 
-    .filter-group {
+    .actions-bar__filter-group {
         flex-direction: column;
     }
 
-    .filter-select {
+    .actions-bar__filter-select {
         width: 100%;
     }
 }
