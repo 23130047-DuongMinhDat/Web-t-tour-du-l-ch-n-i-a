@@ -260,11 +260,13 @@
                                 <i class="fas fa-plus"></i> Thêm Tour Mới
                             </a>
                             <div class="filter-group">
+                                <label for="statusFilter"></label>
                                 <select id="statusFilter" class="filter-select">
                                     <option value="">Tất cả trạng thái</option>
                                     <option value="Hoạt động">Hoạt động</option>
                                     <option value="Dừng">Dừng</option>
                                 </select>
+                                <label for="regionFilter"></label>
                                 <select id="regionFilter" class="filter-select">
                                     <option value="">Tất cả khu vực</option>
                                     <option value="Miền Bắc">Miền Bắc</option>
@@ -318,194 +320,85 @@
 </div>
 
 <!-- jQuery (Required for DataTables) -->
+<!-- jQuery (Required for DataTables) -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <!-- DataTables JS -->
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 
 <!-- Custom Scripts -->
 <script src="../../assets/admin/js/header.js"></script>
 <script src="../../assets/admin/js/sidebar.js"></script>
+<script src="../../assets/admin/js/datatable-config.js"></script>
+<script src="../../assets/admin/js/utils.js"></script>
 
-<!-- Tour List Script -->
+<!-- Page-specific Script -->
 <script>
+
+
     $(document).ready(function () {
-        // Mock data - Tour nội địa Việt Nam
+        // Mock data - ĐẶC THÙ CHO TRANG NÀY
         const tours = [
             {
                 id: 1,
                 image: '../../assets/client/images/tour1.jpg',
                 name: 'Tour Hà Nội - Hạ Long 3N2Đ',
                 region: 'Miền Bắc',
-                price: '3,500,000 ₫',
+                price: 3500000,
                 duration: '3 ngày 2 đêm',
                 status: 'Hoạt động'
             },
-            {
-                id: 2,
-                image: '../../assets/client/images/tour2.jpg',
-                name: 'Tour Đà Nẵng - Hội An 4N3Đ',
-                region: 'Miền Trung',
-                price: '4,200,000 ₫',
-                duration: '4 ngày 3 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 3,
-                image: '../../assets/client/images/tour3.jpg',
-                name: 'Tour Phú Quốc 3N2Đ',
-                region: 'Miền Nam',
-                price: '5,800,000 ₫',
-                duration: '3 ngày 2 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 4,
-                image: '../../assets/client/images/tour4.jpg',
-                name: 'Tour Sapa - Fansipan 2N1Đ',
-                region: 'Miền Bắc',
-                price: '2,900,000 ₫',
-                duration: '2 ngày 1 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 5,
-                image: '../../assets/client/images/tour5.jpg',
-                name: 'Tour Nha Trang - Vinpearl 3N2Đ',
-                region: 'Miền Trung',
-                price: '4,500,000 ₫',
-                duration: '3 ngày 2 đêm',
-                status: 'Dừng'
-            },
-            {
-                id: 6,
-                image: '../../assets/client/images/tour6.jpg',
-                name: 'Tour Cần Thơ - Miệt Vườn 2N1Đ',
-                region: 'Miền Nam',
-                price: '2,200,000 ₫',
-                duration: '2 ngày 1 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 7,
-                image: '../../assets/client/images/tour7.jpg',
-                name: 'Tour Ninh Bình - Tràng An 1N',
-                region: 'Miền Bắc',
-                price: '1,800,000 ₫',
-                duration: '1 ngày',
-                status: 'Hoạt động'
-            },
-            {
-                id: 8,
-                image: '../../assets/client/images/tour8.jpg',
-                name: 'Tour Huế - Động Phong Nha 3N2Đ',
-                region: 'Miền Trung',
-                price: '3,900,000 ₫',
-                duration: '3 ngày 2 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 9,
-                image: '../../assets/client/images/tour9.jpg',
-                name: 'Tour Vũng Tàu - Hòn Bà 2N1Đ',
-                region: 'Miền Nam',
-                price: '2,500,000 ₫',
-                duration: '2 ngày 1 đêm',
-                status: 'Hoạt động'
-            },
-            {
-                id: 10,
-                image: '../../assets/client/images/tour10.jpg',
-                name: 'Tour Mộc Châu - Cao Nguyên Trắng 2N1Đ',
-                region: 'Miền Bắc',
-                price: '2,700,000 ₫',
-                duration: '2 ngày 1 đêm',
-                status: 'Dừng'
-            }
+            // ... (mock data khác)
         ];
 
-        // Initialize DataTable
+        // Initialize DataTable - SỬ DỤNG CONFIG CHUNG
         const table = $('#tourTable').DataTable({
+            ...dataTableConfig, // Spread config chung
             data: tours,
             columns: [
                 {data: 'id'},
                 {
                     data: 'image',
-                    render: function (data) {
-                        return `<img src="${data}" alt="Tour" class="tour-image-cell">`;
-                    },
+                    render: (data) => `<img src="${data}" alt="Tour" class="tour-image-cell">`,
                     orderable: false
                 },
                 {
                     data: 'name',
-                    render: function (data) {
-                        return `<span class="tour-name">${data}</span>`;
-                    }
+                    render: (data) => `<span class="tour-name">${data}</span>`
                 },
                 {data: 'region'},
-                {data: 'price'},
+                {
+                    data: 'price',
+                    render: (data) => formatCurrency(data) // Dùng hàm từ utils.js
+                },
                 {data: 'duration'},
                 {
                     data: 'status',
-                    render: function (data) {
-                        const badgeClass = data === 'Hoạt động' ? 'badge-success' : 'badge-warning';
-                        return `<span class="badge ${badgeClass}">${data}</span>`;
-                    }
+                    render: (data) => createStatusBadge(data) // Dùng hàm từ datatable-config.js
                 },
                 {
                     data: null,
-                    render: function (data) {
-                        return `
-                            <div class="action-buttons">
-                                <a href="edit.html?id=${data.id}" class="btn btn-sm btn-success" title="Sửa">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button onclick="deleteTour(${data.id})" class="btn btn-sm btn-danger" title="Xóa">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        `;
-                    },
+                    render: (data) => createActionButtons(data.id, 'edit.html', 'deleteTour'),
                     orderable: false
                 }
             ],
-            language: {
-                lengthMenu: "Hiển thị _MENU_ tour/trang",
-                search: "Tìm kiếm:",
-                info: "Hiển thị _START_ đến _END_ trong _TOTAL_ tour",
-                infoEmpty: "Không có dữ liệu",
-                infoFiltered: "(lọc từ _MAX_ tour)",
-                paginate: {
-                    first: "Đầu",
-                    last: "Cuối",
-                    next: "Sau",
-                    previous: "Trước"
-                },
-                emptyTable: "Không có tour nào",
-                zeroRecords: "Không tìm thấy tour phù hợp"
-            },
-            pageLength: 10,
-            order: [[0, 'desc']],
-            responsive: true
+            order: [[0, 'desc']]
         });
 
-        // Filter by status
+        // Filter - ĐẶC THÙ CHO TRANG NÀY
         $('#statusFilter').on('change', function () {
             table.column(6).search(this.value).draw();
         });
 
-        // Filter by region
         $('#regionFilter').on('change', function () {
             table.column(3).search(this.value).draw();
         });
     });
 
-    // Delete function
+    // Delete function - ĐẶC THÙ CHO TRANG NÀY
     function deleteTour(id) {
-        if (confirm('Bạn có chắc muốn xóa tour này?')) {
-            alert('Đã xóa tour ID: ' + id);
+        if (confirmDelete('Bạn có chắc muốn xóa tour này?')) {
+            showToast('Đã xóa tour ID: ' + id, 'success');
             location.reload();
         }
     }

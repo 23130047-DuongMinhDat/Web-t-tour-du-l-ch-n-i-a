@@ -117,7 +117,7 @@
                 <ul class="sidebar-menu">
                     <!-- Dashboard -->
                     <li class="nav-item active">
-                        <a href="../index.html" class="nav-link" data-tooltip="Dashboard">
+                        <a href="#" class="nav-link" data-tooltip="Dashboard">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
@@ -134,13 +134,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../tours/list.html" class="nav-link">
+                                <a href="../admin/tours/list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách tour</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../tours/add.html" class="nav-link">
+                                <a href="../admin/tours/add.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Thêm tour mới</span>
                                 </a>
@@ -157,13 +157,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../bookings/list.html" class="nav-link">
+                                <a href="../admin/bookings/list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách đơn đặt</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../bookings/detail.html" class="nav-link">
+                                <a href="../admin/bookings/detail.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Chi tiết đơn đặt</span>
                                 </a>
@@ -440,13 +440,14 @@
 
 </div>
 
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../assets/admin/js/sidebar.js"></script>
 <script src="../assets/admin/js/header.js"></script>
 
 <!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+
     // Revenue Chart
     const ctx = document.getElementById('revenueChart');
     if (ctx) {
