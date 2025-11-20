@@ -1,0 +1,95 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #0099cc;
+    --primary-hover: #0077aa;
+    --primary-light: #e6f7ff;
+    --text-dark: #333;
+    --text-light: #666;
+    --border: #e0e0e0;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+
+    --white: #fff;
+    --bg-light: #f4f4f9;
+
+    --font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: var(--font-family), sans-serif;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content"
+        "sidebar footer";
+    min-height: 100vh;
+    transition: grid-template-columns 0.3s ease;
+}
+
+/* Khi wrapper có class sidebar-collapsed */
+.wrapper.sidebar-collapsed {
+    grid-template-columns: 70px 1fr;
+}
+
+
+.main-header {
+    grid-area: header;
+}
+
+.main-sidebar {
+    grid-area: sidebar;
+    background-color: var(--text-light);
+
+}
+
+.content-wrapper {
+    grid-area: content;
+
+}
+
+.main-footer {
+    grid-area: footer;
+}
+
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.active {
+    background-color: var(--primary);
+    padding: 10px 15px;
+}
+
+.active a {
+    color: white;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1em;
+}
+
