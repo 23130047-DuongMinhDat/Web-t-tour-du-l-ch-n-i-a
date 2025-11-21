@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="../../assets/admin/css/footer.css">
     <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/admin/css/bookings_tour.css">
+    <link rel="stylesheet" href="../../assets/admin/css/buttons_common.css">
 </head>
 <body>
 <div class="wrapper">
@@ -255,20 +257,21 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="actions-bar">
-                            <div class="filter-group">
+                            <div class="actions-bar__filter-group">
                                 <div class="filter-item">
                                     <label for="statusFilter" class="filter-label">Trạng thái Đơn hàng:</label>
-                                    <select id="statusFilter" class="form-control filter-select">
+                                    <select id="statusFilter" class="form-control actions-bar__filter-select">
                                         <option value="">Tất cả trạng thái</option>
                                         <option value="Pending">Chờ xử lý</option>
                                         <option value="Confirmed">Đã xác nhận</option>
+                                        <option value="Completed">Hoàn thành</option>
                                         <option value="Cancelled">Đã hủy</option>
                                     </select>
                                 </div>
 
                                 <div class="filter-item">
                                     <label for="paymentStatusFilter" class="filter-label">Trạng thái Thanh toán:</label>
-                                    <select id="paymentStatusFilter" class="form-control filter-select">
+                                    <select id="paymentStatusFilter" class="form-control actions-bar__filter-select">
                                         <option value="">Tất cả Thanh toán</option>
                                         <option value="Paid">Đã trả</option>
                                         <option value="Unpaid">Chưa trả</option>
@@ -278,13 +281,15 @@
 
                                 <div class="filter-item">
                                     <label for="bookingIdSearch" class="filter-label">Mã Đặt Tour:</label>
-                                    <input type="text" id="bookingIdSearch" class="form-control filter-input"
+                                    <input type="text" id="bookingIdSearch"
+                                           class="form-control actions-bar__filter-input"
                                            placeholder="Nhập REF-XXXX">
                                 </div>
 
                                 <div class="filter-item">
                                     <label for="customerSearch" class="filter-label">Khách hàng (Tên/SĐT):</label>
-                                    <input type="text" id="customerSearch" class="form-control filter-input"
+                                    <input type="text" id="customerSearch"
+                                           class="form-control actions-bar__filter-input"
                                            placeholder="Tên hoặc SĐT khách hàng">
                                 </div>
                             </div>
