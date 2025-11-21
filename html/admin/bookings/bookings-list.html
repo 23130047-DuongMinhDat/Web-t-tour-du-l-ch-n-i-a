@@ -11,12 +11,13 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <link rel="stylesheet" href="../../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/badges.css">
     <link rel="stylesheet" href="../../assets/admin/css/header.css">
     <link rel="stylesheet" href="../../assets/admin/css/footer.css">
     <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
-    <link rel="stylesheet" href="../../assets/admin/css/bookings_tour.css">
-    <link rel="stylesheet" href="../../assets/admin/css/buttons_common.css">
+    <link rel="stylesheet" href="../../assets/admin/css/bookings.css">
+    <link rel="stylesheet" href="../../assets/admin/css/buttons-common.css">
 </head>
 <body>
 <div class="wrapper">
@@ -129,7 +130,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../tours/list.html" class="nav-link">
+                                <a href="../tours/tours-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách tour</span>
                                 </a>
@@ -152,13 +153,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../bookings/list.html" class="nav-link">
+                                <a href="../bookings/bookings-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách đơn đặt</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../bookings/detail.html" class="nav-link">
+                                <a href="booking-detail.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Chi tiết đơn đặt</span>
                                 </a>
@@ -175,13 +176,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../customers/list.html" class="nav-link">
+                                <a href="../customers/customers-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách khách hàng</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../customers/detail.html" class="nav-link">
+                                <a href="../customers/customer-detail.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Chi tiết khách hàng</span>
                                 </a>
@@ -198,7 +199,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../destination/list.html" class="nav-link">
+                                <a href="../destination/destinations-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách điểm đến</span>
                                 </a>
@@ -214,7 +215,7 @@
 
                     <!-- Quản lý đánh giá -->
                     <li class="nav-item">
-                        <a href="../reviews/list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
+                        <a href="../reviews/reviews-list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
                             <i class="nav-icon fas fa-star"></i>
                             <span class="nav-text">Quản lý đánh giá</span>
                         </a>
@@ -239,7 +240,7 @@
         <!-- Content Header -->
         <div class="content-header">
             <div class="header-container">
-                <h2 class="page-title">Quản lý Tour</h2>
+                <h2 class="page-title">Quản lý đặt Tour</h2>
                 <nav class="breadcrumb-nav">
                     <a href="../index02.html" class="breadcrumb-link">
                         <i class="fas fa-home"></i> Home
@@ -297,7 +298,7 @@
                     </div>
                 </div>
 
-                <!-- Tour Table -->
+                <!-- Bookings Table -->
                 <div class="card">
                     <div class="card-body">
                         <table id="bookingsTable" class="data-table" style="width:100%">
@@ -314,8 +315,288 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <!-- Data sẽ được load bằng JavaScript -->
+                            <tr>
+                                <td>BK001</td>
+                                <td>Nguyễn Văn A</td>
+                                <td>Tour Đà Lạt 3N2Đ</td>
+                                <td>2025-12-05</td>
+                                <td>2</td>
+                                <td>6,400,000₫</td>
+                                <td><span class="badge bg-info">Đang xử lý</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK002</td>
+                                <td>Trần Thị B</td>
+                                <td>Tour Nha Trang 4N3Đ</td>
+                                <td>2025-11-22</td>
+                                <td>4</td>
+                                <td>18,000,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK003</td>
+                                <td>Lê Minh C</td>
+                                <td>Tour Hội An – Đà Nẵng</td>
+                                <td>2025-12-10</td>
+                                <td>3</td>
+                                <td>8,700,000₫</td>
+                                <td><span class="badge bg-warning">Chờ thanh toán</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK004</td>
+                                <td>Phạm Ngọc D</td>
+                                <td>Tour Sa Pa 3N2Đ</td>
+                                <td>2025-12-15</td>
+                                <td>1</td>
+                                <td>3,800,000₫</td>
+                                <td><span class="badge bg-danger">Đã hủy</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger" disabled>Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK005</td>
+                                <td>Đỗ Nhật E</td>
+                                <td>Tour Hạ Long 2N1Đ</td>
+                                <td>2025-11-30</td>
+                                <td>5</td>
+                                <td>9,500,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK006</td>
+                                <td>Vũ Thảo Nhi</td>
+                                <td>Tour Côn Đảo 3N2Đ</td>
+                                <td>2025-12-07</td>
+                                <td>2</td>
+                                <td>10,400,000₫</td>
+                                <td><span class="badge bg-info">Đang xử lý</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK007</td>
+                                <td>Hoàng Xuân F</td>
+                                <td>Tour Phú Quốc 4N3Đ</td>
+                                <td>2025-12-20</td>
+                                <td>3</td>
+                                <td>14,700,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK008</td>
+                                <td>Nguyễn Khánh G</td>
+                                <td>Tour Huế – Quảng Bình</td>
+                                <td>2025-12-02</td>
+                                <td>2</td>
+                                <td>6,600,000₫</td>
+                                <td><span class="badge bg-warning">Chờ thanh toán</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK009</td>
+                                <td>Ngô Bích H</td>
+                                <td>Tour Miền Tây Sông Nước</td>
+                                <td>2025-11-28</td>
+                                <td>4</td>
+                                <td>6,000,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK010</td>
+                                <td>Đinh Quốc I</td>
+                                <td>Tour Mộc Châu 2N1Đ</td>
+                                <td>2025-12-18</td>
+                                <td>2</td>
+                                <td>3,400,000₫</td>
+                                <td><span class="badge bg-info">Đang xử lý</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <!-- 11 → 20 -->
+                            <tr>
+                                <td>BK011</td>
+                                <td>Phan Mỹ J</td>
+                                <td>Tour Bình Thuận – Mũi Né</td>
+                                <td>2025-12-09</td>
+                                <td>3</td>
+                                <td>7,800,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK012</td>
+                                <td>Đỗ Lâm K</td>
+                                <td>Tour Buôn Mê Thuột</td>
+                                <td>2025-12-14</td>
+                                <td>1</td>
+                                <td>2,900,000₫</td>
+                                <td><span class="badge bg-warning">Chờ thanh toán</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK013</td>
+                                <td>Lý Ánh L</td>
+                                <td>Tour Cần Thơ – Chợ Nổi</td>
+                                <td>2025-11-26</td>
+                                <td>5</td>
+                                <td>6,500,000₫</td>
+                                <td><span class="badge bg-danger">Đã hủy</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger" disabled>Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK014</td>
+                                <td>Phùng Thanh M</td>
+                                <td>Tour Quy Nhơn – Eo Gió</td>
+                                <td>2025-12-03</td>
+                                <td>2</td>
+                                <td>7,000,000₫</td>
+                                <td><span class="badge bg-info">Đang xử lý</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK015</td>
+                                <td>Đặng Bảo N</td>
+                                <td>Tour Cà Mau – Đất Mũi</td>
+                                <td>2025-12-21</td>
+                                <td>3</td>
+                                <td>6,300,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK016</td>
+                                <td>Mai Tố O</td>
+                                <td>Tour Đồng Tháp – Tràm Chim</td>
+                                <td>2025-11-29</td>
+                                <td>2</td>
+                                <td>2,800,000₫</td>
+                                <td><span class="badge bg-warning">Chờ thanh toán</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK017</td>
+                                <td>Nguyễn Quốc P</td>
+                                <td>Tour Đảo Nam Du</td>
+                                <td>2025-12-11</td>
+                                <td>4</td>
+                                <td>12,800,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK018</td>
+                                <td>Đoàn Bích Q</td>
+                                <td>Tour Điện Biên – A1</td>
+                                <td>2025-12-17</td>
+                                <td>2</td>
+                                <td>4,800,000₫</td>
+                                <td><span class="badge bg-danger">Đã hủy</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger" disabled>Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK019</td>
+                                <td>Huỳnh Gia R</td>
+                                <td>Tour Sài Gòn City Tour</td>
+                                <td>2025-12-04</td>
+                                <td>1</td>
+                                <td>900,000₫</td>
+                                <td><span class="badge bg-success">Đã xác nhận</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>BK020</td>
+                                <td>Phạm Thu S</td>
+                                <td>Tour Cần Giờ – Rừng Ngập Mặn</td>
+                                <td>2025-12-06</td>
+                                <td>3</td>
+                                <td>2,550,000₫</td>
+                                <td><span class="badge bg-info">Đang xử lý</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary">Xem</button>
+                                    <button class="btn btn--sm btn--danger">Hủy</button>
+                                </td>
+                            </tr>
                             </tbody>
+
                         </table>
                     </div>
                 </div>

@@ -23,6 +23,10 @@
     transition: opacity 0.3s ease;
 }
 
+.sidebar-header .logo i, .sidebar-header .logo span {
+    color: var(--primary);
+}
+
 .logo:hover {
     opacity: 0.8;
 }

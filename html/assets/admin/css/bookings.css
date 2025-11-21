@@ -49,38 +49,6 @@
 
 
 /* ===========================
-   STATUS BADGES
-   =========================== */
-
-.status-badge {
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 500;
-    display: inline-block;
-}
-
-.status-badge--pending {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.status-badge--confirmed {
-    background: #d1ecf1;
-    color: #0c5460;
-}
-
-.status-badge--completed {
-    background: #d4edda;
-    color: #155724;
-}
-
-.status-badge--cancelled {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-/* ===========================
    DATATABLE CUSTOM STYLE
    =========================== */
 
@@ -141,6 +109,7 @@
     color: white;
     border-color: var(--primary);
 }
+
 
 /* ===========================
    TABLE CUSTOM STYLE
