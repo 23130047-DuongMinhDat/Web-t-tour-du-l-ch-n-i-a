@@ -22,7 +22,6 @@
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-left">
-                <!-- Thông tin liên hệ nhanh -->
                 <div class="contact-info">
                     <span><i class="fas fa-phone-alt"></i> Hotline: 1900 xxxx</span>
                     <span><i class="fas fa-envelope"></i> support@viettravel.vn</span>
@@ -31,7 +30,6 @@
             </div>
 
             <div class="top-bar-right">
-                <!-- Social Media -->
                 <div class="social-icons">
                     <a href="#" title="Google"><i class="fab fa-google"></i></a>
                     <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -39,17 +37,13 @@
                     <a href="#" title="Youtube"><i class="fab fa-youtube"></i></a>
                 </div>
 
-
-                <!-- User Auth -->
                 <div class="user-auth">
-                    <!-- Khi chưa đăng nhập -->
                     <div class="guest-menu">
                         <a href="login.html"><i class="fas fa-user"></i> Đăng nhập</a>
                         <span class="divider">|</span>
                         <a href="register.html">Đăng ký</a>
                     </div>
 
-                    <!-- Khi đã đăng nhập (ẩn mặc định) -->
                     <div class="user-logged" style="display:none;">
                         <div class="user-dropdown">
                             <button class="user-btn">
@@ -57,6 +51,7 @@
                                 <span class="user-name">Nguyễn Văn A</span>
                                 <i class="fas fa-chevron-down"></i>
                             </button>
+
                             <div class="dropdown-menu">
                                 <a href="profile.html"><i class="fas fa-user-circle"></i> Tài khoản của tôi</a>
                                 <a href="my-bookings.html"><i class="fas fa-ticket-alt"></i> Đơn đặt tour</a>
@@ -73,10 +68,8 @@
         </div>
     </div>
 
-    <!-- Main Header -->
     <div class="main-header">
         <div class="container">
-            <!-- Logo -->
             <div class="logo">
                 <a href="index.html">
                     <i class="fas fa-plane-departure"></i>
@@ -85,48 +78,42 @@
                 </a>
             </div>
 
-            <!-- Search Box (Quan trọng cho e-commerce) -->
-            <div class="search-box">
+            <div class="search-box highlight">
                 <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <i class="fas fa-search"></i>
 
-                        <label for="searchQuery" class="visually-hidden">
-                            <input
-                                    type="text"
-                                    id="searchQuery"
-                                    name="q"
-                                    placeholder="Tìm điểm đến, tour du lịch..."
-                                    class="search-input"
-                                    autocomplete="off"
-                                    required
-                            >
-                        </label>
+                        <label for="searchQuery" class="visually-hidden"></label>
+                        <input type="text"
+                               id="searchQuery"
+                               name="q"
+                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                               class="search-input"
+                               autocomplete="off"
+                               required>
 
-                        <button type="submit" class="search-btn">
-                            Tìm kiếm
-                        </button>
+                        <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
                 </form>
             </div>
 
-            <!-- Header Actions -->
             <div class="header-actions">
-                <!-- Wishlist -->
+
                 <a href="favorites.html" class="header-icon" title="Yêu thích">
                     <i class="fas fa-heart"></i>
                     <span class="badge">3</span>
                 </a>
 
-                <!-- Notifications -->
                 <div class="header-icon notification-icon">
                     <i class="fas fa-bell"></i>
                     <span class="badge">5</span>
+
                     <div class="notification-dropdown">
                         <div class="notification-header">
                             <h4>Thông báo</h4>
                             <a href="#">Đánh dấu đã đọc</a>
                         </div>
+
                         <div class="notification-list">
                             <a href="#" class="notification-item unread">
                                 <i class="fas fa-gift"></i>
@@ -135,13 +122,12 @@
                                     <span class="time">2 giờ trước</span>
                                 </div>
                             </a>
-                            <!-- More notifications -->
                         </div>
+
                         <a href="notifications.html" class="view-all">Xem tất cả</a>
                     </div>
                 </div>
 
-                <!-- Cart/Booking (Giỏ tour) -->
                 <a href="cart.html" class="header-icon cart-icon" title="Giỏ tour">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge">2</span>
@@ -149,27 +135,26 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
             <button class="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </div>
 
-    <!-- Navigation Bar -->
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Trang chủ</a></li>
 
-                <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
                     <a href="tours.html">
                         <i class="fas fa-map-marked-alt"></i> Tour du lịch
                         <i class="fas fa-chevron-down"></i>
                     </a>
+
                     <div class="mega-menu">
                         <div class="mega-menu-content">
+
                             <div class="mega-menu-column">
                                 <h4>Miền Bắc</h4>
                                 <ul>
@@ -179,6 +164,7 @@
                                     <li><a href="#">Ninh Bình</a></li>
                                 </ul>
                             </div>
+
                             <div class="mega-menu-column">
                                 <h4>Miền Trung</h4>
                                 <ul>
@@ -188,6 +174,7 @@
                                     <li><a href="#">Quy Nhơn</a></li>
                                 </ul>
                             </div>
+
                             <div class="mega-menu-column">
                                 <h4>Miền Nam</h4>
                                 <ul>
@@ -197,6 +184,7 @@
                                     <li><a href="#">Vũng Tàu</a></li>
                                 </ul>
                             </div>
+
                             <div class="mega-menu-column mega-menu-promo">
                                 <h4>Khuyến mãi hot</h4>
                                 <div class="promo-banner">
@@ -204,17 +192,17 @@
                                     <p>Giảm đến 30% tour mùa hè</p>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </li>
 
                 <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="blog.html" class="active"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
 
-            <!-- Quick links bên phải -->
             <div class="nav-right">
                 <a href="partner.html" class="nav-cta">
                     <i class="fas fa-handshake"></i> Hợp tác với chúng tôi
