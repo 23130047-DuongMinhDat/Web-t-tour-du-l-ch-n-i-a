@@ -42,3 +42,34 @@ function createStatusBadge(status) {
     const icon = status === 'Hoạt động' ? 'fa-check-circle' : 'fa-pause-circle';
     return `<span class="badge ${badgeClass}"><i class="fas ${icon}"></i> ${status}</span>`;
 }
+
+// Function tạo booking status badge
+function createBookingStatusBadge(status) {
+    let badgeClass = '';
+    let statusText = '';
+
+    switch (status) {
+        case 'Pending':
+            badgeClass = 'status-badge--pending';
+            statusText = 'Chờ xử lý';
+            break;
+        case 'Confirmed':
+            badgeClass = 'status-badge--confirmed';
+            statusText = 'Đã xác nhận';
+            break;
+        case 'Completed':
+            badgeClass = 'status-badge--completed';
+            statusText = 'Hoàn thành';
+            break;
+        case 'Cancelled':
+            badgeClass = 'status-badge--cancelled';
+            statusText = 'Đã hủy';
+            break;
+        default:
+            badgeClass = 'status-badge--pending';
+            statusText = status;
+    }
+
+    return `<span class="status-badge ${badgeClass}">${statusText}</span>`;
+}
+
