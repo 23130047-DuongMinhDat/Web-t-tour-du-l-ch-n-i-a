@@ -91,16 +91,18 @@
             <div class="search-box highlight">
                 <form action="search.html" method="GET" class="search-form">
                     <div class="search-input-wrapper">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
 
                         <label for="searchQuery" class="visually-hidden"></label>
-                        <input type="text"
-                               id="searchQuery"
-                               name="q"
-                               placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
-                               class="search-input"
-                               autocomplete="off"
-                               required>
+                        <input
+                                type="text"
+                                id="searchQuery"
+                                name="q"
+                                placeholder="Tìm tour, điểm đến (VD: Sapa, Đà Lạt, Hạ Long...)"
+                                class="search-input"
+                                autocomplete="off"
+                                required
+                        >
 
                         <button type="submit" class="search-btn">Tìm kiếm</button>
                     </div>
@@ -157,7 +159,7 @@
     <nav class="main-nav">
         <div class="container">
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Trang chủ</a></li>
 
                 <!-- Mega Menu cho Tour -->
                 <li class="has-mega-menu">
@@ -205,7 +207,7 @@
                     </div>
                 </li>
                 <li><a href="deals.html"><i class="fas fa-fire"></i> Ưu đãi hot</a></li>
-                <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+                <li><a href="blog.html" class="active"><i class="fas fa-newspaper"></i> Blog</a></li>
                 <li><a href="contact.html"><i class="fas fa-phone"></i> Liên hệ</a></li>
                 <li><a href="reviews.html"><i class="fas fa-star"></i> Đánh giá</a></li>
             </ul>
@@ -688,11 +690,19 @@
         <aside class="blog-sidebar">
             <div class="sidebar-widget" data-aos="fade-left">
                 <h3>Tìm Kiếm</h3>
-                <form class="search-form">
-                    <label for="searchInput">
-                        <input id="searchInput" type="text" placeholder="Tìm bài viết...">
-                    </label>
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                <form class="sidebar-search-form" method="GET" action="/search" >
+                    <input
+                            type="text"
+                            id="searchBlog"
+                            name="query"
+                            placeholder="Tìm bài viết..."
+                            aria-label="Tìm bài viết..."
+                            required
+                            autocomplete="off"
+                    >
+                    <button type="submit">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
                 </form>
             </div>
             <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">

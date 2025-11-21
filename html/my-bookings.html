@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài khoản của tôi - VietTravel</title>
+    <title>Lịch sử đặt tour - VietTravel</title>
 
-    <!-- Font Awesome-->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
     <link rel="stylesheet" href="../html/assets/client/css/base.css">
     <link rel="stylesheet" href="../html/assets/client/css/header.css">
     <link rel="stylesheet" href="../html/assets/client/css/footer.css">
-    <link rel="stylesheet" href="../html/assets/client/css/profile.css">
+    <link rel="stylesheet" href="../html/assets/client/css/my-bookings.css">
 </head>
-
 <body>
 
+<!-- Header-->
 <header>
     <div class="top-bar">
         <div class="container">
@@ -188,7 +186,7 @@
                             <div class="mega-menu-column mega-menu-promo">
                                 <h4>Khuyến mãi hot</h4>
                                 <div class="promo-banner">
-                                    <img src="assets/client/images/promo-tour.jpg" alt="Promo">
+                                    <img src="../html/assets/client/images/promo-tour.jpg" alt="Promo">
                                     <p>Giảm đến 30% tour mùa hè</p>
                                 </div>
                             </div>
@@ -212,125 +210,97 @@
     </nav>
 </header>
 
-<!-- Breadcrumb (Nên có cho UX) -->
-<div class="breadcrumb">
+<main class="bookings-main">
     <div class="container">
-        <a href="index.html">Trang chủ</a> > <span>Tài khoản của tôi</span>
-    </div>
-</div>
+        <h1 class="page-title"><i class="fas fa-ticket-alt"></i> Lịch sử đặt tour</h1>
 
-<main class="profile-page">
-    <div class="container grid">
+        <!-- Bộ lọc trạng thái -->
+        <div class="filter-tabs" id="filterTabs">
+            <button class="filter-btn active" data-status="all">Tất cả</button>
+            <button class="filter-btn" data-status="pending">Chờ thanh toán</button>
+            <button class="filter-btn" data-status="confirmed">Đã xác nhận</button>
+            <button class="filter-btn" data-status="completed">Hoàn thành</button>
+            <button class="filter-btn" data-status="cancelled">Đã hủy</button>
+        </div>
 
-        <!-- SIDEBAR - Menu tài khoản -->
-        <aside class="side-bar">
-            <div class="user-info-card">
-                <img src="images/avatar.jpg" alt="Avatar" class="avatar">
-                <h3>Nguyễn Văn A</h3>
-                <p class="user-email">user@email.com</p>
+        <!-- Danh sách đơn hàng -->
+        <div class="bookings-list" id="bookingsList">
+
+            <!-- Đơn 1 -->
+            <div class="booking-card" data-status="completed">
+                <div class="booking-header">
+                    <div class="booking-id">Mã đơn: <strong>#T2025-8745</strong></div>
+                    <div class="booking-date">Ngày đặt: 18/11/2025</div>
+                </div>
+                <div class="booking-body">
+                    <img src="../html/assets/client/images/tour-phuquoc.jpg" alt="Tour Phú Quốc">
+                    <div class="booking-info">
+                        <h3>Tour Phú Quốc 4N3Đ - Khách sạn 5 sao</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Khởi hành: 25/12/2025</p>
+                        <p><i class="fas fa-users"></i> Số người: 2 người lớn</p>
+                        <p><i class="fas fa-clock"></i> Trạng thái: <span class="status completed">Hoàn thành</span></p>
+                    </div>
+                    <div class="booking-price">
+                        <div class="total-price">18.900.000đ</div>
+                        <div class="actions">
+                            <a href="booking-detail.html" class="btn-detail">Xem chi tiết</a>
+                            <button class="btn-review">Viết đánh giá</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <nav class="profile-menu">
-                <ul>
-                    <li><a href="profile.html" class="active">📋 Thông tin cá nhân</a></li>
-                    <li><a href="my-bookings.html">🎫 Đơn đặt tour</a></li>
-                    <li><a href="favorites.html">❤️ Yêu thích</a></li>
-                    <li><a href="history.html">📜 Lịch sử giao dịch</a></li>
-                    <li><a href="wallet.html">💰 Ví của tôi</a></li>
-                    <li><a href="vouchers.html">🎁 Voucher</a></li>
-                    <li><a href="change-password.html">🔒 Đổi mật khẩu</a></li>
-                    <li><a href="login.html" class="logout">🚪 Đăng xuất</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <!-- MAIN CONTENT - Nội dung chính -->
-        <section class="main-content">
-            <div class="content-header">
-                <h1>Thông tin cá nhân</h1>
-                <button class="btn-edit" onclick="enableEdit()">✏️ Chỉnh sửa</button>
+            <!-- Đơn 2 -->
+            <div class="booking-card" data-status="confirmed">
+                <div class="booking-header">
+                    <div class="booking-id">Mã đơn: <strong>#T2025-8921</strong></div>
+                    <div class="booking-date">Ngày đặt: 20/11/2025</div>
+                </div>
+                <div class="booking-body">
+                    <img src="../html/assets/client/images/tour-sapa.jpg" alt="Tour Sapa">
+                    <div class="booking-info">
+                        <h3>Tour Sapa - Fansipan 3N2Đ</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Khởi hành: 05/12/2025</p>
+                        <p><i class="fas fa-users"></i> Số người: 4 người lớn + 1 trẻ em</p>
+                        <p><i class="fas fa-clock"></i> Trạng thái: <span class="status confirmed">Đã xác nhận</span></p>
+                    </div>
+                    <div class="booking-price">
+                        <div class="total-price">24.500.000đ</div>
+                        <div class="actions">
+                            <a href="booking-detail.html" class="btn-detail">Xem chi tiết</a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <form class="profile-form" id="profileForm">
-                <!-- Thông tin cơ bản -->
-                <div class="form-section">
-                    <h2>Thông tin cơ bản</h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="fullName">Họ và tên <span class="required">*</span></label>
-                            <input type="text" id="fullName" name="fullName" value="Nguyễn Văn A" disabled required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Số điện thoại <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" value="0901234567" disabled required>
-                        </div>
+            <!-- Đơn 3 -->
+            <div class="booking-card" data-status="cancelled">
+                <div class="booking-header">
+                    <div class="booking-id">Mã đơn: <strong>#T2025-8103</strong></div>
+                    <div class="booking-date">Ngày đặt: 10/11/2025</div>
+                </div>
+                <div class="booking-body">
+                    <img src="../html/assets/client/images/tour-dalat.jpg" alt="Tour Đà Lạt">
+                    <div class="booking-info">
+                        <h3>Tour Đà Lạt 3N2Đ - Mùa hoa mai anh đào</h3>
+                        <p><i class="fas fa-calendar-alt"></i> Khởi hành: 28/11/2025</p>
+                        <p><i class="fas fa-users"></i> Số người: 2 người lớn</p>
+                        <p><i class="fas fa-clock"></i> Trạng thái: <span class="status cancelled">Đã hủy</span></p>
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="userEmail">Email</label>
-                            <input type="email" id="userEmail" name="userEmail" value="user@email.com" disabled>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="birthday">Ngày sinh</label>
-                            <input type="date" id="birthday" name="birthday" value="1990-01-01" disabled>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Giới tính</label>
-                        <div class="radio-group">
-                            <label><input type="radio" name="gender" value="male" disabled checked> Nam</label>
-                            <label><input type="radio" name="gender" value="female" disabled> Nữ</label>
-                            <label><input type="radio" name="gender" value="other" disabled> Khác</label>
+                    <div class="booking-price">
+                        <div class="total-price cancelled">15.800.000đ</div>
+                        <div class="actions">
+                            <a href="#" class="btn-detail disabled">Đã hủy</a>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Địa chỉ -->
-                <div class="form-section">
-                    <h2>Địa chỉ</h2>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="province">Tỉnh/Thành phố</label>
-                            <select id="province" name="province" disabled>
-                                <option value="">Chọn tỉnh/thành</option>
-                                <option value="hanoi">Hà Nội</option>
-                                <option value="hcm" selected>TP. Hồ Chí Minh</option>
-                                <option value="danang">Đà Nẵng</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="district">Quận/Huyện</label>
-                            <select id="district" name="district" disabled>
-                                <option value="">Chọn quận/huyện</option>
-                                <option value="q1" selected>Quận 1</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Địa chỉ cụ thể</label>
-                        <input type="text" id="address" name="address" value="123 Nguyễn Huệ" disabled>
-                    </div>
-                </div>
-
-                <!-- Nút hành động -->
-                <div class="form-actions" style="display: none;">
-                    <button type="button" class="btn-cancel" onclick="cancelEdit()">Hủy</button>
-                    <button type="submit" class="btn-save">💾 Lưu thay đổi</button>
-                </div>
-            </form>
-        </section>
-
+        </div>
     </div>
-</main>
+</main></main>
 
+<!-- Footer  -->
 <footer class="site-footer">
     <!-- Newsletter -->
     <div class="newsletter-section">
@@ -340,9 +310,10 @@
                     <h3><i class="fas fa-envelope-open-text"></i> Đăng ký nhận tin</h3>
                     <p>Nhận thông tin tour mới và ưu đãi đặc biệt</p>
                 </div>
-                <form class="newsletter-form" method="POST" action="">
+                <form class="newsletter-form" method="POST" action="/subscribe">
                     <label>
-                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn..." required>
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Nhập email của bạn..."
+                               required>
                     </label>
                     <button type="submit"><i class="fas fa-paper-plane"></i> Đăng ký</button>
                 </form>
@@ -471,30 +442,6 @@
 
 </footer>
 
-<script>
-    // JavaScript cho chức năng chỉnh sửa
-    function enableEdit() {
-        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
-        inputs.forEach(input => input.disabled = false);
-
-        document.querySelector('.btn-edit').style.display = 'none';
-        document.querySelector('.form-actions').style.display = 'flex';
-    }
-
-    function cancelEdit() {
-        const inputs = document.querySelectorAll('#profileForm input, #profileForm select');
-        inputs.forEach(input => input.disabled = true);
-
-        document.querySelector('.btn-edit').style.display = 'block';
-        document.querySelector('.form-actions').style.display = 'none';
-    }
-
-    document.getElementById('profileForm').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Đã lưu thông tin thành công!');
-        cancelEdit();
-    });
-</script>
-
+<script src="../html/assets/client/js/my-bookings.js"></script>
 </body>
 </html>
