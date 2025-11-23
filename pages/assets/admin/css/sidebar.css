@@ -1,0 +1,234 @@
+/* Sidebar layout */
+.main-sidebar {
+    background: var(--text-dark); /* Dùng CSS variable */
+    color: var(--white);
+    overflow-y: auto;
+}
+
+/* Sidebar header */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar-header .logo i, .sidebar-header .logo span {
+    color: var(--primary);
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius);
+    transition: background 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Sidebar menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.nav-header {
+    padding: 10px 20px;
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+/* Main nav links */
+.sidebar .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: var(--radius);
+    margin: 4px 12px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+
+.nav-link.active,
+.nav-item.active > .nav-link {
+    background: var(--primary) !important;
+    color: var(--white) !important;
+    box-shadow: var(--shadow);
+}
+
+.nav-icon {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Text always aligned left */
+.nav-text {
+    flex-grow: 1;
+}
+
+.submenu-icon {
+    margin-left: auto;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Treeview submenu */
+.nav-treeview {
+    display: none;
+    list-style: none;
+    padding-left: 35px;
+    /* Dùng màu nền tối hơn và rõ ràng hơn */
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--radius);
+}
+
+.nav-treeview .nav-link {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.nav-item.open > .nav-treeview {
+    display: block;
+    /* Ghi đè bất kỳ sự kế thừa màu nền nào từ LI cha */
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.nav-item.active {
+    background-color: transparent !important; /* Đảm bảo LI không có nền */
+}
+
+.nav-item.open > .nav-link .submenu-icon {
+    transform: rotate(90deg);
+}
+
+/* Scrollbar */
+.main-sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main-sidebar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.main-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.main-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Tooltip khi hover icon (sidebar collapsed) */
+.main-sidebar.collapsed .nav-item {
+    position: relative;
+}
+
+.main-sidebar.collapsed .nav-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--text-dark);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.main-sidebar.collapsed .nav-link:hover::after {
+    opacity: 1;
+}
+
+/* ===========================
+   SIDEBAR COLLAPSED STATE
+   =========================== */
+
+/* Sidebar collapsed state */
+.main-sidebar.collapsed {
+    width: 70px;
+}
+
+/* Ẩn text khi collapsed */
+.main-sidebar.collapsed .logo-text,
+.main-sidebar.collapsed .nav-text,
+.main-sidebar.collapsed .nav-header,
+.main-sidebar.collapsed .submenu-icon {
+    display: none;
+}
+
+/* Giữ icon căn giữa khi collapsed */
+.main-sidebar.collapsed .nav-link {
+    justify-content: center;
+    padding: 12px 0;
+}
+
+.main-sidebar.collapsed .nav-icon {
+    margin-right: 0;
+}
+
+.main-sidebar.collapsed .sidebar-header {
+    justify-content: center;
+}
+
+.main-sidebar.collapsed .logo {
+    gap: 0;
+}
+
+/* Ẩn submenu khi collapsed */
+.main-sidebar.collapsed .nav-treeview {
+    display: none !important;
+}
+
+/* Hiệu ứng mượt */
+.main-sidebar {
+    transition: width 0.3s ease;
+}
+
+.logo-text,
+.nav-text,
+.submenu-icon {
+    transition: opacity 0.2s ease;
+}

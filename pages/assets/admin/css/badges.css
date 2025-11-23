@@ -1,0 +1,36 @@
+/* ===========================
+   BADGES - COMMON STYLES
+   =========================== */
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Status Colors */
+.badge.bg-warning,
+.badge.bg-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge.bg-info,
+.badge.bg-processing {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.badge.bg-success,
+.badge.bg-confirmed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge.bg-danger,
+.badge.bg-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}

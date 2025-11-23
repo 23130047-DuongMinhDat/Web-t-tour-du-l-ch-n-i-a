@@ -1,0 +1,3 @@
+$('#bookingsTable').DataTable({
+    ...dataTableConfig,
+});
