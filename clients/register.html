@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng ký tài khoản - VietTravel</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="/assets/client/css/register.css">
+
+</head>
+<body>
+<main>
+    <section class="auth-card">
+        <h1>Đăng ký tài khoản</h1>
+
+        <form id="signup-form" action="/register" method="post">
+            <div class="input-group">
+                <label for="name">Tên</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Tên của bạn..." required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Email của bạn.." required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Mật khẩu</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu của bạn..." required>
+                    <i class="fa-solid fa-eye-slash toggle-pass" id="toggle-password"></i></div>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Xác nhận mật khẩu</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="confirm-password" name="confirm_password"
+                           placeholder="Xác nhận mật khẩu..." required>
+                    <i class="fa-solid fa-eye-slash toggle-pass" id="toggle-confirm-password"></i></div>
+            </div>
+
+            <button id="submit" type="submit">Đăng ký</button>
+        </form>
+
+        <div class="divider">
+            <span>Hoặc đăng nhập bằng:</span>
+        </div>
+
+        <div class="social-media">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Google"><i class="fab fa-google"></i></a>
+        </div>
+
+        <p class="login-text">
+            Đã có tài khoản ? <a href="login.html">Đăng Nhập</a>
+        </p>
+    </section>
+</main>
+<script src="../assets/client/js/register.js"></script>
+</body>
+</html>
