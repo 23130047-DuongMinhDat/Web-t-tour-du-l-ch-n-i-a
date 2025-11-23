@@ -99,21 +99,20 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar">
         <div class="sidebar-header">
-            <a href="../../index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <i class="fas fa-plane-departure"></i>
                 <span class="logo-text">VietTravel</span>
             </a>
             <button class="sidebar-toggle" id="sidebarToggle">
                 <i class="fas fa-angle-left"></i>
             </button>
-
         </div>
         <div class="sidebar-wrapper">
             <nav class="sidebar">
                 <ul class="sidebar-menu">
                     <!-- Dashboard -->
                     <li class="nav-item active">
-                        <a href="../index02.html" class="nav-link" data-tooltip="Dashboard">
+                        <a href="../index.html" class="nav-link" data-tooltip="Dashboard">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
@@ -159,7 +158,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="booking-detail.html" class="nav-link">
+                                <a href="../bookings/booking-detail.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Chi tiết đơn đặt</span>
                                 </a>
@@ -199,15 +198,38 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../destination/destinations-list.html" class="nav-link">
+                                <a href="../destinations/destinations-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách điểm đến</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="../destination/add.html" class="nav-link">
+                                <a href="../destinations/add.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Thêm điểm đến mới</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý thanh toán -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý thanh toán">
+                            <i class="nav-icon fas fa-money-bill-wave"></i>
+                            <span class="nav-text">Quản lý thanh toán</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../payments/payments-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách thanh toán</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../payments/payment-detail.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Chi tiết thanh toán</span>
                                 </a>
                             </li>
                         </ul>
@@ -234,7 +256,7 @@
             </nav>
         </div>
     </aside>
-
+    
     <!-- Main Content -->
     <main class="content-wrapper">
         <!-- Content Header -->
