@@ -451,12 +451,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const imgEl = document.getElementById('tourMainImage');
         if (imgEl) imgEl.src = tour.mainImage;
 
+        // ... (các dòng code khác giữ nguyên)
+
         //khi bấm Sửa vẫn nhớ là tour nào
         const editLink = document.querySelector('a[href*="edit"]');
         if (editLink) {
 
-            editLink.href = `tour-edit.html?id=${tourId}`;
+            editLink.href = `edit.html?id=${tourId}`;
         }
+
+
 
     } else {
         // Trường hợp không tìm thấy ID hoặc ID sai
