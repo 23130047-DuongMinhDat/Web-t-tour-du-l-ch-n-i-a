@@ -18,6 +18,22 @@
     <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/admin/css/tours.css">
     <link rel="stylesheet" href="../../assets/admin/css/buttons-common.css">
+    <style>
+        /* CSS cho nút Xem chi tiết */
+        .btn--info {
+            background-color: #17a2b8; /* Màu xanh ngọc */
+            color: white;
+            text-decoration: none;
+            margin-right: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn--info:hover {
+            background-color: #138496;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 <div class="wrapper">
@@ -121,22 +137,21 @@
                     <li class="nav-header">Quản lý</li>
 
                     <!-- Quản lý tour -->
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link" data-tooltip="Quản lý Tour">
-                            <i class="nav-icon fas fa-map-marked-alt"></i>
-                            <span class="nav-text">Quản lý Tour</span>
+                    <li class="nav-item has-treeview active open">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <span class="nav-text">Quản lý đặt Tour</span>
                             <i class="submenu-icon fas fa-angle-right"></i>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../tours/tours-list.html" class="nav-link">
+                                <a href="tours-list.html" class="nav-link active">
                                     <i class="nav-icon far fa-circle"></i>
-                                    <span>Danh sách tour</span>
+                                    <span>Danh sách đơn đặt</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-
                     <!-- Quản lý đặt tour -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
@@ -291,13 +306,16 @@
                             <tbody>
                             <tr>
                                 <td>1</td>
-                                <td><img src="assets/img/tours/tour1.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Đà Lạt 3N2Đ</td>
                                 <td>Lâm Đồng</td>
                                 <td>3,200,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=1" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -305,13 +323,16 @@
 
                             <tr>
                                 <td>2</td>
-                                <td><img src="assets/img/tours/tour2.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Nha Trang 4N3Đ</td>
                                 <td>Khánh Hòa</td>
                                 <td>4,500,000₫</td>
                                 <td>4 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=2" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -319,13 +340,16 @@
 
                             <tr>
                                 <td>3</td>
-                                <td><img src="assets/img/tours/tour3.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Hội An - Đà Nẵng</td>
                                 <td>Miền Trung</td>
                                 <td>2,900,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-warning">Tạm dừng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=3" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -333,13 +357,16 @@
 
                             <tr>
                                 <td>4</td>
-                                <td><img src="assets/img/tours/tour4.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Sa Pa 3N2Đ</td>
                                 <td>Lào Cai</td>
                                 <td>3,800,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=4" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -347,13 +374,16 @@
 
                             <tr>
                                 <td>5</td>
-                                <td><img src="assets/img/tours/tour5.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Hạ Long 2N1Đ</td>
                                 <td>Quảng Ninh</td>
                                 <td>1,900,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-danger">Ngưng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=5" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -361,13 +391,16 @@
 
                             <tr>
                                 <td>6</td>
-                                <td><img src="assets/img/tours/tour6.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Côn Đảo 3N2Đ</td>
                                 <td>Bà Rịa - Vũng Tàu</td>
                                 <td>5,200,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=6" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -375,13 +408,16 @@
 
                             <tr>
                                 <td>7</td>
-                                <td><img src="assets/img/tours/tour7.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Phú Quốc 4N3Đ</td>
                                 <td>Kiên Giang</td>
                                 <td>4,900,000₫</td>
                                 <td>4 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=7" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -389,13 +425,16 @@
 
                             <tr>
                                 <td>8</td>
-                                <td><img src="assets/img/tours/tour8.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Huế - Quảng Bình</td>
                                 <td>Miền Trung</td>
                                 <td>3,300,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-warning">Tạm dừng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=8" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -403,13 +442,16 @@
 
                             <tr>
                                 <td>9</td>
-                                <td><img src="assets/img/tours/tour9.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Miền Tây Sông Nước</td>
                                 <td>ĐBSCL</td>
                                 <td>1,500,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=9" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -417,28 +459,33 @@
 
                             <tr>
                                 <td>10</td>
-                                <td><img src="assets/img/tours/tour10.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Mộc Châu 2N1Đ</td>
                                 <td>Sơn La</td>
                                 <td>1,700,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=10" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
                             </tr>
 
-                            <!-- 11 - 20 -->
                             <tr>
                                 <td>11</td>
-                                <td><img src="assets/img/tours/tour11.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Bình Thuận – Mũi Né</td>
                                 <td>Bình Thuận</td>
                                 <td>2,600,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=11" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -446,13 +493,16 @@
 
                             <tr>
                                 <td>12</td>
-                                <td><img src="assets/img/tours/tour12.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Buôn Mê Thuột</td>
                                 <td>Đắk Lắk</td>
                                 <td>2,900,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-warning">Tạm dừng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=12" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -460,13 +510,16 @@
 
                             <tr>
                                 <td>13</td>
-                                <td><img src="assets/img/tours/tour13.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Cần Thơ – Chợ Nổi</td>
                                 <td>ĐBSCL</td>
                                 <td>1,300,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=13" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -474,13 +527,16 @@
 
                             <tr>
                                 <td>14</td>
-                                <td><img src="assets/img/tours/tour14.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Quy Nhơn – Eo Gió</td>
                                 <td>Bình Định</td>
                                 <td>3,500,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=14" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -488,13 +544,16 @@
 
                             <tr>
                                 <td>15</td>
-                                <td><img src="assets/img/tours/tour15.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Cà Mau – Đất Mũi</td>
                                 <td>ĐBSCL</td>
                                 <td>2,100,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-danger">Ngưng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=15" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -502,13 +561,16 @@
 
                             <tr>
                                 <td>16</td>
-                                <td><img src="assets/img/tours/tour16.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Đồng Tháp – Tràm Chim</td>
                                 <td>ĐBSCL</td>
                                 <td>1,400,000₫</td>
                                 <td>2 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=16" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -516,13 +578,16 @@
 
                             <tr>
                                 <td>17</td>
-                                <td><img src="assets/img/tours/tour17.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Đảo Nam Du</td>
                                 <td>Kiên Giang</td>
                                 <td>3,200,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=17" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -530,13 +595,16 @@
 
                             <tr>
                                 <td>18</td>
-                                <td><img src="assets/img/tours/tour18.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Điện Biên – A1</td>
                                 <td>Điện Biên</td>
                                 <td>2,400,000₫</td>
                                 <td>3 ngày</td>
                                 <td><span class="badge bg-warning">Tạm dừng</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=18" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -544,13 +612,16 @@
 
                             <tr>
                                 <td>19</td>
-                                <td><img src="assets/img/tours/tour19.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Sài Gòn City Tour</td>
                                 <td>Hồ Chí Minh</td>
                                 <td>900,000₫</td>
                                 <td>1 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=19" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
@@ -558,13 +629,16 @@
 
                             <tr>
                                 <td>20</td>
-                                <td><img src="assets/img/tours/tour20.jpg" width="60"></td>
+                                <td><img src="../../assets/admin/img/tour-image1.jpg" width="60" style="border-radius:4px"></td>
                                 <td>Tour Cần Giờ – Rừng Ngập Mặn</td>
                                 <td>Hồ Chí Minh</td>
                                 <td>850,000₫</td>
                                 <td>1 ngày</td>
                                 <td><span class="badge bg-success">Hoạt động</span></td>
                                 <td>
+                                    <a href="tour-detail.html?id=20" class="btn btn--sm btn--info" title="Xem">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
                                     <button class="btn btn--sm btn--primary">Sửa</button>
                                     <button class="btn btn--sm btn--danger">Xóa</button>
                                 </td>
