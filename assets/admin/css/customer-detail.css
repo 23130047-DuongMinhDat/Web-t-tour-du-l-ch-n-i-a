@@ -1,0 +1,231 @@
+/* ============================================================= */
+/* customer-detail.css - Đồng bộ 100% với base.css của bạn       */
+/* ============================================================= */
+
+.content-wrapper {
+    background-color: var(--bg-light);
+    padding: 20px;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+}
+
+.content-header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.breadcrumb a {
+    color: var(--primary);
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Card chung */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-header .card-title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Profile Card */
+.box-profile {
+    text-align: center;
+}
+
+.profile-user-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--white);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    margin-bottom: 1rem;
+}
+
+.profile-username {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0.5rem 0;
+}
+
+.list-group-unbordered .list-group-item {
+    border: none;
+    padding: 0.75rem 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.list-group-item b {
+    color: var(--text-dark);
+}
+
+.list-group-item a,
+.list-group-item span {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.list-group-item .text-success {
+    color: #28a745 !important;
+    font-weight: 600;
+}
+
+.btn-block {
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+/* Card thông tin cá nhân */
+.card-info .card-body strong {
+    display: block;
+    margin-top: 1rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.card-info .card-body strong i {
+    width: 20px;
+    color: var(--primary);
+}
+
+.card-info .text-muted {
+    margin-top: 0.3rem;
+    margin-bottom: 0;
+    color: var(--text-light) !important;
+}
+
+/* Bảng lịch sử đặt tour */
+.table {
+    margin-bottom: 0;
+    font-size: 0.93rem;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-dark);
+    border-top: none;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.table a {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+.badge {
+    padding: 0.4em 0.8em;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 1rem;
+}
+
+
+.btn-action {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-view {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.btn-view:hover {
+    background-color: #dee2e6;
+    color: #212529;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.btn-delete:hover {
+    background-color: #f5c6cb;
+    color: #491217;
+    transform: translateY(-1px);
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 70px 1fr !important;
+    }
+
+    .row > div {
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-user-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .table-responsive {
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+}

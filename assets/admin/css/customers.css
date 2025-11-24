@@ -1,0 +1,20 @@
+/* Thêm vào file customers.css */
+
+.data-table td:last-child {
+    white-space: nowrap;
+    width: 1%;
+}
+
+
+.data-table th,
+.data-table td {
+    padding: 12px 8px;
+}
+
+.data-table td:last-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    border-bottom: none;
+}

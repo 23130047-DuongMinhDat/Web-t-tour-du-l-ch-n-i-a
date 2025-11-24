@@ -1,0 +1,9 @@
+
+.data-table td:last-child {
+    white-space: nowrap; /* Cấm xuống dòng */
+    width: 1%;
+}
+.data-table th,
+.data-table td {
+    padding: 12px 8px;
+}

@@ -84,9 +84,10 @@
     transform: translateX(5px);
 }
 
-
-.nav-link.active,
-.nav-item.active > .nav-link {
+.active{
+    Padding: 0;
+}
+.nav-link.active{
     background: var(--primary) !important;
     color: var(--white) !important;
     box-shadow: var(--shadow);

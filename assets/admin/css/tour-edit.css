@@ -1,0 +1,114 @@
+.form-card {
+    /* Dùng biến --white */
+    background: var(--white);
+    border-radius: 8px;
+    /* Dùng biến --shadow (đã có trong base.css) */
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Định dạng cho tiêu đề trong form-card, loại bỏ style inline */
+.form-card h3 {
+    margin-bottom: 20px;
+    /* Dùng biến --border thay cho #eee */
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    /* Dùng biến --text-dark */
+    color: var(--text-dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    /* Dùng biến --border thay cho #ddd */
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Dùng biến --primary khi focus */
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Xử lý cho input readonly (loại bỏ style inline) */
+.form-control[readonly] {
+    /* Dùng biến --bg-light làm nền cho input chỉ đọc */
+    background-color: var(--bg-light);
+}
+
+/* Preview Ảnh */
+.img-preview-box {
+    margin-top: 10px;
+    /* Dùng biến --border thay cho #ddd */
+    border: 2px dashed var(--border);
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    /* Dùng biến --bg-light thay cho #f9f9f9 */
+    background: var(--bg-light);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-preview-box img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Utility class cho nút lớn (loại bỏ style inline) */
+.btn-block-lg {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 12px;
+    display: block; /* Đảm bảo a tag hoạt động như block */
+    text-align: center;
+    text-decoration: none !important;
+}
+
+/* Cấu trúc cột */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.row > [class*="col-md-"] {
+    padding: 0 10px;
+}
+
+.col-md-8 {
+    flex: 0 0 66.66%;
+    max-width: 66.66%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+/* Responsive text area */
+textarea.form-control {
+    resize: vertical;
+}
