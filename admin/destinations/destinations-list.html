@@ -1,10 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Điểm đến - VietTravel</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="../../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/badges.css">
+    <link rel="stylesheet" href="../../assets/admin/css/header.css">
+    <link rel="stylesheet" href="../../assets/admin/css/footer.css">
+    <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/admin/css/destinations.css">
+    <link rel="stylesheet" href="../../assets/admin/css/buttons-common.css">
+
+    <style>
+        .btn--info { background-color: #17a2b8; color: white; }
+        .btn--info:hover { background-color: #138496; }
+        .destination-img { width: 70px; height: 50px; object-fit: cover; border-radius: 6px; }
+    </style>
 </head>
 <body>
+<div class="wrapper">
 
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="header-right">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Tìm kiếm...">
+            </div>
+            <!-- Notification & User -->
+            <div class="header-item dropdown">
+                <button class="notification-btn" id="notificationBtn">
+                    <i class="fas fa-bell"></i><span class="badge">3</span>
+                </button>
+                <!-- dropdown menu thông báo  -->
+            </div>
+            <div class="header-item dropdown">
+                <button class="user-btn" id="userBtn">
+                    <img src="../../assets/admin/img/avatar.png" alt="Avatar">
+                    <span class="user-name">Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <!-- dropdown menu user -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="main-sidebar">
+        <div class="sidebar-header">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span class="logo-text">VietTravel</span>
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-angle-left"></i>
+            </button>
+        </div>
+        <div class="sidebar-wrapper">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link" data-tooltip="Dashboard">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Quản lý</li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý Tour">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../tours/tours-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách tour</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview active">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <span class="nav-text">Quản lý đặt Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../bookings/bookings-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách đơn đặt</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý khách hàng">
+                            <i class="nav-icon fas fa-users"></i>
+                            <span class="nav-text">Quản lý khách hàng</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../customers/customers-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách khách hàng</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý điểm đến">
+                            <i class="nav-icon fas fa-map-marker-alt"></i>
+                            <span class="nav-text">Quản lý điểm đến</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview active open">
+                            <li class="nav-item">
+                                <a href="destinations-list.html" class="nav-link active">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách điểm đến</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý thanh toán">
+                            <i class="nav-icon fas fa-money-bill-wave"></i>
+                            <span class="nav-text">Quản lý thanh toán</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../payments/payments-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách thanh toán</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../reviews/reviews-list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
+                            <i class="nav-icon fas fa-star"></i>
+                            <span class="nav-text">Quản lý đánh giá</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Hệ thống</li>
+
+                    <li class="nav-item">
+                        <a href="../settings/general.html" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <span class="nav-text">Cài đặt</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Danh sách Điểm đến (22)</h3>
+                            <nav class="breadcrumb-nav">
+                                <a href="../index02.html" class="breadcrumb-link">
+                                    <i class="fas fa-home"></i> Home
+                                </a>
+                                <span class="breadcrumb-separator">/</span>
+                                <span class="breadcrumb-current">Danh sách điểm đến</span>
+                            </nav>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-wrapper">
+                                <div class="card-tools">
+                                    <a href="add-destination.html" class="btn btn--primary">
+                                        <i class="fas fa-plus"></i> Thêm điểm đến mới
+                                    </a>
+                                </div>
+                                <table id="destinationTable" class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Tên điểm đến</th>
+                                        <th>Vị trí</th>
+                                        <th>Mô tả ngắn</th>
+                                        <th>Số tour</th>
+                                        <th>Trạng thái</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>DES001</td>
+                                        <td><img src="../../assets/admin/img/destinations/ha-long.jpg" class="destination-img" alt="Hạ Long"></td>
+                                        <td>Vịnh Hạ Long</td>
+                                        <td>Quảng Ninh</td>
+                                        <td>Di sản thiên nhiên thế giới UNESCO</td>
+                                        <td>18</td>
+                                        <td><span class="badge bg-success">Hoạt động</span></td>
+                                        <td>
+                                            <a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DES002</td>
+                                        <td><img src="../../assets/admin/img/destinations/phu-quoc.jpg" class="destination-img" alt="Phú Quốc"></td>
+                                        <td>Đảo Phú Quốc</td>
+                                        <td>Kiên Giang</td>
+                                        <td>Đảo ngọc, bãi biển đẹp nhất Việt Nam</td>
+                                        <td>25</td>
+                                        <td><span class="badge bg-success">Hoạt động</span></td>
+                                        <td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td>
+                                    </tr>
+                                    <tr><td>DES003</td><td><img src="../../assets/admin/img/destinations/da-lat.jpg" class="destination-img" alt="Đà Lạt"></td><td>Đà Lạt</td><td>Lâm Đồng</td><td>Thành phố ngàn hoa, khí hậu mát mẻ</td><td>22</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                        <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                        <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES004</td><td><img src="../../assets/admin/img/destinations/nha-trang.jpg" class="destination-img" alt="Nha Trang"></td><td>Nha Trang</td><td>Khánh Hòa</td><td>Vịnh biển đẹp, đảo Hòn Tằm, Vinpearl</td><td>19</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                        <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                        <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES005</td><td><img src="../../assets/admin/img/destinations/hoi-an.jpg" class="destination-img" alt="Hội An"></td><td>Hội An</td><td>Quảng Nam</td><td>Phố cổ đèn lồng, di sản văn hóa</td><td>15</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES006</td><td><img src="../../assets/admin/img/destinations/da-nang.jpg" class="destination-img" alt="Đà Nẵng"></td><td>Đà Nẵng</td><td>Đà Nẵng</td><td>Cầu Rồng, Bà Nà Hills, bãi biển Mỹ Khê</td><td>20</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES007</td><td><img src="../../assets/admin/img/destinations/sapa.jpg" class="destination-img" alt="Sapa"></td><td>Sapa</td><td>Lào Cai</td><td>Ruộng bậc thang, Fansipan</td><td>12</td><td><span class="badge bg-warning">Tạm dừng</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES008</td><td><img src="../../assets/admin/img/destinations/hue.jpg" class="destination-img" alt="Huế"></td><td>Huế</td><td>Thừa Thiên Huế</td><td>Cố đô, Đại Nội, sông Hương</td><td>10</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES009</td><td><img src="../../assets/admin/img/destinations/phong-nha.jpg" class="destination-img" alt="Phong Nha"></td><td>Phong Nha - Kẻ Bàng</td><td>Quảng Bình</td><td>Hang động lớn nhất thế giới</td><td>8</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES010</td><td><img src="../../assets/admin/img/destinations/mien-tay.jpg" class="destination-img" alt="Miền Tây"></td><td>Miền Tây Sông Nước</td><td>ĐBSCL</td><td>Chợ nổi, vườn trái cây, đờn ca tài tử</td><td>16</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES011</td><td><img src="../../assets/admin/img/destinations/mui-ne.jpg" class="destination-img" alt="Mũi Né"></td><td>Mũi Né</td><td>Bình Thuận</td><td>Đồi cát bay, bãi biển, làng chài</td><td>11</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES012</td><td><img src="../../assets/admin/img/destinations/moc-chau.jpg" class="destination-img" alt="Mộc Châu"></td><td>Mộc Châu</td><td>Sơn La</td><td>Đồng cỏ, đồi chè, mùa hoa mận</td><td>9</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES013</td><td><img src="../../assets/admin/img/destinations/buon-me-thuot.jpg" class="destination-img" alt="Buôn Mê Thuột"></td><td>Buôn Mê Thuột</td><td>Đắk Lắk</td><td>Văn hóa cồng chiêng, cà phê</td><td>7</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES014</td><td><img src="../../assets/admin/img/destinations/ca-mau.jpg" class="destination-img" alt="Cà Mau"></td><td>Cà Mau - Đất Mũi</td><td>Cà Mau</td><td>Mũi đất cực Nam Tổ quốc</td><td>6</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES015</td><td><img src="../../assets/admin/img/destinations/tram-chim.jpg" class="destination-img" alt="Tràm Chim"></td><td>Tràm Chim</td><td>Đồng Tháp</td><td>Vườn quốc gia, sếu đầu đỏ</td><td>5</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES016</td><td><img src="../../assets/admin/img/destinations/nam-du.jpg" class="destination-img" alt="Nam Du"></td><td>Quần đảo Nam Du</td><td>Kiên Giang</td><td>Hòn Ngang, biển trong xanh</td><td>10</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES017</td><td><img src="../../assets/admin/img/destinations/quy-nhon.jpg" class="destination-img" alt="Quy Nhơn"></td><td>Quy Nhơn - Eo Gió</td><td>Bình Định</td><td>Biển đẹp, ghềnh đá, võ thuật</td><td>8</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES018</td><td><img src="../../assets/admin/img/destinations/dien-bien.jpg" class="destination-img" alt="Điện Biên"></td><td>Điện Biên</td><td>Điện Biên</td><td>Chiến trường lịch sử, đồi A1</td><td>6</td><td><span class="badge bg-warning">Tạm dừng</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES019</td><td><img src="../../assets/admin/img/destinations/can-gio.jpg" class="destination-img" alt="Cần Giờ"></td><td>Cần Giờ</td><td>TP. Hồ Chí Minh</td><td>Rừng ngập mặn, đảo khỉ</td><td>9</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES020</td><td><img src="../../assets/admin/img/destinations/saigon.jpg" class="destination-img" alt="Sài Gòn"></td><td>Sài Gòn City</td><td>TP. Hồ Chí Minh</td><td>Dinh Độc Lập, chợ Bến Thành, Bitexco</td><td>14</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES021</td><td><img src="../../assets/admin/img/destinations/cho-noi-cai-rang.jpg" class="destination-img" alt="Chợ nổi"></td><td>Chợ nổi Cái Răng</td><td>Cần Thơ</td><td>Chợ nổi lớn nhất miền Tây</td><td>11</td><td><span class="badge bg-success">Hoạt động</span></td><td><a href="destination-detail.html?id=DES001" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                            <a href="edit-destination.html?id=DES001" class="btn btn--sm btn--primary">Sửa</a>
+                                            <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                                    <tr><td>DES022</td><td><img src="../../assets/admin/img/destinations/ha-noi.jpg" class="destination-img" alt="Hà Nội"></td><td>Hà Nội</td><td>Hà Nội</td><td>Hồ Gươm, Văn Miếu, phố cổ</td><td>13</td><td><span class="badge bg-success">Hoạt động</span></td><td>
+                                        <a href="destination-detail.html?id=DES022" class="btn btn--sm btn--info" title="Xem"><i class="fas fa-eye"></i></a>
+                                        <a href="edit-destination.html?id=DES022" class="btn btn--sm btn--primary">Sửa</a>
+                                        <button class="btn btn--sm btn--danger">Xóa</button>
+                                    </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-left"><span>&copy; 2025 <strong>VietTravel</strong>. All rights reserved.</span></div>
+        <div class="footer-right">
+            <a href="#">Hỗ trợ</a><span>•</span><a href="#">Tài liệu</a><span>•</span><span>Version 1.0.0</span>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/admin/js/header.js"></script>
+<script src="../../assets/admin/js/sidebar.js"></script>
+<script src="../../assets/admin/js/datatable-config.js"></script>
+<script src="../../assets/admin/js/utils.js"></script>
 </body>
 </html>
