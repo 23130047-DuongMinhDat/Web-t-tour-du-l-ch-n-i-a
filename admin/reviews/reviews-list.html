@@ -1,10 +1,410 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đánh giá - VietTravel</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="../../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/badges.css">
+    <link rel="stylesheet" href="../../assets/admin/css/header.css">
+    <link rel="stylesheet" href="../../assets/admin/css/footer.css">
+    <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
+    <link rel="stylesheet" href="../../assets/admin/css/buttons-common.css">
+    <link rel="stylesheet" href="../../assets/admin/css/reviews-list.css">
+</head>
+
+<body>
+<div class="wrapper">
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="header-right">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchQuery" placeholder="Tìm kiếm đánh giá...">
+            </div>
+
+            <div class="header-item dropdown">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+            </div>
+
+            <div class="header-item dropdown">
+                <button class="user-btn">
+                    <img src="../../assets/admin/img/avatar.png" alt="Avatar">
+                    <span class="user-name">Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="main-sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span class="logo-text">VietTravel</span>
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-angle-left"></i></button>
+        </div>
+
+        <div class="sidebar-wrapper">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Quản lý</li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../tours/tours-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách tour
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <span class="nav-text">Quản lý đặt Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../bookings/bookings-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách đơn đặt
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <span class="nav-text">Quản lý khách hàng</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../customers/customers-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách khách hàng
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-map-marker-alt"></i>
+                            <span class="nav-text">Quản lý điểm đến</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../destinations/destinations-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách điểm đến
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-money-bill-wave"></i>
+                            <span class="nav-text">Quản lý thanh toán</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../payments/payments-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách thanh toán
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a href="reviews-list.html" class="nav-link active">
+                            <i class="nav-icon fas fa-star"></i>
+                            <span class="nav-text">Quản lý đánh giá</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Hệ thống</li>
+
+                    <li class="nav-item">
+                        <a href="../settings/general.html" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <span class="nav-text">Cài đặt</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content-wrapper">
+
+        <div class="content-header">
+            <div class="header-container">
+                <h2 class="page-title">Quản lý Đánh giá</h2>
+
+                <nav class="breadcrumb-nav">
+                    <a href="../index.html" class="breadcrumb-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Danh sách đánh giá</span>
+                </nav>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="content-body">
+            <div class="body-container">
+
+                <!-- FILTER -->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="actions-bar">
+
+                            <div class="actions-bar__filter-group">
+
+                                <div class="filter-item">
+                                    <label for="starFilter" class="filter-label">Số sao đánh giá:</label>
+                                    <select id="starFilter" class="form-control actions-bar__filter-select">
+                                        <option value="">Tất cả số sao</option>
+                                        <option value="5">5 Sao</option>
+                                        <option value="4">4 Sao</option>
+                                        <option value="3">3 Sao</option>
+                                        <option value="2">2 Sao</option>
+                                        <option value="1">1 Sao</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-item">
+                                    <label for="statusFilter" class="filter-label">Trạng thái:</label>
+                                    <select id="statusFilter" class="form-control actions-bar__filter-select">
+                                        <option value="">Tất cả trạng thái</option>
+                                        <option value="Approved">Đã duyệt</option>
+                                        <option value="Pending">Chờ duyệt</option>
+                                        <option value="Hidden">Đã ẩn</option>
+                                    </select>
+                                </div>
+
+                                <div class="filter-item">
+                                    <label for="reviewSearch" class="filter-label">Tìm kiếm:</label>
+                                    <input type="text" id="reviewSearch"
+                                           class="form-control actions-bar__filter-input"
+                                           placeholder="Nhập tên khách hoặc nội dung..."
+                                           style="min-width:250px;">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABLE -->
+                <div class="card">
+                    <div class="card-body">
+                        <table id="reviewsTable" class="data-table" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Khách hàng</th>
+                                <th>Tour đã đi</th>
+                                <th>Đánh giá</th>
+                                <th>Nội dung</th>
+                                <th>Ngày gửi</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>RV001</td>
+                                <td><strong>Trần Thị A</strong><br><small class="text-muted">CUS001</small></td>
+                                <td>Tour Đà Lạt 3N2Đ</td>
+                                <td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td>
+                                <td><span class="review-content" title="Dịch vụ tuyệt vời! Gia đình tôi rất hài lòng.">Dịch vụ tuyệt vời...</span></td>
+                                <td>25/11/2025</td>
+                                <td><span class="badge bg-success">Đã duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV002</td>
+                                <td><strong>Nguyễn Văn B</strong><br><small class="text-muted">CUS002</small></td>
+                                <td>Tour Nha Trang 4N3Đ</td>
+                                <td><span class="d-none">4</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></td>
+                                <td><span class="review-content" title="Đồ ăn hơi ít món, khách sạn sạch sẽ.">Đồ ăn hơi ít món...</span></td>
+                                <td>24/11/2025</td>
+                                <td><span class="badge bg-success">Đã duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV003</td>
+                                <td><strong>Lê Minh C</strong><br><small class="text-muted">CUS003</small></td>
+                                <td>Tour Sa Pa - Fansipan</td>
+                                <td><span class="d-none">1</span><div class="star-rating"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td>
+                                <td><span class="review-content" title="Xe đón muộn 2 tiếng, thái độ phục vụ kém.">Xe đón muộn 2 tiếng...</span></td>
+                                <td>26/11/2025</td>
+                                <td><span class="badge bg-pending">Chờ duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--info">Duyệt</button>
+                                    <button class="btn btn--sm btn--danger">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV004</td>
+                                <td><strong>Phạm Văn D</strong><br><small class="text-muted">CUS004</small></td>
+                                <td>Tour Phú Quốc 4N3Đ</td>
+                                <td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td>
+                                <td><span class="review-content" title="Cảnh đẹp tuyệt vời, hướng dẫn viên nhiệt tình.">Cảnh đẹp tuyệt vời...</span></td>
+                                <td>25/11/2025</td>
+                                <td><span class="badge bg-success">Đã duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV005</td>
+                                <td><strong>Hoàng Thị E</strong><br><small class="text-muted">CUS005</small></td>
+                                <td>Tour Hạ Long Bay 2N1Đ</td>
+                                <td><span class="d-none">3</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td>
+                                <td><span class="review-content" title="Tàu hơi cũ, nhưng đồ ăn ngon.">Tàu hơi cũ, nhưng...</span></td>
+                                <td>20/11/2025</td>
+                                <td><span class="badge bg-hidden">Đã ẩn</span></td>
+                                <td><button class="btn btn--sm btn--primary">Hiện</button></td>
+                            </tr>
+                            <tr>
+                                <td>RV006</td>
+                                <td><strong>Vũ Văn F</strong><br><small class="text-muted">CUS006</small></td>
+                                <td>Tour Đà Nẵng - Hội An</td>
+                                <td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td>
+                                <td><span class="review-content" title="Hội An về đêm quá đẹp, sẽ quay lại!">Hội An về đêm quá...</span></td>
+                                <td>26/11/2025</td>
+                                <td><span class="badge bg-pending">Chờ duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--info">Duyệt</button>
+                                    <button class="btn btn--sm btn--danger">Xóa</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV007</td>
+                                <td><strong>Đặng Thị G</strong><br><small class="text-muted">CUS007</small></td>
+                                <td>Tour Huế 3N2Đ</td>
+                                <td><span class="d-none">4</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></td>
+                                <td><span class="review-content" title="Thời tiết hơi nóng nhưng tour thú vị.">Thời tiết hơi nóng...</span></td>
+                                <td>22/11/2025</td>
+                                <td><span class="badge bg-success">Đã duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>RV008</td>
+                                <td><strong>Bùi Văn H</strong><br><small class="text-muted">CUS008</small></td>
+                                <td>Tour Mộc Châu - Mai Châu</td>
+                                <td><span class="d-none">1</span><div class="star-rating"><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td>
+                                <td><span class="review-content" title="Mua bán Bitcoin liên hệ zalo...">Mua bán Bitcoin...</span></td>
+                                <td>26/11/2025</td>
+                                <td><span class="badge bg-hidden">Đã ẩn</span></td>
+                                <td><button class="btn btn--sm btn--danger">Xóa vĩnh viễn</button></td>
+                            </tr>
+
+                            <tr><td>RV009</td><td><strong>Đỗ Thị I</strong><br><small class="text-muted">CUS009</small></td><td>Tour Hà Giang - Đồng Văn</td><td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td><td><span class="review-content" title="Mã Pí Lèng hùng vĩ, trải nghiệm đáng nhớ.">Mã Pí Lèng hùng vĩ...</span></td><td>19/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV010</td><td><strong>Trần Văn K</strong><br><small class="text-muted">CUS010</small></td><td>Tour Côn Đảo 3N2Đ</td><td><span class="d-none">2</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Hủy chuyến bay liên tục, rất mệt mỏi.">Hủy chuyến bay...</span></td><td>18/11/2025</td><td><span class="badge bg-pending">Chờ duyệt</span></td><td><button class="btn btn--sm btn--info">Duyệt</button> <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                            <tr><td>RV011</td><td><strong>Lý Thị L</strong><br><small class="text-muted">CUS011</small></td><td>Tour Miền Tây - Cần Thơ</td><td><span class="d-none">4</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Chợ nổi vui, trái cây tươi ngon.">Chợ nổi vui, trái...</span></td><td>15/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV012</td><td><strong>Ngô Văn M</strong><br><small class="text-muted">CUS012</small></td><td>Tour Ninh Bình - Tràng An</td><td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td><td><span class="review-content" title="Tràng An quá đẹp, chèo thuyền rất vui.">Tràng An quá đẹp...</span></td><td>10/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV013</td><td><strong>Phan Thị N</strong><br><small class="text-muted">CUS013</small></td><td>Tour Quy Nhơn - Kỳ Co</td><td><span class="d-none">3</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Nắng quá gắt, hướng dẫn viên ít nói.">Nắng quá gắt...</span></td><td>12/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV014</td><td><strong>Võ Văn O</strong><br><small class="text-muted">CUS014</small></td><td>Tour Quảng Bình - Phong Nha</td><td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td><td><span class="review-content" title="Hang động kỳ vĩ, trải nghiệm tuyệt vời.">Hang động kỳ vĩ...</span></td><td>05/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV015</td><td><strong>Đinh Thị P</strong><br><small class="text-muted">CUS015</small></td><td>Tour Buôn Ma Thuột 3N2Đ</td><td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td><td><span class="review-content" title="Cưỡi voi rất thú vị, cà phê ngon tuyệt.">Cưỡi voi rất thú vị...</span></td><td>04/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV016</td><td><strong>Mai Thị Q</strong><br><small class="text-muted">CUS016</small></td><td>Tour Cần Thơ - Chợ Nổi</td><td><span class="d-none">4</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Hướng dẫn viên vui tính, khách sạn hơi ồn.">HDV vui tính...</span></td><td>03/11/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV017</td><td><strong>Nguyễn Quốc R</strong><br><small class="text-muted">CUS017</small></td><td>Tour Phú Yên - Gành Đá Đĩa</td><td><span class="d-none">2</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Xe cũ, điều hòa hỏng giữa đường.">Xe cũ, điều hòa hỏng...</span></td><td>01/11/2025</td><td><span class="badge bg-pending">Chờ duyệt</span></td><td><button class="btn btn--sm btn--info">Duyệt</button> <button class="btn btn--sm btn--danger">Xóa</button></td></tr>
+                            <tr><td>RV018</td><td><strong>Đoàn Bích S</strong><br><small class="text-muted">CUS018</small></td><td>Tour Sài Gòn City Tour</td><td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td><td><span class="review-content" title="Trải nghiệm ngắn nhưng rất ý nghĩa.">Trải nghiệm ý nghĩa...</span></td><td>30/10/2025</td><td><span class="badge bg-success">Đã duyệt</span></td><td><button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button> <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button></td></tr>
+                            <tr><td>RV019</td><td><strong>Huỳnh Gia T</strong><br><small class="text-muted">CUS019</small></td><td>Tour Cao Bằng - Thác Bản Giốc</td><td><span class="d-none">3</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div></td><td><span class="review-content" title="Thác đẹp, nhưng đường đi quá mệt.">Thác đẹp, đường đi...</span></td><td>28/10/2025</td><td><span class="badge bg-hidden">Đã ẩn</span></td><td><button class="btn btn--sm btn--primary">Hiện</button></td></tr>
+                            <tr>
+                                <td>RV020</td>
+                                <td><strong>Phạm Thu U</strong><br><small class="text-muted">CUS020</small></td>
+                                <td>Tour Lý Sơn 3N2Đ</td>
+                                <td><span class="d-none">5</span><div class="star-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></td>
+                                <td><span class="review-content" title="Biển trong xanh, hải sản ngon tuyệt.">Biển xanh, hải sản...</span></td>
+                                <td>27/10/2025</td>
+                                <td><span class="badge bg-success">Đã duyệt</span></td>
+                                <td>
+                                    <button class="btn btn--sm btn--primary"><i class="fas fa-eye"></i></button>
+                                    <button class="btn btn--sm btn--danger"><i class="fas fa-eye-slash"></i></button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="dataTables_wrapper">
+                            <div class="dataTables_info" role="status" aria-live="polite">
+                                Hiển thị 1 đến 20 trong tổng số 50 đánh giá
+                            </div>
+                            <div class="dataTables_paginate">
+                                <a class="paginate_button previous disabled">Trước</a>
+                                <span>
+                                    <a class="paginate_button current">1</a>
+                                    <a class="paginate_button">2</a>
+                                    <a class="paginate_button">3</a>
+                                </span>
+                                <a class="paginate_button next">Tiếp</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-left">© 2025 <strong>VietTravel</strong>. All rights reserved.</div>
+        <div class="footer-right">Version 1.0.0</div>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="../../assets/admin/js/header.js"></script>
+<script src="../../assets/admin/js/sidebar.js"></script>
+<script src="../../assets/admin/js/reviews-list.js"></script>
 </body>
 </html>
