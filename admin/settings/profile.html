@@ -1,10 +1,223 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ cá nhân - VietTravel Admin</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/header.css">
+    <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/admin/css/footer.css">
+    <link rel="stylesheet" href="../../assets/admin/css/settings-common.css">
+</head>
+<body class="settings-profile">
+
+<div class="wrapper">
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+
+        <div class="header-right">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchQuery" placeholder="Tìm kiếm đánh giá...">
+            </div>
+
+            <div class="header-item dropdown">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+            </div>
+
+            <div class="header-item dropdown">
+                <button class="user-btn">
+                    <img src="../../assets/admin/img/avatar.png" alt="Avatar">
+                    <span class="user-name">Admin</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- SIDEBAR -->
+    <aside class="main-sidebar">
+        <div class="sidebar-header">
+            <a href="../../index.html" class="logo">
+                <i class="fas fa-plane-departure"></i>
+                <span class="logo-text">VietTravel</span>
+            </a>
+            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-angle-left"></i></button>
+        </div>
+
+        <div class="sidebar-wrapper">
+            <nav class="sidebar">
+                <ul class="sidebar-menu">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Quản lý</li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../tours/tours-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách tour
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            <span class="nav-text">Quản lý đặt Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../bookings/bookings-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách đơn đặt
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <span class="nav-text">Quản lý khách hàng</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../customers/customers-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách khách hàng
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-map-marker-alt"></i>
+                            <span class="nav-text">Quản lý điểm đến</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../destinations/destinations-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách điểm đến
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-money-bill-wave"></i>
+                            <span class="nav-text">Quản lý thanh toán</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../payments/payments-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i> Danh sách thanh toán
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a href="reviews-list.html" class="nav-link active">
+                            <i class="nav-icon fas fa-star"></i>
+                            <span class="nav-text">Quản lý đánh giá</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-header">Hệ thống</li>
+
+                    <li class="nav-item">
+                        <a href="../settings/general.html" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <span class="nav-text">Cài đặt</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="content-wrapper">
+        <div class="settings-container">
+            <h2 class="page-title">Hồ sơ quản trị viên</h2>
+            <nav class="breadcrumb-nav">
+                <a href="../../admin/index02.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Hồ sơ cá nhân</span>
+            </nav>
+
+            <div class="card">
+                <div class="card-body">
+                    <form id="profileForm">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-4">
+                                <img src="../../assets/admin/img/avatar.png" alt="Avatar" class="profile-avatar">
+                                <br><br>
+                                <label for="avatarInput" class="btn btn-outline-primary btn-sm" style="cursor:pointer;">
+                                    Đổi ảnh đại diện
+                                </label>
+                                <input type="file" id="avatarInput" accept="image/*" style="display:none">
+                            </div>
+
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Họ và tên</label>
+                                    <input type="text" class="form-control" name="name" value="Dương Minh Đạt" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" name="email" value="23130047@st.hcmuaf.edu.vn" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Số điện thoại</label>
+                                    <input type="text" class="form-control" name="phone" value="0901234567">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mật khẩu mới <small>(để trống nếu không đổi)</small></label>
+                                    <input type="password" class="form-control" name="password">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-save"></i> Cập nhật hồ sơ
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">© 2025 <strong>VietTravel</strong>. All rights reserved.</footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../../assets/admin/js/sidebar.js"></script>
+<script src="../../assets/admin/js/header.js"></script>
+<script src="../../assets/admin/js/settings/profile.js"></script>
 </body>
 </html>

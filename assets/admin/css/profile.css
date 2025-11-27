@@ -1,0 +1,23 @@
+/* Chỉ dùng cho profile.html */
+.profile-page .profile-avatar {
+    width: 160px;
+    height: 160px;
+    border: 6px solid var(--primary-light);
+    transition: all 0.3s;
+}
+
+.profile-page .profile-avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,153,204,0.3);
+}
+
+.profile-page .btn-outline-primary {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.profile-page .btn-outline-primary:hover {
+    background: var(--primary);
+    color: white;
+}
