@@ -1,4 +1,4 @@
-// assets/admin/js/settings/profile.js
+// assets/admin/js/settings/setting-profile.js
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('profileForm');
     const avatarInput = document.getElementById('avatarInput');

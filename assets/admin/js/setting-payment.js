@@ -1,4 +1,3 @@
-// assets/admin/js/settings/payment.js
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('paymentForm');
     if (!form) return;

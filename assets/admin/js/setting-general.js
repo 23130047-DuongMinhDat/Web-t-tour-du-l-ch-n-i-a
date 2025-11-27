@@ -1,4 +1,4 @@
-// assets/admin/js/settings/general.js
+// assets/admin/js/settings/setting-general.js
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('generalForm');
     if (!form) return;
