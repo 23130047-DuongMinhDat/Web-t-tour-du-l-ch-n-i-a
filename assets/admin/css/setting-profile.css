@@ -1,5 +1,4 @@
-/* assets/admin/css/settings/profile.css */
-/* Đồng bộ 100% màu với General - chỉ dùng #0099cc */
+
 
 .settings-profile .page-title {
     font-size: 28px; font-weight: 700; color: var(--text-dark);
@@ -17,10 +16,6 @@
     box-shadow: var(--shadow); overflow: hidden;
     border: 1px solid rgba(0,153,204,0.12);
     transition: all 0.4s ease;
-}
-.settings-profile .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0,153,204,0.22);
 }
 
 .settings-profile .card-header {
