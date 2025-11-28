@@ -7,40 +7,88 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="../../assets/admin/css/base.css">
+    <link rel="stylesheet" href="../../assets/admin/css/badges.css">
     <link rel="stylesheet" href="../../assets/admin/css/header.css">
-    <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/admin/css/footer.css">
+    <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
     <link rel="stylesheet" href="../../assets/admin/css/setting-general.css">
+    <link rel="stylesheet" href="../../assets/admin/css/buttons-common.css">
 </head>
 <body class="settings-general">
 
 <div class="wrapper">
 
-    <!-- HEADER -->
     <header class="main-header">
         <div class="header-left">
-            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
 
         <div class="header-right">
+            <!-- Search -->
             <div class="header-search">
                 <i class="fas fa-search"></i>
-                <input type="text" id="searchQuery" placeholder="Tìm kiếm đánh giá...">
+                <label for="searchQuery"></label>
+                <input type="text" id="searchQuery" placeholder="Tìm kiếm...">
             </div>
 
+            <!-- Notifications -->
             <div class="header-item dropdown">
-                <button class="notification-btn">
+                <button class="notification-btn" id="notificationBtn">
                     <i class="fas fa-bell"></i>
                     <span class="badge">3</span>
                 </button>
+                <div class="dropdown-menu" id="notificationMenu">
+                    <div class="dropdown-header">
+                        <span>Thông báo</span>
+                        <a href="#">Đánh dấu đã đọc</a>
+                    </div>
+                    <div class="notification-item unread">
+                        <i class="fas fa-calendar-check text-primary"></i>
+                        <div class="notification-content">
+                            <p>Đơn đặt tour mới</p>
+                            <span>5 phút trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item unread">
+                        <i class="fas fa-star text-warning"></i>
+                        <div class="notification-content">
+                            <p>Đánh giá 5 sao từ khách hàng</p>
+                            <span>15 phút trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <i class="fas fa-user text-success"></i>
+                        <div class="notification-content">
+                            <p>Khách hàng mới đăng ký</p>
+                            <span>1 giờ trước</span>
+                        </div>
+                    </div>
+                    <a href="#" class="dropdown-footer">Xem tất cả thông báo</a>
+                </div>
             </div>
 
+            <!-- User Menu -->
             <div class="header-item dropdown">
-                <button class="user-btn">
+                <button class="user-btn" id="userBtn">
                     <img src="../../assets/admin/img/avatar.png" alt="Avatar">
                     <span class="user-name">Admin</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
+                <div class="dropdown-menu" id="userMenu">
+                    <a href="../../admin/settings/profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Hồ sơ
+                    </a>
+                    <a href="../../admin/settings/general.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Cài đặt
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="../../clients/login.html" class="dropdown-item text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -153,13 +201,13 @@
 
                     <!-- Quản lý đánh giá -->
                     <li class="nav-item">
-                        <a href="reviews-list.html" class="nav-link">
+                        <a href="../reviews/reviews-list.html" class="nav-link">
                             <i class="nav-icon fas fa-star"></i>
                             <span class="nav-text">Quản lý đánh giá</span>
                         </a>
                     </li>
 
-                    <!-- === PHẦN CÀI ĐẶT - ĐẸP NHƯ DROPBOX === -->
+                    <!-- === PHẦN CÀI ĐẶT=== -->
                     <li class="nav-header">Hệ thống</li>
                     <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active">
@@ -200,12 +248,19 @@
     <!-- MAIN CONTENT -->
     <main class="content-wrapper">
         <div class="settings-container">
-            <h2 class="page-title">Cài đặt chung</h2>
-            <nav class="breadcrumb-nav">
-                <a href="../../admin/index02.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
-                <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-current">Cài đặt chung</span>
-            </nav>
+            <div class="content-header">
+                <div class="header-container">
+                    <h2 class="page-title">Cài đặt chung</h2>
+
+                    <nav class="breadcrumb-nav">
+                        <a href="../../admin/index02.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-current">Cài đặt chung</span>
+                    </nav>
+                </div>
+
+            </div>
+
 
             <div class="card">
                 <div class="card-header">Thông tin website</div>
@@ -243,7 +298,16 @@
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <div class="footer-left">© 2025 <strong>VietTravel</strong>. All rights reserved.</div>
+        <div class="footer-left">
+            <span>&copy; 2025 <strong>VietTravel</strong>. All rights reserved.</span>
+        </div>
+        <div class="footer-right">
+            <a href="#">Hỗ trợ</a>
+            <span>•</span>
+            <a href="#">Tài liệu</a>
+            <span>•</span>
+            <span>Version 1.0.0</span>
+        </div>
     </footer>
 </div>
 
