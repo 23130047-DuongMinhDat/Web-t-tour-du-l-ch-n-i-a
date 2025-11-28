@@ -1,6 +1,4 @@
-// File: assets/admin/js/customers-list.js
 
-// Dữ liệu lịch sử tour (Dùng chung logic với trang chi tiết)
 const bookingsByCustomer = {
     'Nguyễn Văn A': [
         { id: 'BK001', total: '6,400,000₫', status: 'Đang xử lý' },
@@ -92,7 +90,7 @@ function updateCustomersTable() {
     const rows = document.querySelectorAll('#bookingsTable tbody tr');
 
     rows.forEach(row => {
-        // Cột tên khách hàng là cột thứ 2 (index 1)
+        // Cột tên khách hàng là cột thứ 2
         const nameCell = row.cells[1];
         if (!nameCell) return;
 
@@ -127,5 +125,5 @@ function updateCustomersTable() {
     });
 }
 
-// Chạy hàm khi trang tải xong
+
 document.addEventListener('DOMContentLoaded', updateCustomersTable);

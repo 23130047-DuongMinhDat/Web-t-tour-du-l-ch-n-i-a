@@ -1,0 +1,147 @@
+.content-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+    margin-bottom: 25px;
+}
+
+/* CARD CHUNG */
+.settings-general .card,
+.settings-payment .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 1px solid rgba(0, 153, 204, 0.12);
+    transition: all 0.3s ease;
+}
+
+.settings-general .card-header,
+.settings-payment .card-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: white;
+    padding: 24px 34px;
+    font-size: 21px;
+    font-weight: 700;
+    position: relative;
+}
+
+.settings-payment .card-header::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 130px;
+    height: 130px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 50%;
+}
+
+.settings-payment .card-body {
+    padding: 40px 35px;
+    background: linear-gradient(to bottom, #fdfdff, var(--primary-light));
+}
+
+/* HEADER CONTAINER */
+.settings-payment .header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PAGE TITLE */
+.settings-payment .page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings-payment .page-title::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--primary);
+    font-size: 32px;
+}
+
+/* BREADCRUMB */
+.settings-payment .breadcrumb-nav {
+    font-size: 14px;
+}
+
+.settings-payment .breadcrumb-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* FORM */
+.settings-payment .form-group label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-size: 15.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.settings-payment .form-control {
+    padding: 15px 18px;
+    border: 2px solid #cceeff;
+    border-radius: 12px;
+    font-size: 15.5px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.settings-payment .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 5px rgba(0,153,204,0.18);
+}
+
+/* BUTTON */
+.settings-payment .btn-primary {
+    background: linear-gradient(to right, var(--primary), var(--primary-hover));
+    padding: 16px 44px;
+    font-size: 17px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,153,204,0.35);
+    border: none;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.settings-payment .btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-hover), #006699);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,153,204,0.45);
+}
+
+/* SIDEBAR TREEVIEW */
+.sidebar-menu .nav-treeview {
+    padding-left: 20px;
+    background: rgba(0, 153, 204, 0.05);
+    border-left: 3px solid var(--primary);
+    margin: 5px 0;
+    border-radius: 0 8px 8px 0;
+    overflow: hidden;
+}
+
+.sidebar-menu .nav-treeview .nav-link:hover,
+.sidebar-menu .nav-treeview .nav-link.active {
+    background: var(--primary);
+    color: white !important;
+    transform: translateX(5px);
+}
+
+.sidebar-menu .nav-treeview .nav-link.active i {
+    color: white;
+}

@@ -1,0 +1,144 @@
+/* =========================================
+   DESTINATIONS - LIST PAGE (giống bookings-list)
+   ========================================= */
+
+.content-header {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+
+.content-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+.breadcrumb {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #718096;
+}
+
+.breadcrumb a {
+    color: #718096;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--primary);
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.card-header {
+    margin-bottom: 16px;
+    color: white;
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-header h3{
+    font-size: 28px;
+}
+.card-title i {
+    margin-right: 10px;
+
+}
+
+.card-tools {
+    display: flex;
+    gap: 12px;
+}
+
+.card-tools .form-control {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    color: white;
+    min-width: 160px;
+    font-size: 14px;
+}
+
+.card-tools .form-control:focus {
+    background: white;
+    color: #333;
+    outline: none;
+}
+
+#destinationTable th {
+    background: #f8fafc;
+    color: #4a5568;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    padding: 16px 14px !important;
+}
+
+#destinationTable td {
+    padding: 16px 14px !important;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+#destinationTable tbody tr:hover {
+    background-color: #f1f5f9 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+#destinationTable img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.destination-name {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.destination-name + small {
+    color: #718096;
+    font-size: 13px;
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .content-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .card-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+
+    }
+    .card-tools {
+        justify-content: center;
+    }
+}

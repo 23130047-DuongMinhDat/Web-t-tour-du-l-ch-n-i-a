@@ -48,13 +48,14 @@
             <button class="sidebar-toggle" id="sidebarToggle">
                 <i class="fas fa-angle-left"></i>
             </button>
+
         </div>
         <div class="sidebar-wrapper">
             <nav class="sidebar">
                 <ul class="sidebar-menu">
                     <!-- Dashboard -->
-                    <li class="nav-item active">
-                        <a href="../index.html" class="nav-link" data-tooltip="Dashboard">
+                    <li class="nav-item">
+                        <a href="../index02.html" class="nav-link" data-tooltip="Dashboard">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <span class="nav-text">Dashboard</span>
                         </a>
@@ -63,21 +64,22 @@
                     <li class="nav-header">Quản lý</li>
 
                     <!-- Quản lý tour -->
-                    <li class="nav-item has-treeview active open">
-                        <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
-                            <i class="nav-icon fas fa-calendar-check"></i>
-                            <span class="nav-text">Quản lý đặt Tour</span>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý Tour">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
                             <i class="submenu-icon fas fa-angle-right"></i>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="tours-list.html" class="nav-link active">
+                                <a href="../tours/tours-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
-                                    <span>Danh sách đơn đặt</span>
+                                    <span>Danh sách tour</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+
                     <!-- Quản lý đặt tour -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
@@ -104,7 +106,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="../customers/customers-list.html" class="nav-link">
+                                <a href="../customers/customers-list.html" class="nav-link ">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách khách hàng</span>
                                 </a>
@@ -128,7 +130,6 @@
                             </li>
                         </ul>
                     </li>
-
                     <!-- Quản lý thanh toán -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý thanh toán">
@@ -145,7 +146,6 @@
                             </li>
                         </ul>
                     </li>
-
                     <!-- Quản lý đánh giá -->
                     <li class="nav-item">
                         <a href="../reviews/reviews-list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
@@ -173,6 +173,8 @@
             <div class="header-container">
                 <h2 class="page-title">Chỉnh sửa Tour</h2>
                 <nav class="breadcrumb-nav">
+                    <a href="../index02.html" class="breadcrumb-link"><i class="fas fa-home"></i> Home</a>
+                    <span class="breadcrumb-separator">/</span>
                     <a href="tours-list.html" class="breadcrumb-link">Quản lý Tour</a>
                     <span class="breadcrumb-separator">/</span>
                     <span class="breadcrumb-current">Sửa Tour</span>

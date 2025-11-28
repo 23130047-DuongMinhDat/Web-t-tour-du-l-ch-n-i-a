@@ -1,0 +1,15 @@
+/* Chỉ dùng cho payment.html */
+.payment-config .card {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.payment-config .switch {
+    float: right;
+    margin-top: 8px;
+}
+
+.payment-config .form-group label {
+    font-weight: 600;
+    color: #2c3e50;
+}
