@@ -14,35 +14,82 @@
     <link rel="stylesheet" href="../../assets/admin/css/footer.css">
     <link rel="stylesheet" href="../../assets/admin/css/sidebar.css">
     <link rel="stylesheet" href="../../assets/admin/css/dashboard.css">
-
-    <!-- CSS riêng cho trang thêm điểm đến (giống hệt add tour) -->
     <link rel="stylesheet" href="../../assets/admin/css/add-destination.css">
 </head>
 <body>
 
 <div class="wrapper">
 
-    <!-- HEADER -->
     <header class="main-header">
         <div class="header-left">
-            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+
         <div class="header-right">
+            <!-- Search -->
             <div class="header-search">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Tìm kiếm...">
+                <label for="searchQuery"></label>
+                <input type="text" id="searchQuery" placeholder="Tìm kiếm...">
             </div>
+
+            <!-- Notifications -->
             <div class="header-item dropdown">
                 <button class="notification-btn" id="notificationBtn">
-                    <i class="fas fa-bell"></i><span class="badge">3</span>
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
                 </button>
+                <div class="dropdown-menu" id="notificationMenu">
+                    <div class="dropdown-header">
+                        <span>Thông báo</span>
+                        <a href="#">Đánh dấu đã đọc</a>
+                    </div>
+                    <div class="notification-item unread">
+                        <i class="fas fa-calendar-check text-primary"></i>
+                        <div class="notification-content">
+                            <p>Đơn đặt tour mới</p>
+                            <span>5 phút trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item unread">
+                        <i class="fas fa-star text-warning"></i>
+                        <div class="notification-content">
+                            <p>Đánh giá 5 sao từ khách hàng</p>
+                            <span>15 phút trước</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <i class="fas fa-user text-success"></i>
+                        <div class="notification-content">
+                            <p>Khách hàng mới đăng ký</p>
+                            <span>1 giờ trước</span>
+                        </div>
+                    </div>
+                    <a href="#" class="dropdown-footer">Xem tất cả thông báo</a>
+                </div>
             </div>
+
+            <!-- User Menu -->
             <div class="header-item dropdown">
                 <button class="user-btn" id="userBtn">
                     <img src="../../assets/admin/img/avatar.png" alt="Avatar">
                     <span class="user-name">Admin</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
+                <div class="dropdown-menu" id="userMenu">
+                    <a href="../../admin/settings/profile.html" class="dropdown-item">
+                        <i class="fas fa-user"></i> Hồ sơ
+                    </a>
+                    <a href="../../admin/settings/general.html" class="dropdown-item">
+                        <i class="fas fa-cog"></i> Cài đặt
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="../../clients/login.html" class="dropdown-item text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    </a>
+                </div>
             </div>
         </div>
     </header>

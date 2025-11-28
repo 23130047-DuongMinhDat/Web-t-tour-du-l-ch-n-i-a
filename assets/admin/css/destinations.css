@@ -47,11 +47,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
 }
-
+.card-header h3{
+    font-size: 28px;
+}
 .card-title i {
     margin-right: 10px;
+
 }
 
 .card-tools {
@@ -134,6 +136,7 @@
         flex-direction: column;
         text-align: center;
         gap: 16px;
+
     }
     .card-tools {
         justify-content: center;
