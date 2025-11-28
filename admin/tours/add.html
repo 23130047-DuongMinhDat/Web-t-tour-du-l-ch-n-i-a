@@ -61,20 +61,47 @@
     <!-- SIDEBAR -->
     <aside class="main-sidebar">
         <div class="sidebar-header">
-            <a href="../../admin/index.html" class="logo">
+            <a href="../../index.html" class="logo">
                 <i class="fas fa-plane-departure"></i>
                 <span class="logo-text">VietTravel</span>
             </a>
-            <button class="sidebar-toggle" id="sidebarToggle"><i class="fas fa-angle-left"></i></button>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-angle-left"></i>
+            </button>
+
         </div>
         <div class="sidebar-wrapper">
             <nav class="sidebar">
                 <ul class="sidebar-menu">
-                    <li class="nav-item"><a href="../../admin/index02.html" class="nav-link" data-tooltip="Dashboard"><i class="nav-icon fas fa-tachometer-alt"></i><span class="nav-text">Dashboard</span></a></li>
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a href="../index02.html" class="nav-link" data-tooltip="Dashboard">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
 
                     <li class="nav-header">Quản lý</li>
 
-                    <li class="nav-item has-treeview active open">
+                    <!-- Quản lý tour -->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link" data-tooltip="Quản lý Tour">
+                            <i class="nav-icon fas fa-map-marked-alt"></i>
+                            <span class="nav-text">Quản lý Tour</span>
+                            <i class="submenu-icon fas fa-angle-right"></i>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="../tours/tours-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách tour</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Quản lý đặt tour -->
+                    <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
                             <i class="nav-icon fas fa-calendar-check"></i>
                             <span class="nav-text">Quản lý đặt Tour</span>
@@ -82,7 +109,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="tours-list.html" class="nav-link active">
+                                <a href="../bookings/bookings-list.html" class="nav-link">
                                     <i class="nav-icon far fa-circle"></i>
                                     <span>Danh sách đơn đặt</span>
                                 </a>
@@ -90,17 +117,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link" data-tooltip="Quản lý đặt Tour">
-                            <i class="nav-icon fas fa-calendar-check"></i>
-                            <span class="nav-text">Quản lý đặt Tour</span>
-                            <i class="submenu-icon fas fa-angle-right"></i>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item"><a href="../bookings/bookings-list.html" class="nav-link"><i class="nav-icon far fa-circle"></i><span>Danh sách đơn đặt</span></a></li>
-                        </ul>
-                    </li>
-
+                    <!-- Quản lý khách hàng -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý khách hàng">
                             <i class="nav-icon fas fa-users"></i>
@@ -108,13 +125,16 @@
                             <i class="submenu-icon fas fa-angle-right"></i>
                         </a>
                         <ul class="nav nav-treeview">
-                            <a href="../customers/customers-list.html" class="nav-link">
-                                <i class="nav-icon far fa-circle"></i>
-                                <span>Danh sách khách hàng</span>
-                            </a>
+                            <li class="nav-item">
+                                <a href="../customers/customers-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách khách hàng</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
+                    <!-- Quản lý điểm đến -->
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link" data-tooltip="Quản lý điểm đến">
                             <i class="nav-icon fas fa-map-marker-alt"></i>
@@ -122,7 +142,12 @@
                             <i class="submenu-icon fas fa-angle-right"></i>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item"><a href="../destinations/destinations-list.html" class="nav-link"><i class="nav-icon far fa-circle"></i><span>Danh sách điểm đến</span></a></li>
+                            <li class="nav-item">
+                                <a href="../destinations/destinations-list.html" class="nav-link">
+                                    <i class="nav-icon far fa-circle"></i>
+                                    <span>Danh sách điểm đến</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <!-- Quản lý thanh toán -->
@@ -141,10 +166,23 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a href="../reviews/list.html" class="nav-link" data-tooltip="Quản lý đánh giá"><i class="nav-icon fas fa-star"></i><span class="nav-text">Quản lý đánh giá</span></a></li>
+                    <!-- Quản lý đánh giá -->
+                    <li class="nav-item">
+                        <a href="../reviews/reviews-list.html" class="nav-link" data-tooltip="Quản lý đánh giá">
+                            <i class="nav-icon fas fa-star"></i>
+                            <span class="nav-text">Quản lý đánh giá</span>
+                        </a>
+                    </li>
 
                     <li class="nav-header">Hệ thống</li>
-                    <li class="nav-item"><a href="../settings/general.html" class="nav-link"><i class="nav-icon fas fa-cog"></i><span class="nav-text">Cài đặt</span></a></li>
+
+                    <!-- Cài đặt -->
+                    <li class="nav-item">
+                        <a href="../settings/general.html" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <span class="nav-text">Cài đặt</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
