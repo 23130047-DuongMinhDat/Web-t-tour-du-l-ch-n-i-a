@@ -182,11 +182,9 @@ function formatMoney(amount) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Lấy ID từ URL
     const urlParams = new URLSearchParams(window.location.search);
     const bookingId = urlParams.get('id') || 'BK001';
 
-    // 2. Lấy dữ liệu
     const data = bookingsData[bookingId];
 
     if (!data) {
@@ -194,27 +192,27 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // 3. Điền vào HTML (Chỉ điền text, không tạo thẻ mới)
     document.title = `Chi tiết ${bookingId} - VietTravel`;
     document.getElementById('d-booking-id').innerText = bookingId;
 
-    // --- Status ---
     const badge = document.getElementById('d-status-badge');
     const btnConfirm = document.getElementById('btn-confirm');
     const btnCancel = document.getElementById('btn-cancel');
 
     if (data.status === 'Confirmed') {
-        badge.className = 'badge bg-success'; badge.innerText = 'Đã xác nhận';
+        badge.className = 'badge bg-success';
+        badge.innerText = 'Đã xác nhận';
         if(btnConfirm) btnConfirm.style.display = 'none';
     } else if (data.status === 'Cancelled') {
-        badge.className = 'badge bg-danger'; badge.innerText = 'Đã hủy';
+        badge.className = 'badge bg-danger';
+        badge.innerText = 'Đã hủy';
         if(btnConfirm) btnConfirm.style.display = 'none';
         if(btnCancel) btnCancel.style.display = 'none';
     } else {
-        badge.className = 'badge bg-warning'; badge.innerText = 'Chờ xử lý';
+        badge.className = 'badge bg-warning';
+        badge.innerText = 'Chờ xử lý';
     }
 
-    // --- Thông tin chung ---
     document.getElementById('d-customer-name').innerText = data.name;
     document.getElementById('d-email').innerText = data.email;
     document.getElementById('d-phone').innerText = data.phone;
@@ -225,21 +223,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('d-start-date').innerText = data.date;
     document.getElementById('d-duration').innerText = data.duration;
 
-    // --- Tiền ---
     const subTotal = data.pax * data.pricePerPax;
     document.getElementById('d-price-per-pax').innerText = formatMoney(data.pricePerPax);
     document.getElementById('d-pax-count').innerText = data.pax;
     document.getElementById('d-total-price').innerText = formatMoney(subTotal);
 
-    // --- CẬP NHẬT TÊN TRONG BẢNG (Không render lại) ---
-    // Chỉ cập nhật tên người đầu tiên trong bảng cho khớp với người đặt
     const mainPaxName = document.getElementById('d-pax-main-name');
     if (mainPaxName) {
         mainPaxName.innerText = data.name;
     }
 });
 
-// --- Modal Functions (Giữ nguyên) ---
 function openModal(id) { document.getElementById(id).style.display = 'block'; }
 function closeModal(id) { document.getElementById(id).style.display = 'none'; }
 function confirmAction(msg) { alert(msg); location.reload(); }

@@ -3,7 +3,7 @@ $(document).ready(function() {
     let currentPage = 1;
 
     if ($('#reviewsTable').length) {
-        // Giữ nguyên DataTable nhưng tắt phân trang mặc định
+
         const table = $('#reviewsTable').DataTable({
             paging: false,
             info: false,
@@ -15,73 +15,78 @@ $(document).ready(function() {
             language: { zeroRecords: "Không tìm thấy dữ liệu" }
         });
 
-        // Hàm chính
+        const infoBox = document.querySelector('.dataTables_wrapper .dataTables_info');
+        const pageContainer = document.querySelector('.dataTables_paginate span');
+        const prevBtn = document.querySelector('.dataTables_paginate .previous');
+        const nextBtn = document.querySelector('.dataTables_paginate .next');
+
+        function clearChildren(el) {
+            while (el.firstChild) el.removeChild(el.firstChild);
+        }
+
+        function createPageBtn(page, isActive) {
+            const btn = document.createElement("button");
+            btn.classList.add("paginate_button");
+            if (isActive) btn.classList.add("current");
+            btn.textContent = page;
+            btn.addEventListener("click", () => showPage(page));
+            return btn;
+        }
+
         function showPage(page) {
             currentPage = page;
+
             const filteredRows = table.rows({search: 'applied'}).nodes();
             const total = filteredRows.length;
 
-            // Ẩn tất cả dòng đã lọc
             $(filteredRows).hide();
-
-            // Tính toán và hiện đúng 10 dòng từ filtered
             const start = (page - 1) * PAGE_SIZE;
             const end = start + PAGE_SIZE;
             $(filteredRows).slice(start, end).show();
 
-            // Cập nhật thông tin
+            // update info text
             const from = total > 0 ? start + 1 : 0;
             const to = Math.min(end, total);
-            $('.dataTables_wrapper .dataTables_info').html(
-                `Hiển thị <strong>${from}</strong> đến <strong>${to}</strong> trong tổng số <strong>${total}</strong> đánh giá`
-            );
+            infoBox.textContent = `Hiển thị ${from} đến ${to} trong tổng số ${total} đánh giá`;
 
-            // Vẽ lại số trang
+            // render page buttons (không dùng HTML string)
+            clearChildren(pageContainer);
             const totalPages = Math.ceil(total / PAGE_SIZE);
-            const container = $('.dataTables_paginate span');
-            container.empty();
 
             for (let i = 1; i <= totalPages; i++) {
-                const active = i === currentPage ? 'current' : '';
-                container.append(`<a class="paginate_button ${active}">${i}</a>`);
+                const btn = createPageBtn(i, i === currentPage);
+                pageContainer.appendChild(btn);
             }
 
-            // Xử lý nút Trước / Sau
-            $('.dataTables_paginate .previous')
-                .off('click').toggleClass('disabled', currentPage === 1)
-                .on('click', () => { if (currentPage > 1) showPage(currentPage - 1); });
+            // previous
+            prevBtn.classList.toggle("disabled", currentPage === 1);
+            prevBtn.onclick = () => {
+                if (currentPage > 1) showPage(currentPage - 1);
+            };
 
-            $('.dataTables_paginate .next')
-                .off('click').toggleClass('disabled', currentPage === totalPages)
-                .on('click', () => { if (currentPage < totalPages) showPage(currentPage + 1); });
-
-            // Click vào số trang
-            container.find('a').off('click').on('click', function() {
-                showPage(parseInt($(this).text()));
-            });
+            // next
+            nextBtn.classList.toggle("disabled", currentPage === totalPages);
+            nextBtn.onclick = () => {
+                if (currentPage < totalPages) showPage(currentPage + 1);
+            };
         }
 
-        // Bộ lọc - giữ nguyên nhưng gọi showPage sau
         $('#reviewSearch').on('keyup', function() {
             table.search(this.value).draw();
-            currentPage = 1;
             showPage(1);
         });
 
         $('#statusFilter').on('change', function() {
             const val = $.fn.dataTable.util.escapeRegex($(this).val());
             table.column(6).search(val ? '^' + val + '$' : '', true, false).draw();
-            currentPage = 1;
             showPage(1);
         });
 
         $('#starFilter').on('change', function() {
             table.column(3).search($(this).val()).draw();
-            currentPage = 1;
             showPage(1);
         });
 
-        // Khởi chạy lần đầu
         showPage(1);
     }
 });

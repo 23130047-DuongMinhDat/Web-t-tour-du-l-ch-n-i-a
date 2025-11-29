@@ -1,4 +1,3 @@
-// assets/admin/js/destination-add.js
 document.addEventListener('DOMContentLoaded', function () {
     const mainImageInput = document.querySelector('input[name="main_image"]');
     const mainImagePreview = document.getElementById('mainImagePreview');
@@ -20,21 +19,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Preview + xóa ảnh phụ
+    // Preview + xóa ảnh phụ (KHÔNG dùng innerHTML)
     if (galleryInput) {
         galleryInput.addEventListener('change', function (e) {
-            galleryPreview.innerHTML = ''; // Xóa preview cũ
+
+            // Xóa preview cũ (an toàn, không innerHTML)
+            while (galleryPreview.firstChild) {
+                galleryPreview.removeChild(galleryPreview.firstChild);
+            }
 
             Array.from(e.target.files).forEach(file => {
                 if (file.type.match('image.*')) {
                     const reader = new FileReader();
                     reader.onload = function (ev) {
+
                         const div = document.createElement('div');
-                        div.className = 'image-preview';
-                        div.innerHTML = `
-              <img src="${ev.target.result}" alt="Preview">
-              <button type="button" class="remove-img" title="Xóa ảnh này">×</button>
-            `;
+                        div.classList.add('image-preview');
+
+                        const img = document.createElement('img');
+                        img.src = ev.target.result;
+                        img.alt = "Preview";
+
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.classList.add('remove-img');
+                        btn.title = "Xóa ảnh này";
+                        btn.textContent = "×";
+
+                        div.appendChild(img);
+                        div.appendChild(btn);
+
                         galleryPreview.appendChild(div);
                     };
                     reader.readAsDataURL(file);
@@ -47,36 +61,15 @@ document.addEventListener('DOMContentLoaded', function () {
     galleryPreview.addEventListener('click', function (e) {
         if (e.target.classList.contains('remove-img')) {
             e.target.parentElement.remove();
-            // Optional: có thể reset input file nếu cần (phức tạp hơn, tạm để vậy là đẹp rồi)
         }
     });
 
-    // Demo submit (sau này thay bằng fetch API thật)
+    // Demo submit
     if (form) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-
-            // Tạo FormData để gửi kèm file
             const formData = new FormData(form);
-
-            // Demo thông báo thành công
             alert('Địa điểm mới đã được thêm thành công!');
-
-            // Sau này bạn sẽ dùng đoạn này:
-            /*
-            fetch('/api/admin/destinations', {
-              method: 'POST',
-              body: formData,
-              headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content }
-            })
-            .then(res => res.json())
-            .then(data => {
-              if (data.success) {
-                alert('Thêm thành công!');
-                window.location.href = 'destinations-list.html';
-              }
-            });
-            */
         });
     }
 });

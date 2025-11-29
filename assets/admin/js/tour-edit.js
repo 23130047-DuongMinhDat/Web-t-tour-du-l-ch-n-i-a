@@ -401,62 +401,55 @@ const toursData = {
         mainImage: '../../assets/admin/img/tour-image1.jpg'
     }
 };
-
-// Hàm loại bỏ ký tự tiền tệ và dấu phẩy để lấy giá trị số cho input type="number"
+// Hàm loại bỏ ký tự tiền tệ để lấy số
 function cleanCurrencyString(currencyString) {
     if (typeof currencyString !== 'string') return currencyString;
-    // Xóa tất cả dấu phẩy, dấu chấm và ký tự tiền tệ (₫)
     return currencyString.replace(/[,.₫]/g, '');
 }
 
-
 $(document).ready(function() {
 
-    // Hàm lấy tham số từ URL
     function getUrlParameter(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
         const results = regex.exec(location.search);
-        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-    };
+        return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : '';
+    }
 
-    // Lấy ID tour từ URL
     const tourId = getUrlParameter('id');
 
     if (tourId) {
         const tour = toursData[tourId];
 
         if (tour) {
-            // Điền dữ liệu vào form
+
             function populateForm(tour) {
-                // 1. Tiêu đề trang
+
                 $('title').text(`Chỉnh sửa Tour: ${tour.name}`);
                 $('.page-title').text(`Chỉnh sửa Tour: ${tour.name}`);
 
-                // 2. Thông tin chung (Sử dụng .val() cho các input và select)
                 $('#name').val(tour.name);
                 $('#code').val(tour.code);
-                // Chọn đúng option trong thẻ select
                 $('#region').val(tour.region);
 
-                // Xử lý giá: Loại bỏ định dạng tiền tệ (₫, dấu phẩy)
-                // để hiển thị giá trị số trong input type="number"
                 $('#priceAdult').val(cleanCurrencyString(tour.priceAdult));
                 $('#priceChild').val(cleanCurrencyString(tour.priceChild));
 
                 $('#shortDesc').val(tour.shortDesc);
 
-                // Xử lý itinerary: Loại bỏ thẻ <p> và thay bằng xuống dòng để hiển thị raw text trong textarea
-                const cleanItinerary = tour.itinerary.replace(/<p><strong>(.*?)<\/strong>|<\/p>/g, '\n$1').replace(/<p>|<\/p>/g, '\n').trim();
+
+                const cleanItinerary = tour.itinerary
+                    .replace(/<\/?p>/g, '\n')
+                    .replace(/<\/?strong>/g, '')
+                    .trim();
+
                 $('#itinerary').val(cleanItinerary);
 
-                // 3. Cài đặt
-                // Chọn đúng option trong thẻ select
                 $('#status').val(tour.status);
                 $('#duration').val(tour.duration);
-                $('#createdDate').val(tour.createdDate); // Giả định là trường chỉ đọc
+                $('#createdDate').val(tour.createdDate);
 
-                // 4. Preview ảnh (Sử dụng .attr() để đặt nguồn ảnh, không render HTML)
+                // Preview ảnh
                 const $mainImagePreview = $('#mainImagePreview');
                 const $imgPreviewBox = $('.img-preview-box');
 
@@ -470,16 +463,17 @@ $(document).ready(function() {
             }
 
             populateForm(tour);
+
         } else {
             console.warn('Không tìm thấy thông tin tour cho ID:', tourId);
         }
+
     } else {
         console.log('Chế độ tạo tour mới.');
-        // Set ngày tạo mặc định
         $('#createdDate').val(new Date().toLocaleDateString('vi-VN'));
     }
 
-    // 5. Xử lý Preview ảnh khi upload file
+    // Preview ảnh
     $('#mainImageInput').on('change', function(event) {
         const file = event.target.files[0];
         if (file) {
@@ -492,10 +486,9 @@ $(document).ready(function() {
         }
     });
 
-    // 6. Xử lý form submit (demo)
+    // Submit demo
     $('#editTourForm').on('submit', function(e) {
         e.preventDefault();
-        // **Lưu ý:** Đây là chỗ để gửi dữ liệu form lên server (AJAX POST/PUT)
         alert('Dữ liệu tour đã được cập nhật/thêm mới (Demo)! ID: ' + (tourId || 'Mới'));
     });
 });

@@ -99,7 +99,6 @@ const bookingsByCustomer = {
         { id: 'BK020', tour: 'Tour Cần Giờ – Rừng Ngập Mặn', bookDate: '20/11/2025', departure: '2025-12-06', people: 3, total: '2,550,000₫', status: 'Đang xử lý', badge: 'bg-info' }
     ]
 };
-
 // === HELPER FUNCTIONS ===
 function getURLParameter(name) {
     return new URLSearchParams(window.location.search).get(name);
@@ -108,7 +107,6 @@ function getURLParameter(name) {
 // Hàm chuyển đổi chuỗi tiền '1,000,000₫' thành số 1000000 để tính toán
 function parseMoney(moneyStr) {
     if (!moneyStr) return 0;
-    // Loại bỏ dấu phẩy, chữ đ, khoảng trắng
     return parseInt(moneyStr.replace(/[,₫\s]/g, '')) || 0;
 }
 
@@ -138,7 +136,6 @@ function createActionButton(type, bookingId) {
                 tr.style.opacity = '0.4';
                 tr.style.pointerEvents = 'none';
                 alert(`Đã xóa đơn ${bookingId} (demo)`);
-                // Sau này gọi API xóa thật thì reload lại tổng tiền
             }
         });
     }
@@ -149,25 +146,28 @@ function displayCustomerInfo() {
     const customerId = getURLParameter('id') || 'CUS002';
     const customer = customersData[customerId];
 
-    // Xử lý khi không tìm thấy khách hàng mà không dùng innerHTML để replace toàn bộ body
+
     if (!customer) {
         const errorDiv = document.createElement('div');
         errorDiv.style.textAlign = 'center';
         errorDiv.style.marginTop = '100px';
         errorDiv.style.color = 'red';
+
         const h2 = document.createElement('h2');
         h2.textContent = `Không tìm thấy khách hàng ${customerId}`;
         errorDiv.appendChild(h2);
 
-        document.body.innerHTML = ''; // Clear body cũ
+
+        while (document.body.firstChild) {
+            document.body.removeChild(document.body.firstChild);
+        }
         document.body.appendChild(errorDiv);
         return;
     }
 
-    // 1. Lấy danh sách booking của khách
     const bookings = bookingsByCustomer[customer.name] || [];
 
-    // 2. Tính toán tổng tiền thực tế (chỉ tính đơn KHÔNG bị hủy)
+    // Tổng tiền
     let calculatedTotalSpent = 0;
     bookings.forEach(b => {
         if (b.status !== 'Đã hủy') {
@@ -175,34 +175,29 @@ function displayCustomerInfo() {
         }
     });
 
-    // Cập nhật giao diện thông tin khách hàng
+    // ===== CẬP NHẬT THÔNG TIN CÁ NHÂN =====
     const avatarImg = document.querySelector('.profile-user-img');
-    if(avatarImg) avatarImg.src = customer.avatar;
+    if (avatarImg) avatarImg.src = customer.avatar;
 
     const userName = document.querySelector('.profile-username');
-    if(userName) userName.textContent = customer.name;
+    if (userName) userName.textContent = customer.name;
 
     const userCategory = document.querySelector('.text-muted.text-center');
-    if(userCategory) userCategory.textContent = 'Khách hàng ' + customer.category;
+    if (userCategory) userCategory.textContent = 'Khách hàng ' + customer.category;
 
-    // Cập nhật list group bên trái
     const infoItems = document.querySelectorAll('.list-group-item .float-right');
     if (infoItems.length >= 6) {
         infoItems[0].textContent = customer.id;
         infoItems[1].textContent = customer.email;
         infoItems[2].textContent = customer.phone;
         infoItems[3].textContent = customer.joinDate;
-
-        // Gán giá trị tổng tiền ĐÃ TÍNH TOÁN thay vì giá trị cứng từ customersData
         infoItems[4].textContent = formatMoney(calculatedTotalSpent);
         infoItems[4].classList.add('text-success', 'font-weight-bold');
-
-        // Cập nhật số tour (đếm số tour không hủy hoặc tổng tour tùy logic, ở đây lấy tổng tour trong list)
         infoItems[5].textContent = bookings.length + ' tour';
     }
 
     const emailBtn = document.querySelector('.btn-primary.btn-block');
-    if(emailBtn) emailBtn.href = 'mailto:' + customer.email;
+    if (emailBtn) emailBtn.href = 'mailto:' + customer.email;
 
     const personalInfos = document.querySelectorAll('.card-info .text-muted');
     if (personalInfos.length >= 4) {
@@ -212,12 +207,13 @@ function displayCustomerInfo() {
         personalInfos[3].textContent = customer.address;
     }
 
-    // 3. Render bảng lịch sử đặt tour (Dùng createElement - An toàn)
+    // ===== RENDER BẢNG BOOKING KHÔNG DÙNG innerHTML =====
     const cardTitle = document.querySelector('.card-title');
-    if(cardTitle) cardTitle.textContent = `Lịch sử đặt tour (${bookings.length} đơn)`;
+    if (cardTitle) cardTitle.textContent = `Lịch sử đặt tour (${bookings.length} đơn)`;
 
     const tbody = document.querySelector('tbody');
-    // Xóa nội dung cũ an toàn
+
+
     while (tbody.firstChild) {
         tbody.removeChild(tbody.firstChild);
     }
@@ -225,7 +221,6 @@ function displayCustomerInfo() {
     bookings.forEach(b => {
         const tr = document.createElement('tr');
 
-        // Helper để tạo td nhanh
         const createTd = (text, className = '') => {
             const td = document.createElement('td');
             td.textContent = text;
@@ -238,11 +233,8 @@ function displayCustomerInfo() {
         tr.appendChild(createTd(b.bookDate));
         tr.appendChild(createTd(b.departure));
         tr.appendChild(createTd(b.people + ' người'));
-
-        // Cột tổng tiền
         tr.appendChild(createTd(b.total, 'text-success font-weight-bold'));
 
-        // Cột trạng thái (badge)
         const tdStatus = document.createElement('td');
         const badge = document.createElement('span');
         badge.className = 'badge ' + b.badge;
@@ -250,7 +242,6 @@ function displayCustomerInfo() {
         tdStatus.appendChild(badge);
         tr.appendChild(tdStatus);
 
-        // Cột hành động
         const tdAction = document.createElement('td');
         tdAction.className = 'text-center';
         tdAction.appendChild(createActionButton('view', b.id));
