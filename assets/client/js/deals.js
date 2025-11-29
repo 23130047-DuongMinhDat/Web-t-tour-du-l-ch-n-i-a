@@ -1,3 +1,4 @@
+"use strict";
 
 // Khởi tạo AOS
 AOS.init({
@@ -9,14 +10,12 @@ AOS.init({
 
 // Format thời gian
 function formatTime(endTime) {
-    const now = Date.now();
-    const distance = now - endTime;
-
+    const distance = Date.now() - endTime;
     if (distance < 0) return "Đã hết hạn";
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
 
     return `${days} ngày ${hours} giờ ${minutes} phút`;
 }
@@ -24,19 +23,17 @@ function formatTime(endTime) {
 // Cập nhật timer
 function updateTimers() {
     const timers = document.querySelectorAll('.deal-timer .time');
-    if (timers.length === 0) return;
+    if (!timers.length) return;
 
     const update = () => {
         timers.forEach(timer => {
             const endTime = parseInt(timer.dataset.endtime, 10);
-            if (endTime) {
-                timer.textContent = formatTime(endTime);
-            }
+            if (endTime) timer.textContent = formatTime(endTime);
         });
     };
 
-    update(); // Cập nhật ngay
-    setInterval(update, 60000); // Cập nhật mỗi phút
+    update();
+    setInterval(update, 60000);
 }
 
 // Lọc theo danh mục
@@ -45,22 +42,21 @@ function filterByCategory(category) {
     let visible = 0;
 
     cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-            card.style.display = 'block';
-            visible++;
-        } else {
-            card.style.display = 'none';
-        }
+        const show = category === 'all' || card.dataset.category === category;
+        card.style.display = show ? 'block' : 'none';
+        if (show) visible++;
     });
 
     const msg = document.getElementById('noResults');
-    if (!msg && visible === 0) {
-        const div = document.createElement('div');
-        div.id = 'noResults';
-        div.textContent = 'Không tìm thấy ưu đãi nào.';
-        div.style.cssText = 'grid-column:1/-1; text-align:center; padding:40px; color:#999; font-size:18px;';
-        document.querySelector('.deals-grid').appendChild(div);
-    } else if (msg && visible > 0) {
+    if (!visible) {
+        if (!msg) {
+            const div = document.createElement('div');
+            div.id = 'noResults';
+            div.textContent = 'Không tìm thấy ưu đãi nào.';
+            div.style.cssText = 'grid-column:1/-1; text-align:center; padding:40px; color:#999; font-size:18px;';
+            document.querySelector('.deals-grid').appendChild(div);
+        }
+    } else if (msg) {
         msg.remove();
     }
 }
@@ -72,21 +68,32 @@ function searchDeals() {
 
     const term = input.value.toLowerCase().trim();
     const cards = document.querySelectorAll('.deal-card');
-    let visible = 0;
 
+    let visible = 0;
     cards.forEach(card => {
         const text = (card.querySelector('h3')?.textContent + ' ' + card.querySelector('p')?.textContent).toLowerCase();
-        if (!term || text.includes(term)) {
-            card.style.display = 'block';
-            visible++;
-        } else {
-            card.style.display = 'none';
-        }
+        const show = !term || text.includes(term);
+        card.style.display = show ? 'block' : 'none';
+        if (show) visible++;
     });
 
-    filterByCategory('all'); // Reset filter
-    document.querySelector('.filter-btn.active')?.classList.remove('active');
-    document.querySelector('.filter-btn[data-category="all"]')?.classList.add('active');
+    // Reset filter
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+    if (allBtn) allBtn.classList.add('active');
+
+    const msg = document.getElementById('noResults');
+    if (!visible) {
+        if (!msg) {
+            const div = document.createElement('div');
+            div.id = 'noResults';
+            div.textContent = 'Không tìm thấy ưu đãi nào.';
+            div.style.cssText = 'grid-column:1/-1; text-align:center; padding:40px; color:#999; font-size:18px;';
+            document.querySelector('.deals-grid').appendChild(div);
+        }
+    } else if (msg) {
+        msg.remove();
+    }
 }
 
 // Đặt tour
@@ -98,7 +105,7 @@ function bookTour(id) {
 
 // DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Filter
+    // Filter theo danh mục
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -120,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Timer
     updateTimers();
 
-    // AOS refresh
+    // Refresh AOS khi DOM thay đổi
     const observer = new MutationObserver(() => setTimeout(() => AOS.refresh(), 100));
     observer.observe(document.querySelector('.deals-grid'), { childList: true, subtree: true });
 

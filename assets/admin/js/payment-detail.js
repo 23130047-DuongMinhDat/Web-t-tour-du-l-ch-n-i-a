@@ -102,17 +102,14 @@ const paymentData = {
         ]
     }
 };
-
 document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('id');
 
-    const data = paymentData[id] || paymentData[1]; // fallback về 1 nếu không tìm thấy
+    const data = paymentData[id] || paymentData[1];
 
-    // Cập nhật tiêu đề
     document.getElementById("paymentIdDisplay").textContent = data.bookingCode;
 
-    // Điền dữ liệu
     document.getElementById("payId").textContent = data.id;
     document.getElementById("bookingCode").textContent = data.bookingCode;
     document.getElementById("customerName").textContent = data.customer;
@@ -120,7 +117,14 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("amount").textContent = data.amount;
     document.getElementById("method").textContent = data.method;
     document.getElementById("payDate").textContent = data.payDate;
-    document.getElementById("statusBadge").innerHTML = `<span class="badge ${data.statusClass}">${data.status}</span>`;
+
+    // Không dùng innerHTML → tạo DOM thuần
+    const badgeContainer = document.getElementById("statusBadge");
+    badgeContainer.textContent = "";
+    const span = document.createElement("span");
+    span.classList.add("badge", data.statusClass);
+    span.textContent = data.status;
+    badgeContainer.appendChild(span);
 
     document.getElementById("transactionId").textContent = data.transactionId;
     document.getElementById("fromAccount").textContent = data.fromAccount;
@@ -128,16 +132,20 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("fee").textContent = data.fee;
     document.getElementById("note").textContent = data.note;
 
-    // Lịch sử
     const historyList = document.getElementById("historyList");
-    historyList.innerHTML = "";
+    while (historyList.firstChild) {
+        historyList.removeChild(historyList.firstChild);
+    }
+
     data.history.forEach(item => {
         const li = document.createElement("li");
         li.textContent = item;
         historyList.appendChild(li);
     });
 
-    // Nút hành động
-    document.getElementById("refundButton").onclick = () => alert(`Hoàn tiền cho ${data.bookingCode}?`);
-    document.getElementById("cancelButton").onclick = () => confirm(`Hủy thanh toán ${data.bookingCode}?`) && alert("Đã hủy!");
+    document.getElementById("refundButton").onclick = () =>
+        alert(`Hoàn tiền cho ${data.bookingCode}?`);
+
+    document.getElementById("cancelButton").onclick = () =>
+        confirm(`Hủy thanh toán ${data.bookingCode}?`) && alert("Đã hủy!");
 });

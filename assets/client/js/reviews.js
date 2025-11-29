@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnFilter = document.querySelector('.btn-filter');
     const reviews = document.querySelectorAll('.review-card');
 
-    btnFilter.addEventListener('click', () => {
+    btnFilter?.addEventListener('click', () => {
         const tour = filterTour.value;
         const rating = parseInt(filterRating.value) || 0;
 
@@ -12,10 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const reviewTour = review.dataset.tour;
             const reviewRating = parseInt(review.dataset.rating);
 
-            const matchTour = !tour || reviewTour === tour;
-            const matchRating = !rating || reviewRating >= rating;
-
-            review.style.display = matchTour && matchRating ? 'block' : 'none';
+            review.style.display =
+                (!tour || reviewTour === tour) && (!rating || reviewRating >= rating)
+                    ? 'block' : 'none';
         });
     });
 });

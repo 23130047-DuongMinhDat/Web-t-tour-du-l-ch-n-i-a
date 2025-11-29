@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('paymentForm');
     if (!form) return;
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const formData = new FormData(form);
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Cấu hình thanh toán:', data);
 
-        // TODO: Gọi API lưu cấu hình
         // fetch('/api/settings/payment', { method: 'POST', body: JSON.stringify(data) })
 
         showToast('Cấu hình cổng thanh toán đã được lưu!', 'success');

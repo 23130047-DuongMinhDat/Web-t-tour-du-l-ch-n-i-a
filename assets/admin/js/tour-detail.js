@@ -400,74 +400,57 @@ const toursData = {
         mainImage: '../../assets/admin/img/tour-image1.jpg'
     }
 };
-
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Lấy ID
     const urlParams = new URLSearchParams(window.location.search);
     const tourId = urlParams.get('id');
 
-    // 2. Kiểm tra nếu có ID và dữ liệu tồn tại
     if (tourId && toursData[tourId]) {
         const tour = toursData[tourId];
 
-        // Thông tin cơ bản
         setText('tourName', tour.name);
         setText('tourCode', tour.code);
         setText('tourRegion', tour.region);
         setText('tourDuration', tour.duration);
 
-        // Giá
         setText('priceAdult', tour.priceAdult);
         setText('priceChild', tour.priceChild);
 
-        // Mô tả & Hành trình
         setText('tourShortDesc', tour.shortDesc);
-        if(document.getElementById('tourItinerary')) {
-            document.getElementById('tourItinerary').innerHTML = tour.itinerary;
+
+        // Không dùng innerHTML — chỉ text
+        const itineraryEl = document.getElementById('tourItinerary');
+        if (itineraryEl) {
+            itineraryEl.textContent = tour.itinerary;
         }
 
-        // Trạng thái (Badge)
         const statusBadge = document.getElementById('tourStatus');
         if (statusBadge) {
             statusBadge.textContent = tour.status;
-            // Reset class và thêm class mới
-            statusBadge.className = 'badge';
-            statusBadge.classList.add(tour.statusBadge);
+            statusBadge.className = 'badge ' + tour.statusBadge;
         }
 
-        // Ngày tháng & Thống kê
         setText('createdDate', tour.createdDate);
         setText('updatedDate', tour.updatedDate);
         setText('totalBookings', tour.totalBookings);
         setText('totalRevenue', tour.totalRevenue);
         setText('avgRating', tour.avgRating);
 
-        // Tổng lượt xem (nếu có element này)
-        if(tour.totalViews) {
+        if (tour.totalViews) {
             setText('totalViews', tour.totalViews.toLocaleString());
         }
 
-        // Ảnh đại diện
         const imgEl = document.getElementById('tourMainImage');
         if (imgEl) imgEl.src = tour.mainImage;
 
-        // ... (các dòng code khác giữ nguyên)
-
-        //khi bấm Sửa vẫn nhớ là tour nào
         const editLink = document.querySelector('a[href*="edit"]');
         if (editLink) {
-
             editLink.href = `edit.html?id=${tourId}`;
         }
 
-
-
     } else {
-        // Trường hợp không tìm thấy ID hoặc ID sai
         console.warn('Không tìm thấy thông tin tour cho ID:', tourId);
     }
 });
-
 
 function setText(id, value) {
     const el = document.getElementById(id);

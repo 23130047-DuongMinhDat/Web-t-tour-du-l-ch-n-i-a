@@ -1,15 +1,9 @@
-// tour-detail.js - Tối ưu hóa theo yêu cầu không dùng render HTML
 document.addEventListener("DOMContentLoaded", () => {
-    // Khởi tạo AOS animation
-    if (typeof AOS !== 'undefined') {
-        AOS.init({duration: 800, once: true});
-    }
+    if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true });
 
-    // Lấy ID tour từ URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const tourId = urlParams.get('id') || 'halong';
-
-    // Database tour (giả lập - sau này có thể lấy từ API)
+    // --- Lấy tour ID ---
+    const tourId = new URLSearchParams(window.location.search).get('id') || 'halong';
+    // Database tour
     const tours = {
         halong: {
             name: "Tour Vịnh Hạ Long 3N2Đ",
@@ -141,185 +135,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Lấy thông tin tour hiện tại
     const tour = tours[tourId];
-
-    // Kiểm tra tour có tồn tại không
     if (!tour) {
-        console.error('Tour không tồn tại:', tourId);
         alert('Tour không tồn tại! Quay về trang chủ...');
-        window.location.href = 'index.pages';
-        return;
+        return window.location.href = 'index.pages';
     }
 
-    // === CẬP NHẬT THÔNG TIN TOUR VÀO HTML ===
-
-    // Cập nhật tiêu đề tour
-    const tourNameElement = document.getElementById("tourName");
-    if (tourNameElement) {
-        tourNameElement.textContent = tour.name;
-    }
-
-    // Cập nhật breadcrumb
-    const breadcrumbElement = document.getElementById("breadcrumbName");
-    if (breadcrumbElement) {
-        const shortName = tour.name.length > 25 ? tour.name.substring(0, 25) + "..." : tour.name;
-        breadcrumbElement.textContent = shortName;
-    }
-
-    // Cập nhật giá
-    const priceElement = document.getElementById("price");
-    if (priceElement) {
-        priceElement.textContent = tour.price.toLocaleString('vi-VN') + "đ";
-    }
-
-    // Cập nhật giá cũ
-    const oldPriceElement = document.querySelector(".tour-price .old-price");
-    if (oldPriceElement) {
-        oldPriceElement.textContent = tour.oldPrice.toLocaleString('vi-VN') + "đ";
-    }
-
-    // Cập nhật % giảm giá
-    const discountElement = document.querySelector(".discount");
-    if (discountElement) {
-        discountElement.textContent = "Giảm " + tour.discount + "%";
-    }
-
-    // Cập nhật thời gian
-    const durationElement = document.getElementById("duration");
-    if (durationElement) {
-        durationElement.textContent = tour.duration;
-    }
-
-    // Cập nhật số chỗ còn lại
-    const slotsElement = document.getElementById("slots");
-    if (slotsElement) {
-        slotsElement.textContent = tour.slots;
-    }
-
-    // Cập nhật hình ảnh hero
-    const heroImage = document.querySelector(".page-hero img");
-    if (heroImage) {
-        heroImage.src = tour.image;
-        heroImage.alt = tour.name;
-    }
-
-    // Cập nhật điểm khởi hành
-    const departureElements = document.querySelectorAll('.tour-highlights li');
-    if (departureElements.length >= 2) {
-        const departureText = departureElements[1].querySelector('strong');
-        if (departureText && departureText.nextSibling) {
-            departureText.nextSibling.textContent = ' ' + tour.departure;
-        }
-    }
-
-    // Cập nhật đánh giá
-    const ratingElements = document.querySelectorAll('.tour-highlights li');
-    if (ratingElements.length >= 4) {
-        const ratingText = ratingElements[3].querySelector('strong');
-        if (ratingText && ratingText.nextSibling) {
-            ratingText.nextSibling.textContent = ' ' + tour.rating + ' (' + tour.reviews + ')';
-        }
-    }
-
-    // === XỬ LÝ TABS ===
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanes = document.querySelectorAll('.tab-pane');
-
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active từ tất cả
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabPanes.forEach(p => p.classList.remove('active'));
-
-            // Thêm active vào tab được click
-            btn.classList.add('active');
-            const targetTab = document.getElementById(btn.getAttribute('data-tab'));
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-        });
-    });
-
-    // === TÍNH TỔNG TIỀN ===
-    const adultsInput = document.getElementById("adults");
-    const childrenInput = document.getElementById("children");
-    const totalAmountElement = document.getElementById("totalAmount");
-
-    const calculateTotal = () => {
-        const adults = parseInt(adultsInput.value) || 0;
-        const children = parseInt(childrenInput.value) || 0;
-
-        // Trẻ em tính 70% giá người lớn
-        const total = (adults * tour.price) + (children * tour.price * 0.7);
-
-        if (totalAmountElement) {
-            totalAmountElement.textContent = total.toLocaleString('vi-VN') + "đ";
-        }
+    // --- Helper: set text ---
+    const setText = (selector, text) => {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = text;
     };
 
-    // Lắng nghe thay đổi số lượng người
-    if (adultsInput) {
-        adultsInput.addEventListener("input", calculateTotal);
-    }
-    if (childrenInput) {
-        childrenInput.addEventListener("input", calculateTotal);
-    }
+    // --- Cập nhật thông tin tour ---
+    setText("#tourName", tour.name);
+    setText("#breadcrumbName", tour.name.length > 25 ? tour.name.slice(0, 25) + "…" : tour.name);
+    setText("#price", tour.price.toLocaleString('vi-VN') + "đ");
+    setText(".tour-price .old-price", tour.oldPrice.toLocaleString('vi-VN') + "đ");
+    setText(".discount", `Giảm ${tour.discount}%`);
+    setText("#duration", tour.duration);
+    setText("#slots", tour.slots);
 
-    // Tính tổng tiền ban đầu
-    calculateTotal();
+    const heroImg = document.querySelector(".page-hero img");
+    if (heroImg) { heroImg.src = tour.image; heroImg.alt = tour.name; }
 
-    // === XỬ LÝ ĐẶT TOUR ===
-    const bookingForm = document.getElementById("bookingForm");
-    if (bookingForm) {
-        bookingForm.addEventListener("submit", (e) => {
-            e.preventDefault();
+    const departureEl = document.querySelector('.tour-highlights li:nth-child(2) strong');
+    if (departureEl) departureEl.nextSibling.textContent = ' ' + tour.departure;
 
-            // Lấy thông tin từ form
-            const departDate = document.getElementById("departDate").value;
-            const adults = parseInt(adultsInput.value) || 0;
-            const children = parseInt(childrenInput.value) || 0;
+    const ratingEl = document.querySelector('.tour-highlights li:nth-child(4) strong');
+    if (ratingEl) ratingEl.nextSibling.textContent = ` ${tour.rating} (${tour.reviews})`;
 
-            // Kiểm tra dữ liệu
-            if (!departDate) {
-                alert("Vui lòng chọn ngày khởi hành!");
-                return;
-            }
+    // --- Tabs ---
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panes = document.querySelectorAll('.tab-pane');
+    tabs.forEach(tab => tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        panes.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.getElementById(tab.dataset.tab);
+        if (target) target.classList.add('active');
+    }));
 
-            if (adults === 0) {
-                alert("Vui lòng chọn ít nhất 1 người lớn!");
-                return;
-            }
+    // --- Tính tổng tiền ---
+    const adultsInput = document.getElementById("adults");
+    const childrenInput = document.getElementById("children");
+    const totalEl = document.getElementById("totalAmount");
 
-            // Kiểm tra số chỗ còn lại
-            const totalPeople = adults + children;
-            if (totalPeople > tour.slots) {
-                alert(`Xin lỗi! Tour chỉ còn ${tour.slots} chỗ trống.`);
-                return;
-            }
+    const calcTotal = () => {
+        const adults = parseInt(adultsInput?.value) || 0;
+        const children = parseInt(childrenInput?.value) || 0;
+        const total = (adults + children * 0.7) * tour.price;
+        if (totalEl) totalEl.textContent = total.toLocaleString('vi-VN') + "đ";
+    };
+    adultsInput?.addEventListener('input', calcTotal);
+    childrenInput?.addEventListener('input', calcTotal);
+    calcTotal();
 
-            // Xử lý đặt tour (có thể gửi lên server sau này)
-            const bookingData = {
-                tourId: tourId,
-                tourName: tour.name,
-                departDate: departDate,
-                adults: adults,
-                children: children,
-                totalAmount: (adults * tour.price) + (children * tour.price * 0.7)
-            };
+    // --- Đặt tour ---
+    document.getElementById("bookingForm")?.addEventListener('submit', e => {
+        e.preventDefault();
+        const date = document.getElementById("departDate").value;
+        const adults = parseInt(adultsInput?.value) || 0;
+        const children = parseInt(childrenInput?.value) || 0;
 
-            console.log("Booking data:", bookingData);
+        if (!date) return alert("Vui lòng chọn ngày khởi hành!");
+        if (adults === 0) return alert("Vui lòng chọn ít nhất 1 người lớn!");
+        if (adults + children > tour.slots) return alert(`Xin lỗi! Tour chỉ còn ${tour.slots} chỗ trống.`);
 
-            // Thông báo thành công
-            alert(`Đặt tour thành công!\n\nTour: ${tour.name}\nNgày khởi hành: ${departDate}\nSố người: ${adults} người lớn, ${children} trẻ em\nTổng tiền: ${bookingData.totalAmount.toLocaleString('vi-VN')}đ\n\nChúng tôi sẽ liên hệ bạn trong thời gian sớm nhất!`);
-
-            // Có thể chuyển hướng đến trang thanh toán
-            // window.location.href = 'payment.pages?bookingId=' + bookingId;
-        });
-    }
-
-    // === LOG DEBUG ===
-    console.log('Tour detail loaded:', {
-        tourId: tourId,
-        tourName: tour.name,
-        price: tour.price
+        alert(`Đặt tour thành công!\nTour: ${tour.name}\nNgày khởi hành: ${date}\nSố người: ${adults} người lớn, ${children} trẻ em\nTổng tiền: ${(adults + children*0.7)*tour.price.toLocaleString('vi-VN')}đ`);
     });
+
+    console.log('Tour detail loaded:', tourId, tour.name);
 });
